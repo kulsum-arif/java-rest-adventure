@@ -1,0 +1,528 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "searchTime": {
+      "$ref": "#/definitions/dateTimeField",
+      "description": ""
+    },
+    "products": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/productItem"
+      },
+      "minItems": 1,
+      "description": ""
+    }
+  },
+  "required": [
+    "searchTime",
+    "products"
+  ],
+  "additionalProperties": false,
+  "definitions": {
+    "integerField": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "numericField": {
+      "type": "number",
+      "multipleOf": 0.00001
+    },
+    "adjustmentNumericField": {
+      "type": "number",
+      "multipleOf": 0.00001
+    },
+    "dateField": {
+      "type": "string",
+      "format": "date"
+    },
+    "dateTimeField": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "productItem": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "investor": {
+          "type": "string"
+        },
+        "lastUpdated": {
+          "$ref": "#/definitions/dateTimeField",
+          "description": ""
+        },
+        "comments": {
+          "type": "string"
+        },
+        "margin": {
+          "$ref": "#/definitions/numericField",
+          "description": ""
+        },
+        "marginRoundingCode": {
+          "$ref": "#/definitions/numericField",
+          "description": ""
+        },
+        "marginRoundingFactor": {
+          "type": "string",
+          "enum": [
+            "UP",
+            "DOWN"
+          ]
+        },
+        "apor": {
+          "$ref": "#/definitions/numericField",
+          "description": "Average Prime Offer Rate"
+        },
+        "unDiscountedRate": {
+          "$ref": "#/definitions/numericField",
+          "description": ""
+        },
+        "cltv": {
+          "$ref": "#/definitions/numericField",
+          "description": "Combined loan to value"
+        },
+        "ltv": {
+          "$ref": "#/definitions/numericField",
+          "description": "Loan to value"
+        },
+        "hcltv": {
+          "$ref": "#/definitions/numericField",
+          "description": "HELOC Combined loan to value"
+        },
+        "pricing": {
+          "type": "object",
+          "properties": {
+            "period": {
+              "$ref": "#/definitions/integerField",
+              "description": ""
+            },
+            "rate": {
+              "$ref": "#/definitions/numericField",
+              "description": ""
+            },
+            "expirationDate": {
+              "$ref": "#/definitions/dateField",
+              "description": ""
+            },
+            "rateSheetId": {
+              "type": "string"
+            },
+            "isAvailable": {
+              "type": "boolean"
+            }
+          },
+          "additionalProperties": false
+        },
+        "loan": {
+          "type": "object",
+          "properties": {
+            "termInMonths": {
+              "$ref": "#/definitions/integerField",
+              "description": ""
+            },
+            "type": {
+              "type": "string",
+              "enum": [
+                "FHA",
+                "VA",
+                "Conventional",
+                "FarmersHomeAdministration",
+                "HELOC",
+                "Other"
+              ]
+            },
+            "program": {
+              "type": "object",
+              "properties": {
+                "code": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "code",
+                "name"
+              ],
+              "additionalProperties": false
+            },
+            "amortization": {
+              "type": "object",
+              "properties": {
+                "termInMonths": {
+                  "$ref": "#/definitions/integerField",
+                  "description": ""
+                },
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "GraduatedPaymentMortgage",
+                    "Fixed",
+                    "AdjustableRate",
+                    "OtherAmortizationType"
+                  ]
+                }
+              },
+              "required": [
+                "termInMonths",
+                "type"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "additionalProperties": false
+        },
+        "closingCost": {
+          "type": "object",
+          "properties": {
+            "total": {
+              "$ref": "#/definitions/integerField",
+              "description": ""
+            },
+            "details": {
+              "type": "object",
+              "properties": {
+                "lender": {
+                  "$ref": "#/definitions/numericField",
+                  "description": ""
+                },
+                "government": {
+                  "$ref": "#/definitions/numericField",
+                  "description": ""
+                },
+                "services": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/serviceItem"
+                  },
+                  "minItems": 1,
+                  "description": ""
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          "additionalProperties": false
+        },
+        "index": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string",
+              "description": "Name of the index",
+              "examples": [
+                "SOFR"
+              ]
+            },
+            "value": {
+              "$ref": "#/definitions/numericField",
+              "description": "Numerical representation of the value of the index",
+              "examples": [
+                "1.07800"
+              ]
+            }
+          },
+          "required": [
+            "name",
+            "value"
+          ],
+          "additionalProperties": false
+        },
+        "arm": {
+          "type": "object",
+          "properties": {
+            "lifetimeCap": {
+              "$ref": "#/definitions/numericField",
+              "description": ""
+            },
+            "lifetimeFloor": {
+              "$ref": "#/definitions/numericField",
+              "description": ""
+            },
+            "firstCap": {
+              "$ref": "#/definitions/numericField",
+              "description": ""
+            },
+            "firstFloor": {
+              "$ref": "#/definitions/numericField",
+              "description": ""
+            },
+            "periodicCap": {
+              "$ref": "#/definitions/numericField",
+              "description": ""
+            },
+            "adjPeriod": {
+              "$ref": "#/definitions/numericField",
+              "description": ""
+            },
+            "firstAdjustPeriod": {
+              "$ref": "#/definitions/numericField",
+              "description": ""
+            },
+            "startingAdjPrice": {
+              "$ref": "#/definitions/numericField",
+              "description": ""
+            },
+            "startingAdjRate": {
+              "$ref": "#/definitions/numericField",
+              "description": ""
+            },
+            "indexType": {
+              "type": "string",
+              "enum": [
+                "UST1YW",
+                "UST3YW",
+                "UST5YW",
+                "UST7YW",
+                "UST10YW",
+                "UST20YW",
+                "UST30YW",
+                "UST1Y",
+                "UST3Y",
+                "UST5Y",
+                "UST7Y",
+                "UST10Y",
+                "UST20Y",
+                "UST30Y",
+                "3MoCD(12MoAvg)",
+                "6MCDW",
+                "UST6M",
+                "FRBCommercial3M",
+                "FRBBankPrime",
+                "FHLBSFCOFI",
+                "CMR",
+                "FHFB_NACMR",
+                "FRBDiscount",
+                "FHLMC30Y30D",
+                "FHLMC30Y60D",
+                "FHLMC30Y90D",
+                "FHLMCLIBOR1M",
+                "FHLMCLIBOR3M",
+                "FHLMCLIBOR6M",
+                "FHLMCLIBOR1Y",
+                "FNMA12MAVG",
+                "FNMA15Y60D",
+                "FNMA30Y30D",
+                "FNMA30Y60D",
+                "FNMA30Y90D",
+                "FNMALIBOR1M",
+                "FNMALIBOR3M",
+                "FNMALIBOR6M",
+                "FNMALIBOR1Y",
+                "LIBOR1M",
+                "LIBOR3M",
+                "LIBOR6M",
+                "LIBOR12M",
+                "MTA",
+                "TNMax",
+                "WSJPrime",
+                "WSJPrimeWkly",
+                "CMT1",
+                "CMT3",
+                "CMT5",
+                "CMT7",
+                "CMT10",
+                "SOFR1M",
+                "SOFR3M",
+                "SOFR6M"
+              ]
+            },
+            "disclosureType": {
+              "type": "string",
+              "enum": [
+                "WeeklyAverageConstantMaturingTreasury",
+                "MonthlyAverageConstantMaturingTreasury",
+                "WeeklyAverageTreasuryAuctionAverageInvestmentYield",
+                "WeeklyAverageTreasuryAuctionAverageBondDiscountYield",
+                "WeeklyAverageSecondaryMarketTreasuryBillInvestmentYield",
+                "DailyCertificateOfDepositRate",
+                "WeeklyAverageCertificateOfDepositRate",
+                "WeeklyAveragePrimeRate",
+                "TreasuryBillDailyValue",
+                "EleventhDistrictCostOfFunds",
+                "NationalMonthlyMedianCostOfFunds",
+                "WallStreetJournalLIBOR",
+                "FNM_LIBOR"
+              ]
+            }
+          },
+          "additionalProperties": false
+        },
+        "quotes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/quoteItem"
+          },
+          "minItems": 1,
+          "description": ""
+        },
+        "adjustments": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/adjustmentItem"
+          },
+          "minItems": 1,
+          "description": ""
+        }
+      },
+      "required": [
+        "id"
+      ],
+      "additionalProperties": false
+    },
+    "serviceItem": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "fee": {
+          "$ref": "#/definitions/numericField",
+          "description": ""
+        }
+      },
+      "required": [
+        "name",
+        "fee"
+      ],
+      "additionalProperties": false
+    },
+    "quoteItem": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "apr": {
+          "$ref": "#/definitions/numericField",
+          "description": ""
+        },
+        "rate": {
+          "$ref": "#/definitions/numericField",
+          "description": ""
+        },
+        "price": {
+          "$ref": "#/definitions/numericField",
+          "description": ""
+        },
+        "basePrice": {
+          "$ref": "#/definitions/numericField",
+          "description": ""
+        },
+        "holdback": {
+          "$ref": "#/definitions/numericField",
+          "description": ""
+        },
+        "principalAndInterest": {
+          "$ref": "#/definitions/numericField",
+          "description": ""
+        },
+        "monthlyMI": {
+          "$ref": "#/definitions/numericField",
+          "description": ""
+        },
+        "monthlyPayment": {
+          "$ref": "#/definitions/numericField",
+          "description": ""
+        },
+        "originationFees": {
+          "$ref": "#/definitions/numericField",
+          "description": ""
+        },
+        "points": {
+          "$ref": "#/definitions/numericField",
+          "description": ""
+        },
+        "loComp": {
+          "$ref": "#/definitions/numericField",
+          "description": ""
+        },
+        "margin": {
+          "$ref": "#/definitions/numericField",
+          "description": ""
+        },
+        "discount": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "enum": [
+                "Percent",
+                "Absolute"
+              ],
+              "description": "Cost to the lender."
+            },
+            "value": {
+              "$ref": "#/definitions/numericField",
+              "description": ""
+            }
+          },
+          "required": [
+            "type",
+            "value"
+          ],
+          "additionalProperties": false
+        },
+        "rebate": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "enum": [
+                "Percent",
+                "Absolute"
+              ],
+              "description": "Refund to the lender from investor"
+            },
+            "value": {
+              "$ref": "#/definitions/numericField",
+              "description": ""
+            }
+          },
+          "required": [
+            "type",
+            "value"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "adjustmentItem": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "BasePrice",
+            "BaseMargin",
+            "BaseRate",
+            "ProfitMargin"
+          ],
+          "description": ""
+        },
+        "description": {
+          "type": "string",
+          "description": ""
+        },
+        "value": {
+          "$ref": "#/definitions/adjustmentNumericField",
+          "description": ""
+        }
+      },
+      "required": [
+        "type",
+        "description",
+        "value"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

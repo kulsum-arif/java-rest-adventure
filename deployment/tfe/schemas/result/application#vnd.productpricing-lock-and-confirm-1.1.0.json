@@ -1,0 +1,1108 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "validationMessage": {
+    "oneOf": "Two of lockDate, lockNumberOfDays and lockExpirationDate are required.",
+    "oneOfSub": "Two of lockDate, lockNumberOfDays and lockExpirationDate are required.",
+    "oneOfBuySideSub": "Two of lockDate, lockNumberOfDays and lockExpirationDate are required.",
+    "oneOfAdditionalFields": "fieldName and one of stringValue, numericValue and dateValue is required.",
+    "datePattern": "Date should be in the format MM/DD/YYYY.",
+    "timePattern": "Time should be in the format HH:MM"
+  },
+  "properties": {
+    "extensionIndicator": {
+      "type": "boolean",
+      "description": ""
+    },
+    "priceConcession": {
+      "type": "object",
+      "properties": {
+        "indicator": {
+          "type": "boolean",
+          "description": ""
+        },
+        "requestStatus": {
+          "type": "string",
+          "enum": [
+            "Approved",
+            "Denied"
+          ],
+          "description": ""
+        },
+        "requestedAmount": {
+          "$ref": "#/definitions/numericField",
+          "description": ""
+        }
+      }
+    },
+    "borrLenderPaid": {
+      "type": "string",
+      "enum": [
+        "Lender Paid",
+        "Borrower Paid",
+        "Exempt"
+      ],
+      "description": ""
+    },
+    "programNotes": {
+      "type": "string",
+      "description": "Free form Rate Lock Request Program Notes."
+    },
+    "investor": {
+      "type": "string",
+      "description": ""
+    },
+    "planCode": {
+      "type": "string",
+      "description": ""
+    },
+    "onrpTime": {
+      "type": "string",
+      "$ref": "#/definitions/timePattern",
+      "description": ""
+    },
+    "lockDate": {
+      "$ref": "#/definitions/datePattern",
+      "description": ""
+    },
+    "lockExpirationDate": {
+      "$ref": "#/definitions/datePattern",
+      "description": ""
+    },
+    "lockNumberOfDays": {
+      "$ref": "#/definitions/integerField",
+      "description": ""
+    },
+    "adjustments": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/adjustmentItem"
+      },
+      "minItems": 1,
+      "description": ""
+    },
+    "additionalFields": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/additionalFieldItem"
+      },
+      "minItems": 1,
+      "description": "Additional fields in the rate lock."
+    },
+    "lastRateSetDate": {
+      "$ref": "#/definitions/datePattern",
+      "description": ""
+    },
+    "correspondentCommitmentType": {
+      "type": "string",
+      "enum": [
+        "Best Efforts",
+        "Mandatory"
+      ],
+      "description": "Type of lock associated with the correspondent trade."
+    },
+    "correspondentDeliveryType": {
+      "type": "string",
+      "description": "The processing method of the commitment."
+    },
+    "isDeliveryType": {
+      "type": "boolean",
+      "description": "Gets set based on the committment type."
+    },
+    "hedging": {
+      "type": "boolean",
+      "description": "A flag to indicate whether a loan is part of the hedge."
+    },
+    "onrpDate": {
+      "$ref": "#/definitions/datePattern",
+      "description": ""
+    },
+    "onrpLock": {
+      "type": "boolean",
+      "description": ""
+    },
+    "onrpEligible": {
+      "type": "boolean",
+      "description": ""
+    },
+    "penaltyTerm": {
+      "type": "string",
+      "enum": [
+        "1 Year",
+        "2 Years",
+        "3 Years",
+        "4 Years",
+        "5 Years",
+        ""
+      ],
+      "description": "It is the period of the prepaid penalty."
+    },
+    "currentAcquisition": {
+      "type": "boolean",
+      "description": "The lot/land status of the property"
+    },
+    "currentConstructionRefi": {
+      "type": "boolean",
+      "description": "Indicated whether a refinance is being done on the construction."
+    },
+    "prepayPenalty": {
+      "type": "boolean",
+      "description": "Indicates whether there is a prepayment penalty on the loan."
+    },
+    "startingAdjustRate": {
+      "$ref": "#/definitions/numericField",
+      "description": ""
+    },
+    "startingAdjustPrice": {
+      "$ref": "#/definitions/numericField",
+      "description": ""
+    },
+    "unDiscountedRate": {
+      "$ref": "#/definitions/numericField",
+      "description": ""
+    },
+    "gpmRate": {
+      "$ref": "#/definitions/numericField",
+      "description": ""
+    },
+    "gpmYears": {
+      "$ref": "#/definitions/integerField",
+      "description": ""
+    },
+    "baseRate": {
+      "$ref": "#/definitions/numericField",
+      "description": ""
+    },
+    "basePrice": {
+      "$ref": "#/definitions/numericField",
+      "description": ""
+    },
+    "baseMarginRate": {
+      "$ref": "#/definitions/numericField",
+      "description": ""
+    },
+    "rateSheetId": {
+      "type": "string",
+      "description": ""
+    },
+    "requestImpoundWaived": {
+      "type": "string",
+      "enum": [
+        "Waived",
+        "Not Waived",
+        ""
+      ],
+      "description": "Indicates whether any portion of the payment will be part of an escrow account."
+    },
+    "requestImpoundType": {
+      "type": "string",
+      "enum": [
+        "No Impounds",
+        "Insurance only",
+        "Taxes only",
+        "Taxes and Insurance",
+        ""
+      ],
+      "description": "Describes what portion of the payment will have an escrow account."
+    },
+    "impoundWaived": {
+      "type": "string",
+      "enum": [
+        "Waived",
+        "Not Waived",
+        ""
+      ],
+      "description": "Indicates waiver of impound/escrow account requirement for the subject mortgage transaction."
+    },
+    "impoundType": {
+      "type": "string",
+      "enum": [
+        "No Impounds",
+        "Insurance only",
+        "Taxes only",
+        "Taxes and Insurance",
+        ""
+      ],
+      "description": "Waiver type of impound/escrow account requirement for the subject mortgage transaction."
+    },
+    "lenderFeeWaiverOption": {
+      "type": "boolean",
+      "description": "Indicates whether a lender will waive their fees."
+    },
+    "sellerPaidMiPremium": {
+      "$ref": "#/definitions/integerField",
+      "description": "Lock Request Seller Paid MI Premium"
+    },
+    "fhaUpfrontMiPremiumPercent": {
+      "$ref": "#/definitions/numericField",
+      "description": ""
+    },
+    "roundToNearest50": {
+      "type": "boolean",
+      "description": ""
+    },
+    "pricing": {
+      "type": "object",
+      "properties": {
+        "historyData": {
+          "type": "string",
+          "minLength": 1
+        },
+        "updated": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "historyData"
+      ],
+      "additionalProperties": false
+    },
+    "comments": {
+      "type": "string",
+      "description": ""
+    },
+    "buySide": {
+      "type": "object",
+      "properties": {
+        "commitment": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "enum": [
+                "Best Efforts",
+                "Mandatory"
+              ]
+            },
+            "number": {
+              "type": "string",
+              "description": "Commitment number associated with the trade."
+            },
+            "date": {
+              "$ref": "#/definitions/datePattern",
+              "description": ""
+            },
+            "masterCommitmentNumber": {
+              "type": "string",
+              "description": "Master commitment number associated with the trade."
+            },
+            "investorCommitment": {
+              "type": "string",
+              "description": ""
+            }
+          },
+          "additionalProperties": false
+        },
+        "onrpDate": {
+          "$ref": "#/definitions/datePattern",
+          "description": ""
+        },
+        "onrpEligible": {
+          "type": "boolean",
+          "description": ""
+        },
+        "tpoName": {
+          "type": "string",
+          "description": ""
+        },
+        "tpoId": {
+          "type": "string",
+          "description": ""
+        },
+        "orgId": {
+          "type": "string",
+          "description": ""
+        },
+        "daysToExtend": {
+          "$ref": "#/definitions/integerField"
+        },
+        "extendedLockExpirationDate": {
+          "$ref": "#/definitions/datePattern"
+        },
+        "lockExtendPriceAdjustment": {
+          "$ref": "#/definitions/numericField"
+        },
+        "expirationDate": {
+          "$ref": "#/definitions/datePattern",
+          "description": ""
+        },
+        "originalLockExpirationDate": {
+          "$ref": "#/definitions/datePattern"
+        },
+        "investor": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string",
+              "description": "Name of the investor."
+            }
+          },
+          "additionalProperties": false
+        },
+        "delivery": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "description": ""
+            },
+            "expirationDate": {
+              "$ref": "#/definitions/datePattern",
+              "description": ""
+            }
+          },
+          "additionalProperties": false
+        },
+        "totalBuyPrice": {
+          "$ref": "#/definitions/numericField",
+          "description": ""
+        },
+        "totalPrice": {
+          "$ref": "#/definitions/numericField",
+          "description": ""
+        },
+        "startingAdjustPrice": {
+          "$ref": "#/definitions/numericField",
+          "description": ""
+        },
+        "unDiscountedRate": {
+          "$ref": "#/definitions/numericField",
+          "description": ""
+        },
+        "totalRateAdjustments": {
+          "$ref": "#/definitions/numericField",
+          "description": ""
+        },
+        "netRate": {
+          "$ref": "#/definitions/numericField",
+          "description": ""
+        },
+        "totalPriceAdjustments": {
+          "$ref": "#/definitions/numericField",
+          "description": ""
+        },
+        "netPrice": {
+          "$ref": "#/definitions/numericField",
+          "description": ""
+        },
+        "totalMarginAdjustments": {
+          "$ref": "#/definitions/numericField",
+          "description": ""
+        },
+        "netMarginRate": {
+          "$ref": "#/definitions/numericField",
+          "description": ""
+        },
+        "startingAdjustRate": {
+          "$ref": "#/definitions/numericField",
+          "description": ""
+        },
+        "branch": {
+          "type": "object",
+          "properties": {
+            "approvalDate": {
+              "$ref": "#/definitions/datePattern",
+              "description": ""
+            },
+            "approvedBy": {
+              "type": "string",
+              "description": ""
+            },
+            "price": {
+              "$ref": "#/definitions/numericField",
+              "description": ""
+            },
+            "reasonForApproval": {
+              "type": "string",
+              "description": ""
+            },
+            "approvalDate2": {
+              "$ref": "#/definitions/datePattern",
+              "description": ""
+            },
+            "approvedBy2": {
+              "type": "string",
+              "description": ""
+            },
+            "price2": {
+              "$ref": "#/definitions/numericField",
+              "description": ""
+            },
+            "reasonForApproval2": {
+              "type": "string",
+              "description": ""
+            },
+            "approvalDate3": {
+              "$ref": "#/definitions/datePattern",
+              "description": ""
+            },
+            "approvedBy3": {
+              "type": "string",
+              "description": ""
+            },
+            "price3": {
+              "$ref": "#/definitions/numericField",
+              "description": ""
+            },
+            "reasonForApproval3": {
+              "type": "string",
+              "description": ""
+            },
+            "approvalDate4": {
+              "$ref": "#/definitions/datePattern",
+              "description": ""
+            },
+            "approvedBy4": {
+              "type": "string",
+              "description": ""
+            },
+            "price4": {
+              "$ref": "#/definitions/numericField",
+              "description": ""
+            },
+            "reasonForApproval4": {
+              "type": "string",
+              "description": ""
+            },
+            "approvalDate5": {
+              "$ref": "#/definitions/datePattern",
+              "description": ""
+            },
+            "approvedBy5": {
+              "type": "string",
+              "description": ""
+            },
+            "price5": {
+              "$ref": "#/definitions/numericField",
+              "description": ""
+            },
+            "reasonForApproval5": {
+              "type": "string",
+              "description": ""
+            }
+          },
+          "additionalProperties": false
+        },
+        "corporate": {
+          "type": "object",
+          "properties": {
+            "approvalDate": {
+              "$ref": "#/definitions/datePattern",
+              "description": ""
+            },
+            "approvedBy": {
+              "type": "string",
+              "description": ""
+            },
+            "price": {
+              "$ref": "#/definitions/numericField",
+              "description": ""
+            },
+            "reasonForApproval": {
+              "type": "string",
+              "description": ""
+            },
+            "approvalDate2": {
+              "$ref": "#/definitions/datePattern",
+              "description": ""
+            },
+            "approvedBy2": {
+              "type": "string",
+              "description": ""
+            },
+            "price2": {
+              "$ref": "#/definitions/numericField",
+              "description": ""
+            },
+            "reasonForApproval2": {
+              "type": "string",
+              "description": ""
+            },
+            "approvalDate3": {
+              "$ref": "#/definitions/datePattern",
+              "description": ""
+            },
+            "approvedBy3": {
+              "type": "string",
+              "description": ""
+            },
+            "price3": {
+              "$ref": "#/definitions/numericField",
+              "description": ""
+            },
+            "reasonForApproval3": {
+              "type": "string",
+              "description": ""
+            },
+            "approvalDate4": {
+              "$ref": "#/definitions/datePattern",
+              "description": ""
+            },
+            "approvedBy4": {
+              "type": "string",
+              "description": ""
+            },
+            "price4": {
+              "$ref": "#/definitions/numericField",
+              "description": ""
+            },
+            "reasonForApproval4": {
+              "type": "string",
+              "description": ""
+            },
+            "approvalDate5": {
+              "$ref": "#/definitions/datePattern",
+              "description": ""
+            },
+            "approvedBy5": {
+              "type": "string",
+              "description": ""
+            },
+            "price5": {
+              "$ref": "#/definitions/numericField",
+              "description": ""
+            },
+            "reasonForApproval5": {
+              "type": "string",
+              "description": ""
+            }
+          },
+          "additionalProperties": false
+        },
+        "profitMarginAdjustedBuyPrice": {
+          "$ref": "#/definitions/numericField"
+        },
+        "correspondent": {
+          "type": "object",
+          "properties": {
+            "tradeId": {
+              "type": "string",
+              "description": ""
+            },
+            "tradeNumber": {
+              "type": "string",
+              "description": ""
+            }
+          },
+          "additionalProperties": false
+        },
+        "lockDate": {
+          "$ref": "#/definitions/datePattern",
+          "description": ""
+        },
+        "lockExpirationDate": {
+          "$ref": "#/definitions/datePattern",
+          "description": ""
+        },
+        "lockNumberOfDays": {
+          "$ref": "#/definitions/integerField",
+          "description": ""
+        },
+        "baseRate": {
+          "$ref": "#/definitions/numericField",
+          "description": ""
+        },
+        "basePrice": {
+          "$ref": "#/definitions/numericField"
+        },
+        "baseMarginRate": {
+          "$ref": "#/definitions/numericField",
+          "description": ""
+        },
+        "srpPaidOut": {
+          "$ref": "#/definitions/numericField",
+          "description": ""
+        },
+        "rateSheetId": {
+          "type": "string",
+          "description": ""
+        },
+        "lastRateSetDate": {
+          "$ref": "#/definitions/datePattern",
+          "description": ""
+        },
+        "comments": {
+          "type": "string",
+          "description": ""
+        },
+        "adjustments": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/adjustmentItem"
+          },
+          "minItems": 1,
+          "description": ""
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "baseRate"
+      ],
+      "oneOf": [
+        {
+          "required": [
+            "lockDate",
+            "lockNumberOfDays"
+          ],
+          "validationMessage": {
+            "$ref": "#/validationMessage/oneOfBuySideSub"
+          }
+        },
+        {
+          "required": [
+            "lockDate",
+            "lockExpirationDate"
+          ],
+          "validationMessage": {
+            "$ref": "#/validationMessage/oneOfBuySideSub"
+          }
+        },
+        {
+          "required": [
+            "lockExpirationDate",
+            "lockNumberOfDays"
+          ],
+          "validationMessage": {
+            "$ref": "#/validationMessage/oneOfBuySideSub"
+          }
+        }
+      ]
+    },
+    "sellSide": {
+      "type": "object",
+      "properties": {
+        "srp": {
+          "$ref": "#/definitions/numericField"
+        },
+        "servicing": {
+          "$ref": "#/definitions/servicingItem"
+        },
+        "actual": {
+          "type": "object",
+          "properties": {
+            "amount": {
+              "$ref": "#/definitions/numericField"
+            },
+            "price": {
+              "$ref": "#/definitions/numericField"
+            },
+            "srp": {
+              "$ref": "#/definitions/numericField"
+            }
+          },
+          "additionalProperties": false
+        },
+        "diff": {
+          "type": "object",
+          "properties": {
+            "amount": {
+              "$ref": "#/definitions/numericField"
+            },
+            "price": {
+              "$ref": "#/definitions/numericField"
+            },
+            "srp": {
+              "$ref": "#/definitions/numericField"
+            }
+          },
+          "additionalProperties": false
+        },
+        "netAmount": {
+          "$ref": "#/definitions/numericField"
+        },
+        "paidMiPremium": {
+          "$ref": "#/definitions/numericField"
+        },
+        "tradeMgmtPrevConfirmedLockGuid": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+          "validationMessage": {
+            "$ref": "#/validationMessage/uuidPattern"
+          }
+        },
+        "correspondent": {
+          "type": "object",
+          "properties": {
+            "escrowDisbursementsToBePaid": {
+              "$ref": "#/definitions/numericField"
+            },
+            "tradeId": {
+              "type": "string"
+            },
+            "tradeNumber": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        },
+        "daysToExtend": {
+          "$ref": "#/definitions/integerField"
+        },
+        "extendedLockExpirationDate": {
+          "$ref": "#/definitions/datePattern"
+        },
+        "commitmentDate": {
+          "$ref": "#/definitions/datePattern"
+        },
+        "lockExtendPriceAdjustment": {
+          "$ref": "#/definitions/numericField"
+        },
+        "discountYsp": {
+          "$ref": "#/definitions/numericField"
+        },
+        "masterContractNumber": {
+          "type": "string"
+        },
+        "gainLossPercentage": {
+          "$ref": "#/definitions/numericField"
+        },
+        "gainLossPrice": {
+          "$ref": "#/definitions/numericField"
+        },
+        "gainLossTotalPrice": {
+          "$ref": "#/definitions/numericField"
+        },
+        "rateSheetId": {
+          "type": "string"
+        },
+        "lastRateSetDate": {
+          "$ref": "#/definitions/datePattern"
+        },
+        "lockNumberOfDays": {
+          "$ref": "#/definitions/integerField"
+        },
+        "lockExpirationDate": {
+          "$ref": "#/definitions/datePattern"
+        },
+        "lockDate": {
+          "$ref": "#/definitions/datePattern"
+        },
+        "baseRate": {
+          "$ref": "#/definitions/numericField"
+        },
+        "totalRateAdjustments": {
+          "$ref": "#/definitions/numericField"
+        },
+        "netRate": {
+          "$ref": "#/definitions/numericField"
+        },
+        "basePrice": {
+          "$ref": "#/definitions/numericField"
+        },
+        "totalPriceAdjustments": {
+          "$ref": "#/definitions/numericField"
+        },
+        "netPrice": {
+          "$ref": "#/definitions/numericField"
+        },
+        "baseMarginRate": {
+          "$ref": "#/definitions/numericField"
+        },
+        "totalMarginAdjustments": {
+          "$ref": "#/definitions/numericField"
+        },
+        "netMarginRate": {
+          "$ref": "#/definitions/numericField"
+        },
+        "originalLockExpirationDate": {
+          "$ref": "#/definitions/datePattern"
+        },
+        "comments": {
+          "type": "string"
+        },
+        "srpPaidOut": {
+          "$ref": "#/definitions/numericField"
+        },
+        "investor": {
+          "type": "object",
+          "properties": {
+            "loanNumber": {
+              "type": "string"
+            },
+            "mersNumber": {
+              "type": "string"
+            },
+            "lockedDate": {
+              "$ref": "#/definitions/datePattern"
+            },
+            "deliveryDate": {
+              "$ref": "#/definitions/datePattern"
+            },
+            "targetDeliveryDate": {
+              "$ref": "#/definitions/datePattern"
+            },
+            "name": {
+              "type": "string"
+            },
+            "contact": {
+              "type": "string"
+            },
+            "phone": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string"
+            },
+            "address": {
+              "type": "string"
+            },
+            "city": {
+              "type": "string"
+            },
+            "state": {
+              "type": "string",
+              "maxLength": 2
+            },
+            "postalCode": {
+              "type": "string"
+            },
+            "website": {
+              "type": "string"
+            },
+            "lockType": {
+              "type": "string"
+            },
+            "programCode": {
+              "type": "string"
+            },
+            "status": {
+              "type": "string"
+            },
+            "statusDate": {
+              "$ref": "#/definitions/datePattern"
+            },
+            "tradeNumber": {
+              "type": "string"
+            },
+            "commitment": {
+              "type": "string"
+            },
+            "templateName": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        },
+        "adjustments": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/adjustmentItem"
+          },
+          "minItems": 1,
+          "description": ""
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "baseRate",
+    "buySide"
+  ],
+  "oneOf": [
+    {
+      "required": [
+        "lockDate",
+        "lockNumberOfDays"
+      ],
+      "validationMessage": {
+        "$ref": "#/validationMessage/oneOfSub"
+      }
+    },
+    {
+      "required": [
+        "lockDate",
+        "lockExpirationDate"
+      ],
+      "validationMessage": {
+        "$ref": "#/validationMessage/oneOfSub"
+      }
+    },
+    {
+      "required": [
+        "lockExpirationDate",
+        "lockNumberOfDays"
+      ],
+      "validationMessage": {
+        "$ref": "#/validationMessage/oneOfSub"
+      }
+    }
+  ],
+  "additionalProperties": false,
+  "definitions": {
+    "integerField": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "numericField": {
+      "type": "number",
+      "multipleOf": 0.0000000001
+    },
+    "adjustmentNumericField": {
+      "type": "number",
+      "multipleOf": 0.0000000001
+    },
+    "datePattern": {
+      "type": "string",
+      "pattern": "^^(?:(?:(?:0?[13578]|1[02])(\\/)31)\\1|(?:(?:0?[1,3-9]|1[0-2])(\\/)(?:29|30)\\2))(?:(?:1[6-9]|[2-9]\\d)?\\d{2})$|^(?:0?2(\\/)29\\3(?:(?:(?:1[6-9]|[2-9]\\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:(?:0?[1-9])|(?:1[0-2]))(\\/)(?:0?[1-9]|1\\d|2[0-8])\\4(?:(?:1[6-9]|[2-9]\\d)?\\d{2})$",
+      "validationMessage": {
+        "$ref": "#/validationMessage/datePattern"
+      }
+    },
+    "timePattern": {
+      "type": "string",
+      "pattern": "^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$",
+      "validationMessage": {
+        "$ref": "#/validationMessage/timePattern"
+      }
+    },
+    "servicingItem": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "Service Retained",
+            "Service Released"
+          ],
+          "description": ""
+        },
+        "servicer": {
+          "type": "string"
+        },
+        "fee": {
+          "type": "object",
+          "properties": {
+            "servicing": {
+              "$ref": "#/definitions/numericField"
+            },
+            "guarantyBase": {
+              "$ref": "#/definitions/numericField"
+            },
+            "guarantee": {
+              "$ref": "#/definitions/numericField"
+            }
+          },
+          "additionalProperties": false
+        },
+        "pool": {
+          "type": "object",
+          "properties": {
+            "number": {
+              "type": "string"
+            },
+            "id": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        },
+        "commitmentContractNumber": {
+          "type": "string"
+        },
+        "productName": {
+          "type": "string"
+        },
+        "msrValue": {
+          "$ref": "#/definitions/numericField"
+        }
+      },
+      "additionalProperties": false
+    },
+    "adjustmentItem": {
+      "type": "object",
+      "properties": {
+        "adjustmentType": {
+          "type": "string",
+          "enum": [
+            "Adjustment",
+            "LockExtensionAdjustment",
+            "ReLockFeeAdjustment",
+            "CustomPriceAdjustment"
+          ],
+          "description": ""
+        },
+        "description": {
+          "type": "string",
+          "description": ""
+        },
+        "priceAdjustmentType": {
+          "type": "string",
+          "enum": [
+            "BasePrice",
+            "BaseMargin",
+            "BaseRate",
+            "ProfitMargin"
+          ],
+          "description": ""
+        },
+        "adjustment": {
+          "$ref": "#/definitions/adjustmentNumericField",
+          "description": ""
+        }
+      },
+      "required": [
+        "adjustmentType",
+        "description",
+        "priceAdjustmentType"
+      ],
+      "additionalProperties": false
+    },
+    "additionalFieldItem": {
+      "type": "object",
+      "properties": {
+        "fieldName": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^[a-zA-Z0-9.]*$",
+          "description": "Identifier of the additional field in encompass"
+        },
+        "numericValue": {
+          "type": "number",
+          "multipleOf": 0.0000000001,
+          "description": "Numeric value for the additonal field"
+        },
+        "stringValue": {
+          "type": "string",
+          "minLength": 1,
+          "description": "String value for the additonal field"
+        },
+        "dateValue": {
+          "$ref": "#/definitions/datePattern",
+          "description": "Date value for the additonal field."
+        }
+      },
+      "oneOf": [
+        {
+          "required": [
+            "fieldName",
+            "stringValue"
+          ],
+          "validationMessage": {
+            "$ref": "#/validationMessage/oneOfAdditionalFields"
+          }
+        },
+        {
+          "required": [
+            "fieldName",
+            "numericValue"
+          ],
+          "validationMessage": {
+            "$ref": "#/validationMessage/oneOfAdditionalFields"
+          }
+        },
+        {
+          "required": [
+            "fieldName",
+            "dateValue"
+          ],
+          "validationMessage": {
+            "$ref": "#/validationMessage/oneOfAdditionalFields"
+          }
+        }
+      ],
+      "additionalProperties": false
+    }
+  }
+}

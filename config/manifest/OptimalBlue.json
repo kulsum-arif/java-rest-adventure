@@ -1,0 +1,420 @@
+{
+    "partnerId": "11158557",
+    "name": "ob_test_product",
+    "listingName": "Optimal Blue Test Product",
+    "requestTypes": [
+        "SEARCH",
+        "LOCKREQUEST"
+    ],
+    "environment": "sandbox",
+    "status": "development",
+    "interfaceUrl": "https://dev-nc-epic-ui.azurewebsites.net/",
+    "integrationType": "ASYNC",
+    "tags": {
+        "workflows": [
+            "interactive"
+        ],
+        "categories": [
+            "PRODUCTPRICING"
+        ],
+        "applications": [
+            "LO Connect"
+        ]
+    },
+    "entitlements": {
+        "access": {
+            "allow": [
+                "urn:elli:encompass:TEBE11158557"
+            ],
+            "deny": [
+                ""
+            ]
+        },
+        "data": {
+            "origin": {
+                "fields": [
+                    {
+                        "jsonPath": "$.loanAmortizationTermMonths",
+                        "fieldId": "4",
+                        "description": "Trans Details Term (Mos)"
+                    },
+                    {
+                        "jsonPath": "$.loanAmortizationType",
+                        "fieldId": "608",
+                        "description": "Trans Details Amort Type"
+                    },
+                    {
+                        "jsonPath": "$.propertyAppraisedValueAmount",
+                        "fieldId": "356",
+                        "description": "Subject Property Appraised Value"
+                    },
+                    {
+                        "jsonPath": "$.tsum.riskAssessmentType",
+                        "fieldId": "1543",
+                        "description": "Underwriting Risk Assess Type"
+                    },
+                    {
+                        "jsonPath": "$.borrowerRequestedLoanAmount",
+                        "fieldId": "1109",
+                        "description": "Trans Details Loan Amt"
+                    },
+                    {
+                        "jsonPath": "$.cashFromToBorrowerAmount",
+                        "fieldId": "142",
+                        "description": "Trans Details Cash From Borr"
+                    },
+                    {
+                        "jsonPath": "$.property.loanPurposeType",
+                        "fieldId": "19",
+                        "description": "Trans Details Loan Purpose"
+                    },
+                    {
+                        "jsonPath": "$.property.state",
+                        "fieldId": "14",
+                        "description": "Subject Property State"
+                    },
+                    {
+                        "jsonPath": "$.loanProductData.loanDocumentationType",
+                        "fieldId": "MORNET.X67",
+                        "description": "Fannie Mae Loan Doc Type Code"
+                    },
+                    {
+                        "jsonPath": "$.applications[0].bottomRatioPercent",
+                        "fieldId": "742",
+                        "description": "Trans Details Qual Ratio Bottom"
+                    },
+                    {
+                        "jsonPath": "$.loanNumber",
+                        "fieldId": "364",
+                        "description": "Trans Details Loan #"
+                    },
+                    {
+                        "jsonPath": "$.vaLoanData.creditScore",
+                        "fieldId": "VASUMM.X23",
+                        "description": "VA Loan Summ Credit Score"
+                    },
+                    {
+                        "jsonPath": "$.firstTimeHomebuyersIndicator",
+                        "fieldId": "934",
+                        "description": "Borr First Time Homebuyer"
+                    },
+                    {
+                        "jsonPath": "$.regulationZ.interestOnlyMonths",
+                        "fieldId": "1177",
+                        "description": "Trans Details Interest Only Mos"
+                    },
+                    {
+                        "jsonPath": "$.loanProductData.lienPriorityType",
+                        "fieldId": "420",
+                        "description": "Trans Details Lien Position"
+                    },
+                    {
+                        "jsonPath": "$.mortgageType",
+                        "fieldId": "1172",
+                        "description": "Trans Details Loan Type"
+                    },
+                    {
+                        "jsonPath": "$.loanProductData.balloonLoanMaturityTermMonthsCount",
+                        "fieldId": "325",
+                        "description": "Trans Details Term Due In"
+                    },
+                    {
+                        "jsonPath": "$.gfe.fundingAmount",
+                        "fieldId": "1826",
+                        "description": "Expenses Calc MIP/PMI MIP Funding Amt"
+                    },
+                    {
+                        "jsonPath": "$.regulationZ.lenderPaidMortgageInsuranceIndicator",
+                        "fieldId": "3533",
+                        "description": "Lender Paid Mortgage Insurance"
+                    },
+                    {
+                        "jsonPath": "$.applications[0].coborrower.intentToOccupyIndicator",
+                        "fieldId": "1343",
+                        "description": "Co-Borr Declarations L"
+                    },
+                    {
+                        "jsonPath": "$.property.financedNumberOfUnits",
+                        "fieldId": "16",
+                        "description": "Subject Property # Units"
+                    },
+                    {
+                        "jsonPath": "$.applications[0].propertyUsageType",
+                        "fieldId": "1811",
+                        "description": "Subject Property Occupancy Status"
+                    },
+                    {
+                        "jsonPath": "$.baseLoanAmount",
+                        "fieldId": "2",
+                        "description": "Trans Details Total Loan Amt (w/ MIP/FF)"
+                    },
+                    {
+                        "jsonPath": "$.secondSubordinateAmount",
+                        "fieldId": "428",
+                        "description": "Trans Details Sub Fin Second Mtg Loan Amt"
+                    },
+                    {
+                        "jsonPath": "$.property.streetAddress",
+                        "fieldId": "11",
+                        "description": "Subject Property Street"
+                    },
+                    {
+                        "jsonPath": "$.property.city",
+                        "fieldId": "12",
+                        "description": "Subject Property City"
+                    },
+                    {
+                        "jsonPath": "$.property.postalCode",
+                        "fieldId": "15",
+                        "description": "Subject Property Zip"
+                    },
+                    {
+                        "jsonPath": "$.loanProductData.gsePropertyType",
+                        "fieldId": "1041",
+                        "description": "Subject Property Type Fannie Mae"
+                    },
+                    {
+                        "jsonPath": "$.purchasePriceAmount",
+                        "fieldId": "136",
+                        "description": "Trans Details Purchase Price"
+                    },
+                    {
+                        "jsonPath": "$.requestedInterestRatePercent",
+                        "fieldId": "3",
+                        "description": "Trans Details Interest Rate"
+                    },
+                    {
+                        "jsonPath": "$.applications[0].borrower.employment[?(@.currentEmploymentIndicator == true)][0].selfEmployedIndicator",
+                        "fieldId": "FE0115",
+                        "description": "Borr Self Employed"
+                    },
+                    {
+                        "jsonPath": "$.mortgageInsurancePremiumUpfrontFactorPercent",
+                        "fieldId": "1107",
+                        "description": "Insurance Mtg Ins Upfront Factor"
+                    },
+                    {
+                        "jsonPath": "$.applications[0].borrower.declarationsJIndicator",
+                        "fieldId": "965",
+                        "description": "Borr Declarations J"
+                    },
+                    {
+                        "jsonPath": "$.mipPaidInCashAmount",
+                        "fieldId": "1760",
+                        "description": "Expenses Calc MIP/PMI Amt Paid In Cash"
+                    },
+                    {
+                        "jsonPath": "$.freddieMac.helocActualBalance",
+                        "fieldId": "CASASRN.X167",
+                        "description": "Freddie Mac HELOC Actual Bal"
+                    },
+                    {
+                        "jsonPath": "$.freddieMac.helocCreditLimit",
+                        "fieldId": "CASASRN.X168",
+                        "description": "Freddie Mac HELOC Credit Limit"
+                    },
+                    {
+                        "jsonPath": "$.rateLock.investorCommitment",
+                        "fieldId": "2286",
+                        "description": "Rate Lock Sell Side Investor Commitment"
+                    },
+                    {
+                        "jsonPath": "$.rateLock.investorLoanNumber",
+                        "fieldId": "2288",
+                        "description": "Rate Lock Sell Side Investor Loan Number"
+                    },
+                    {
+                        "jsonPath": "$.loCompensation.whoPaidCompensation",
+                        "fieldId": "LCP.X1",
+                        "description": "Loan Compensation Plan - Brrower/Lender Paid"
+                    },
+                    {
+                        "jsonPath": "$.rateLock.penaltyTerm",
+                        "fieldId": "2217",
+                        "description": "Trans Details Penalty Term"
+                    },
+                    {
+                        "jsonPath": "$.property.nonwarrantableProjectIndicator",
+                        "fieldId": "3316",
+                        "description": "Property Info Is Non-Warrantable Project"
+                    },
+                    {
+                        "jsonPath": "$.loanSubmission.numberOfDays",
+                        "fieldId": "432",
+                        "description": "Trans Details Rate Lock # Days"
+                    },
+                    {
+                        "jsonPath": "$.vaLoanData.fundingFeeExempt",
+                        "fieldId": "990",
+                        "description": "VA Loan Summ Discount Info"
+                    },
+                    {
+                        "jsonPath": "$.vaLoanData.typeOfVeteran",
+                        "fieldId": "VAVOB.X72",
+                        "description": "VA Veteran Type"
+                    },
+                    {
+                        "jsonPath": "$.rateLock.impoundWavied",
+                        "fieldId": "2293",
+                        "description": "Trans Details Impounds Waived"
+                    },
+                    {
+                        "jsonPath": "$.rateLock.loanAmortizationTermMonths",
+                        "fieldId": "2959",
+                        "description": "Lock Request Term Months"
+                    },
+                    {
+                        "jsonPath": "$.rateLock.loanAmortizationType",
+                        "fieldId": "2953",
+                        "description": "Lock Request Amort Type"
+                    },
+                    {
+                        "jsonPath": "$.rateLock.propertyAppraisedValueAmount",
+                        "fieldId": "2949",
+                        "description": "Lock Request Subject Property Appraised Value"
+                    },
+                    {
+                        "jsonPath": "$.rateLock.baseLoanAmount",
+                        "fieldId": "3043",
+                        "description": "Lock Request Loan Amnt Excluding MIP/PMI"
+                    },
+                    {
+                        "jsonPath": "$.rateLock.lockRequestLoanPurposeType",
+                        "fieldId": "2951",
+                        "description": "Lock Request Loan Purpose"
+                    },
+                    {
+                        "jsonPath": "$.rateLock.subjectPropertyState",
+                        "fieldId": "2945",
+                        "description": "Lock Request Subject Property State"
+                    },
+                    {
+                        "jsonPath": "$.rateLock.loanDocumentationType",
+                        "fieldId": "2867",
+                        "description": "Lock Request Doc Type"
+                    },
+                    {
+                        "jsonPath": "$.creditScoreToUse",
+                        "fieldId": "2853",
+                        "description": "Lock Request Credit Score for Decision Making"
+                    },
+                    {
+                        "jsonPath": "$.rateLock.mipPaidInCash",
+                        "fieldId": "3047",
+                        "description": "Lock Request Upfont MI Premium/Funding Amt Paid in Cash"
+                    },
+                    {
+                        "jsonPath": "$.rateLock.firstTimeHomebuyersIndicator",
+                        "fieldId": "3528",
+                        "description": "Lock Request Borr First Time Homebuyer"
+                    },
+                    {
+                        "jsonPath": "$.rateLock.lienPriorityType",
+                        "fieldId": "2958",
+                        "description": "Lock Request Lein Position"
+                    },
+                    {
+                        "jsonPath": "$.rateLock.mortgageType",
+                        "fieldId": "2952",
+                        "description": "Lock Request Loan Type"
+                    },
+                    {
+                        "jsonPath": "$.rateLock.balloonLoanMaturityTermMonths",
+                        "fieldId": "2960",
+                        "description": "Lock Request Term Due In"
+                    },
+                    {
+                        "jsonPath": "$.rateLock.fundingAmount",
+                        "fieldId": "3045",
+                        "description": "Lock Request MI Premium/Funding Amnt"
+                    },
+                    {
+                        "jsonPath": "$.rateLock.financedNumberOfUnits",
+                        "fieldId": "3529",
+                        "description": "Lock Request Subject Property # Units"
+                    },
+                    {
+                        "jsonPath": "$.rateLock.propertyUsageType",
+                        "fieldId": "2950",
+                        "description": "Lock Request Subject Property Occupancy Status"
+                    },
+                    {
+                        "jsonPath": "$.rateLock.borrowerRequestedLoanAmount",
+                        "fieldId": "2965",
+                        "description": "Lock Request Loan Amount"
+                    },
+                    {
+                        "jsonPath": "$.rateLock.requestPenaltyTerm",
+                        "fieldId": "2964",
+                        "description": "Lock Request Penelaty Term"
+                    },
+                    {
+                        "jsonPath": "$.rateLock.subjectPropertyStreetAddress",
+                        "fieldId": "2942",
+                        "description": "Lock Request Subject Property Address"
+                    },
+                    {
+                        "jsonPath": "$.rateLock.subjectPropertyCity",
+                        "fieldId": "2943",
+                        "description": "Lock Request Subject Property City"
+                    },
+                    {
+                        "jsonPath": "$.rateLock.subjectPropertyPostalCode",
+                        "fieldId": "2946",
+                        "description": "Lock Request Subject Property Zip"
+                    },
+                    {
+                        "jsonPath": "$.rateLock.gsePropertyType",
+                        "fieldId": "2947",
+                        "description": "Lock Request Subject Property Type"
+                    },
+                    {
+                        "jsonPath": "$.rateLock.subjectPropertyNonWarrantableProjectIndicator",
+                        "fieldId": "4116",
+                        "description": "Lock Request Subject Property is a Non-Warrantable Project"
+                    },
+                    {
+                        "jsonPath": "$.rateLock.purchasePriceAmount",
+                        "fieldId": "3038",
+                        "description": "Lock Request Purchase Price Amount"
+                    },
+                    {
+                        "jsonPath": "$.rateLock.buySideNumberOfDays",
+                        "fieldId": "2150",
+                        "description": "Rate Lock Buy Side Number of Days"
+                    },
+                    {
+                        "jsonPath": "$.rateLock.requestRate",
+                        "fieldId": "2092",
+                        "description": "Rate Lock Request Base Rate"
+                    },
+                    {
+                        "jsonPath": "$.rateLock.fhaUpfrontMiPremiumPercent",
+                        "fieldId": "3044",
+                        "description": "Lock Request MI Premium/Funding Fee %"
+                    },
+                    {
+                        "jsonPath": "$.rateLock.requestImpoundWaived",
+                        "fieldId": "2961",
+                        "description": "Lock Request Impounds Waived"
+                    }
+                ]
+            },
+            "transactions": [
+                {
+                    "requestTypes": [
+                        "SEARCH",
+                        "LOCKREQUEST"
+                    ],
+                    "request": {
+                        "fields": []
+                    },
+                    "response": {
+                        "fields": []
+                    }
+                }
+            ],
+            "extensionCount": 5
+        }
+    }
+}

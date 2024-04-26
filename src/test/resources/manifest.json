@@ -1,0 +1,61 @@
+{
+  "origin": {
+    "fields": [
+      {
+        "jsonPath": "$.applications[0].borrower.firstName"
+      },
+      {
+        "jsonPath": "$.applications[0].borrower.lastName"
+      },
+      {
+        "jsonPath": "$.applications[0].borrower.ssn"
+      }
+    ]
+  },
+  "transactions": [
+    {
+      "request": {
+        "fields": [
+          {
+            "jsonPath": "$.applications[0].borrower.age"
+          },
+          {
+            "jsonPath": "$.loan.baseLoanAmount"
+          },
+          {
+            "jsonPath": "$.loan.deedPosition"
+          }
+        ]
+      },
+      "response": {
+        "fields": [
+          {
+            "jsonPath": "$.applications[0].borrower.streetAddress"
+          },
+          {
+            "jsonPath": "$.applications[0].borrower.city"
+          },
+          {
+            "jsonPath": "$.applications[0].borrower.state"
+          }
+        ]
+      },
+      "requestTypes": [
+        "SEARCH",
+        "REFRESH"
+      ]
+    }
+  ],
+  "findings": {
+    "types": [
+      {
+        "code": "INC-7788",
+        "name": "Are there any employment gaps ≥ 90 days?"
+      }
+    ],
+    "statuses": [
+      "open",
+      "completed"
+    ]
+  }
+}

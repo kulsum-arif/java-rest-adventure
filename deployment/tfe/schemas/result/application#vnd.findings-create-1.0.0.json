@@ -1,0 +1,114 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "validationMessage": {
+    "invalid-string": "a valid String. Please provide a valid string.",
+    "invalid-alpha-numeric-string": "a valid String. Please provide a valid String."
+  },
+  "properties": {
+    "findings": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/findingItem"
+      },
+      "minItems": 1,
+      "description": ""
+    }
+  },
+  "required": [
+    "findings"
+  ],
+  "additionalProperties": false,
+  "definitions": {
+    "non-empty-string": {
+      "type": "string",
+      "pattern": "^(?!\\s*$).+",
+      "validationMessage": {
+        "$ref": "#/validationMessage/invalid-string"
+      }
+    },
+    "non-empty-string-code-pattern": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9](?:[A-Za-z0-9_-]*[A-Za-z0-9])?$",
+      "validationMessage": {
+        "$ref": "#/validationMessage/invalid-string"
+      }
+    },
+    "non-empty-alpha-numeric-string": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9](?:[A-Za-z0-9_.:'$%<>&()*#@!;\\/, -]*[A-Za-z0-9_.:'$%()\\/,-])?$",
+      "validationMessage": {
+        "$ref": "#/validationMessage/invalid-alpha-numeric-string"
+      }
+    },
+    "findingItem": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "$ref": "#/definitions/non-empty-string",
+          "description": "Represents the title of the finding."
+        },
+        "description": {
+          "$ref": "#/definitions/non-empty-string",
+          "description": "Represents the description of the finding."
+        },
+        "code": {
+          "$ref": "#/definitions/non-empty-string",
+          "description": "Represents the code of the finding."
+        },
+        "referenceId": {
+          "type": "string"
+        },
+        "status": {
+          "$ref": "#/definitions/non-empty-string",
+          "description": "Represents the status of the finding."
+        },
+        "scope": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "enum": [
+                "application"
+              ],
+              "description": "Determines the scope of the finding."
+            },
+            "id": {
+              "$ref": "#/definitions/non-empty-string",
+              "description": "Contains a reference to a particular application. If not present, the finding is applicable to all applications."
+            }
+          },
+          "required": [
+            "type",
+            "id"
+          ],
+          "additionalProperties": false
+        },
+        "comments": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/commentItem"
+          }
+        }
+      },
+      "required": [
+        "title",
+        "code"
+      ],
+      "additionalProperties": false
+    },
+    "commentItem": {
+      "type": "object",
+      "properties": {
+        "comment": {
+          "$ref": "#/definitions/non-empty-string"
+        }
+      },
+      "required": [
+        "comment"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

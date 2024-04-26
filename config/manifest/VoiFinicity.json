@@ -1,0 +1,2273 @@
+{
+  "partnerId": "11211000",
+  "name": "finicity-voe-services",
+  "integrationType": "ASYNC",
+  "listingName": "Finicity",
+  "interfaceUrl": "https://finicity.com/",
+  "requestTypes": [
+    "VERIFY_EMPLOYMENT_INCOME"
+  ],
+  "tags": {
+    "workflows": [
+      "interactive"
+    ],
+    "categories": [
+      "VERIF",
+      "VOE"
+    ],
+    "applications": [
+      "urn:elli:application:loconnect",
+      "urn:elli:application:encompass",
+      "urn:elli:application:consumerconnect"
+    ]
+  },
+  "entitlements": {
+    "access": {
+      "allow": [
+        "urn:elli:encompass:*"
+      ],
+      "deny": [
+        ""
+      ]
+    },
+    "data": {
+      "origin": {
+        "fields": [
+          {
+            "jsonPath": "$.applications[0].borrower.id"
+          },
+          {
+            "jsonPath": "$.applications[0].borrower.firstName"
+          },
+          {
+            "jsonPath": "$.applications[0].borrower.middleName"
+          },
+          {
+            "jsonPath": "$.applications[0].borrower.lastName"
+          },
+          {
+            "jsonPath": "$.applications[0].borrower.taxIdentificationIdentifier"
+          },
+          {
+            "jsonPath": "$.applications[0].borrower.birthDate"
+          },
+          {
+            "jsonPath": "$.applications[0].borrower.emailAddressText"
+          },
+          {
+            "jsonPath": "$.applications[0].borrower.homePhoneNumber"
+          },
+          {
+            "jsonPath": "$.applications[0].borrower.mailingAddress.addressStreetLine1"
+          },
+          {
+            "jsonPath": "$.applications[0].borrower.mailingAddress.addressCity"
+          },
+          {
+            "jsonPath": "$.applications[0].borrower.mailingAddress.addressState"
+          },
+          {
+            "jsonPath": "$.applications[0].borrower.mailingAddress.addressPostalCode"
+          },
+          {
+            "jsonPath": "$.applications[0].coborrower.id"
+          },
+          {
+            "jsonPath": "$.applications[0].coborrower.firstName"
+          },
+          {
+            "jsonPath": "$.applications[0].coborrower.middleName"
+          },
+          {
+            "jsonPath": "$.applications[0].coborrower.lastName"
+          },
+          {
+            "jsonPath": "$.applications[0].coborrower.taxIdentificationIdentifier"
+          },
+          {
+            "jsonPath": "$.applications[0].coborrower.birthDate"
+          },
+          {
+            "jsonPath": "$.applications[0].coborrower.emailAddressText"
+          },
+          {
+            "jsonPath": "$.applications[0].coborrower.homePhoneNumber"
+          },
+          {
+            "jsonPath": "$.applications[0].coborrower.mailingAddress.addressStreetLine1"
+          },
+          {
+            "jsonPath": "$.applications[0].coborrower.mailingAddress.addressCity"
+          },
+          {
+            "jsonPath": "$.applications[0].coborrower.mailingAddress.addressState"
+          },
+          {
+            "jsonPath": "$.applications[0].coborrower.mailingAddress.addressPostalCode"
+          }
+        ]
+      },
+      "transactions": [
+        {
+          "requestTypes": [
+            "VERIFY_EMPLOYMENT_INCOME"
+          ],
+          "request": {
+            "fields": [
+              {
+                "jsonPath": "$.applications[0].borrower.id"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.firstName"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.middleName"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.lastName"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.taxIdentificationIdentifier"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.birthDate"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.emailAddressText"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.homePhoneNumber"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.mailingAddress.addressStreetLine1"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.mailingAddress.addressCity"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.mailingAddress.addressState"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.mailingAddress.addressPostalCode"
+              },
+              {
+                "jsonPath": "$.applications[0].coborrower.id"
+              },
+              {
+                "jsonPath": "$.applications[0].coborrower.firstName"
+              },
+              {
+                "jsonPath": "$.applications[0].coborrower.middleName"
+              },
+              {
+                "jsonPath": "$.applications[0].coborrower.lastName"
+              },
+              {
+                "jsonPath": "$.applications[0].coborrower.taxIdentificationIdentifier"
+              },
+              {
+                "jsonPath": "$.applications[0].coborrower.birthDate"
+              },
+              {
+                "jsonPath": "$.applications[0].coborrower.emailAddressText"
+              },
+              {
+                "jsonPath": "$.applications[0].coborrower.homePhoneNumber"
+              },
+              {
+                "jsonPath": "$.applications[0].coborrower.mailingAddress.addressStreetLine1"
+              },
+              {
+                "jsonPath": "$.applications[0].coborrower.mailingAddress.addressCity"
+              },
+              {
+                "jsonPath": "$.applications[0].coborrower.mailingAddress.addressState"
+              },
+              {
+                "jsonPath": "$.applications[0].coborrower.mailingAddress.addressPostalCode"
+              }
+            ]
+          },
+          "response": {
+            "fields": [
+              {
+                "jsonPath": "$.applications[0].coborrower.vendor27"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[0].id"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[0].addressCity"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[0].addressPostalCode"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[0].addressState"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[0].addressStreetLine1"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[0].attention"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[0].badgeOrEmployeeId"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[0].basePayAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[0].bonusAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[0].businessName"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[0].businessOwnedPercent"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[0].businessPhone"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[0].commissionsAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[0].countryCode"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[0].currentEmploymentIndicator"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[0].doesNotApply"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[0].email"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[0].employerComments"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[0].employerName"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[0].employmentStartDate"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[0].jobTermMonths"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[0].baseIncome"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[0].overTime"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[0].bonus"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[0].commission"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[0].militaryEntitlement"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[0].otherIncome"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[0].total"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[0].specialEmployerRelationshipIndicator"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[0].ownershipInterestType"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[0].employmentMonthlyIncomeAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[0].endDate"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[0].fax"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[0].monthlyIncomeAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[0].noLinkToDocTrackIndicator"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[0].otherAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[0].overtimeAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[0].phoneNumber"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[0].positionDescription"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[0].printAttachmentIndicator"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[0].printUserJobTitleIndicator"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[0].printUserNameIndicator"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[0].selfEmployedIndicator"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[0].startDate"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[0].timeInLineOfWorkMonths"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[0].timeInLineOfWorkYears"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[0].timeOnJobTermMonths"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[0].timeOnJobTermYears"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[0].title"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[0].titleFax"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[0].titlePhone"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[0].unitNumber"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[0].unitType"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[0].urla2020StreetAddress"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[0].verificationRequestDate"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[0].individualEmployer"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[0].militaryEmployer"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[0].militaryCombatPay"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[0].militaryFlightPay"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[0].militaryHazardPay"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[0].militaryOverseasPay"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[0].militaryPropPay"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[0].clothingAllowance"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[0].rationsAllowance"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[0].variableHousingAllowance"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[0].quartersAllowance"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[0].otherAllowanceDescription"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[0].foreignIncome"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[0].seasonalIncome"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[1].id"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[1].addressCity"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[1].addressPostalCode"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[1].addressState"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[1].addressStreetLine1"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[1].attention"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[1].badgeOrEmployeeId"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[1].basePayAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[1].bonusAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[1].businessName"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[1].businessOwnedPercent"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[1].businessPhone"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[1].commissionsAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[1].countryCode"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[1].currentEmploymentIndicator"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[1].doesNotApply"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[1].email"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[1].employerComments"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[1].employerName"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[1].employmentStartDate"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[1].jobTermMonths"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[1].baseIncome"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[1].overTime"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[1].bonus"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[1].commission"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[1].militaryEntitlement"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[1].otherIncome"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[1].total"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[1].specialEmployerRelationshipIndicator"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[1].ownershipInterestType"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[1].employmentMonthlyIncomeAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[1].endDate"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[1].fax"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[1].monthlyIncomeAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[1].noLinkToDocTrackIndicator"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[1].otherAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[1].overtimeAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[1].phoneNumber"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[1].positionDescription"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[1].printAttachmentIndicator"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[1].printUserJobTitleIndicator"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[1].printUserNameIndicator"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[1].selfEmployedIndicator"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[1].startDate"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[1].timeInLineOfWorkMonths"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[1].timeInLineOfWorkYears"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[1].timeOnJobTermMonths"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[1].timeOnJobTermYears"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[1].title"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[1].titleFax"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[1].titlePhone"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[1].unitNumber"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[1].unitType"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[1].urla2020StreetAddress"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[1].verificationRequestDate"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[1].individualEmployer"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[1].militaryEmployer"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[1].militaryCombatPay"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[1].militaryFlightPay"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[1].militaryHazardPay"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[1].militaryOverseasPay"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[1].militaryPropPay"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[1].clothingAllowance"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[1].rationsAllowance"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[1].variableHousingAllowance"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[1].quartersAllowance"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[1].otherAllowanceDescription"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[1].foreignIncome"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[1].seasonalIncome"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[2].id"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[2].addressCity"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[2].addressPostalCode"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[2].addressState"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[2].addressStreetLine1"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[2].attention"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[2].badgeOrEmployeeId"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[2].basePayAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[2].bonusAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[2].businessName"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[2].businessOwnedPercent"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[2].businessPhone"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[2].commissionsAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[2].countryCode"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[2].currentEmploymentIndicator"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[2].doesNotApply"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[2].email"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[2].employerComments"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[2].employerName"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[2].employmentStartDate"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[2].jobTermMonths"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[2].baseIncome"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[2].overTime"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[2].bonus"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[2].commission"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[2].militaryEntitlement"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[2].otherIncome"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[2].total"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[2].specialEmployerRelationshipIndicator"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[2].ownershipInterestType"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[2].employmentMonthlyIncomeAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[2].endDate"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[2].fax"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[2].monthlyIncomeAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[2].noLinkToDocTrackIndicator"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[2].otherAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[2].overtimeAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[2].phoneNumber"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[2].positionDescription"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[2].printAttachmentIndicator"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[2].printUserJobTitleIndicator"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[2].printUserNameIndicator"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[2].selfEmployedIndicator"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[2].startDate"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[2].timeInLineOfWorkMonths"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[2].timeInLineOfWorkYears"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[2].timeOnJobTermMonths"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[2].timeOnJobTermYears"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[2].title"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[2].titleFax"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[2].titlePhone"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[2].unitNumber"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[2].unitType"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[2].urla2020StreetAddress"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[2].verificationRequestDate"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[2].individualEmployer"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[2].militaryEmployer"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[2].militaryCombatPay"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[2].militaryFlightPay"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[2].militaryHazardPay"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[2].militaryOverseasPay"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[2].militaryPropPay"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[2].clothingAllowance"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[2].rationsAllowance"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[2].variableHousingAllowance"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[2].quartersAllowance"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[2].otherAllowanceDescription"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[2].foreignIncome"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[2].seasonalIncome"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[3].id"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[3].addressCity"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[3].addressPostalCode"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[3].addressState"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[3].addressStreetLine1"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[3].attention"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[3].badgeOrEmployeeId"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[3].basePayAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[3].bonusAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[3].businessName"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[3].businessOwnedPercent"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[3].businessPhone"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[3].commissionsAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[3].countryCode"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[3].currentEmploymentIndicator"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[3].doesNotApply"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[3].email"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[3].employerComments"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[3].employerName"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[3].employmentStartDate"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[3].jobTermMonths"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[3].baseIncome"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[3].overTime"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[3].bonus"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[3].commission"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[3].militaryEntitlement"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[3].otherIncome"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[3].total"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[3].specialEmployerRelationshipIndicator"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[3].ownershipInterestType"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[3].employmentMonthlyIncomeAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[3].endDate"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[3].fax"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[3].monthlyIncomeAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[3].noLinkToDocTrackIndicator"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[3].otherAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[3].overtimeAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[3].phoneNumber"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[3].positionDescription"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[3].printAttachmentIndicator"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[3].printUserJobTitleIndicator"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[3].printUserNameIndicator"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[3].selfEmployedIndicator"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[3].startDate"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[3].timeInLineOfWorkMonths"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[3].timeInLineOfWorkYears"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[3].timeOnJobTermMonths"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[3].timeOnJobTermYears"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[3].title"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[3].titleFax"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[3].titlePhone"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[3].unitNumber"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[3].unitType"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[3].urla2020StreetAddress"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[3].verificationRequestDate"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[3].individualEmployer"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[3].militaryEmployer"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[3].militaryCombatPay"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[3].militaryFlightPay"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[3].militaryHazardPay"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[3].militaryOverseasPay"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[3].militaryPropPay"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[3].clothingAllowance"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[3].rationsAllowance"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[3].variableHousingAllowance"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[3].quartersAllowance"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[3].otherAllowanceDescription"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[3].foreignIncome"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[3].seasonalIncome"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[4].id"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[4].addressCity"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[4].addressPostalCode"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[4].addressState"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[4].addressStreetLine1"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[4].attention"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[4].badgeOrEmployeeId"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[4].basePayAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[4].bonusAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[4].businessName"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[4].businessOwnedPercent"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[4].businessPhone"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[4].commissionsAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[4].countryCode"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[4].currentEmploymentIndicator"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[4].doesNotApply"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[4].email"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[4].employerComments"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[4].employerName"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[4].employmentStartDate"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[4].jobTermMonths"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[4].baseIncome"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[4].overTime"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[4].bonus"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[4].commission"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[4].militaryEntitlement"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[4].otherIncome"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[4].total"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[4].specialEmployerRelationshipIndicator"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[4].ownershipInterestType"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[4].employmentMonthlyIncomeAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[4].endDate"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[4].fax"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[4].monthlyIncomeAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[4].noLinkToDocTrackIndicator"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[4].otherAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[4].overtimeAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[4].phoneNumber"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[4].positionDescription"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[4].printAttachmentIndicator"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[4].printUserJobTitleIndicator"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[4].printUserNameIndicator"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[4].selfEmployedIndicator"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[4].startDate"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[4].timeInLineOfWorkMonths"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[4].timeInLineOfWorkYears"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[4].timeOnJobTermMonths"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[4].timeOnJobTermYears"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[4].title"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[4].titleFax"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[4].titlePhone"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[4].unitNumber"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[4].unitType"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[4].urla2020StreetAddress"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[4].verificationRequestDate"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[4].individualEmployer"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[4].militaryEmployer"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[4].militaryCombatPay"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[4].militaryFlightPay"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[4].militaryHazardPay"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[4].militaryOverseasPay"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[4].militaryPropPay"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[4].clothingAllowance"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[4].rationsAllowance"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[4].variableHousingAllowance"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[4].quartersAllowance"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[4].otherAllowanceDescription"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[4].foreignIncome"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[4].seasonalIncome"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[5].id"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[5].addressCity"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[5].addressPostalCode"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[5].addressState"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[5].addressStreetLine1"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[5].attention"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[5].badgeOrEmployeeId"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[5].basePayAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[5].bonusAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[5].businessName"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[5].businessOwnedPercent"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[5].businessPhone"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[5].commissionsAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[5].countryCode"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[5].currentEmploymentIndicator"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[5].doesNotApply"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[5].email"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[5].employerComments"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[5].employerName"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[5].employmentStartDate"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[5].jobTermMonths"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[5].baseIncome"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[5].overTime"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[5].bonus"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[5].commission"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[5].militaryEntitlement"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[5].otherIncome"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[5].total"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[5].specialEmployerRelationshipIndicator"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[5].ownershipInterestType"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[5].employmentMonthlyIncomeAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[5].endDate"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[5].fax"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[5].monthlyIncomeAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[5].noLinkToDocTrackIndicator"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[5].otherAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[5].overtimeAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[5].phoneNumber"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[5].positionDescription"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[5].printAttachmentIndicator"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[5].printUserJobTitleIndicator"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[5].printUserNameIndicator"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[5].selfEmployedIndicator"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[5].startDate"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[5].timeInLineOfWorkMonths"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[5].timeInLineOfWorkYears"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[5].timeOnJobTermMonths"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[5].timeOnJobTermYears"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[5].title"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[5].titleFax"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[5].titlePhone"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[5].unitNumber"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[5].unitType"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[5].urla2020StreetAddress"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[5].verificationRequestDate"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[5].individualEmployer"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[5].militaryEmployer"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[5].militaryCombatPay"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[5].militaryFlightPay"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[5].militaryHazardPay"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[5].militaryOverseasPay"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[5].militaryPropPay"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[5].clothingAllowance"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[5].rationsAllowance"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[5].variableHousingAllowance"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[5].quartersAllowance"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[5].otherAllowanceDescription"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[5].foreignIncome"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[5].seasonalIncome"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[6].id"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[6].addressCity"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[6].addressPostalCode"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[6].addressState"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[6].addressStreetLine1"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[6].attention"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[6].badgeOrEmployeeId"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[6].basePayAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[6].bonusAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[6].businessName"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[6].businessOwnedPercent"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[6].businessPhone"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[6].commissionsAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[6].countryCode"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[6].currentEmploymentIndicator"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[6].doesNotApply"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[6].email"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[6].employerComments"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[6].employerName"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[6].employmentStartDate"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[6].jobTermMonths"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[6].baseIncome"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[6].overTime"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[6].bonus"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[6].commission"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[6].militaryEntitlement"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[6].otherIncome"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[6].total"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[6].specialEmployerRelationshipIndicator"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[6].ownershipInterestType"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[6].employmentMonthlyIncomeAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[6].endDate"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[6].fax"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[6].monthlyIncomeAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[6].noLinkToDocTrackIndicator"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[6].otherAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[6].overtimeAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[6].phoneNumber"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[6].positionDescription"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[6].printAttachmentIndicator"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[6].printUserJobTitleIndicator"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[6].printUserNameIndicator"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[6].selfEmployedIndicator"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[6].startDate"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[6].timeInLineOfWorkMonths"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[6].timeInLineOfWorkYears"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[6].timeOnJobTermMonths"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[6].timeOnJobTermYears"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[6].title"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[6].titleFax"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[6].titlePhone"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[6].unitNumber"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[6].unitType"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[6].urla2020StreetAddress"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[6].verificationRequestDate"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[6].individualEmployer"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[6].militaryEmployer"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[6].militaryCombatPay"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[6].militaryFlightPay"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[6].militaryHazardPay"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[6].militaryOverseasPay"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[6].militaryPropPay"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[6].clothingAllowance"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[6].rationsAllowance"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[6].variableHousingAllowance"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[6].quartersAllowance"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[6].otherAllowanceDescription"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[6].foreignIncome"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[6].seasonalIncome"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[7].id"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[7].addressCity"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[7].addressPostalCode"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[7].addressState"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[7].addressStreetLine1"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[7].attention"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[7].badgeOrEmployeeId"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[7].basePayAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[7].bonusAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[7].businessName"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[7].businessOwnedPercent"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[7].businessPhone"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[7].commissionsAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[7].countryCode"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[7].currentEmploymentIndicator"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[7].doesNotApply"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[7].email"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[7].employerComments"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[7].employerName"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[7].employmentStartDate"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[7].jobTermMonths"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[7].baseIncome"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[7].overTime"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[7].bonus"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[7].commission"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[7].militaryEntitlement"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[7].otherIncome"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[7].total"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[7].specialEmployerRelationshipIndicator"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[7].ownershipInterestType"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[7].employmentMonthlyIncomeAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[7].endDate"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[7].fax"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[7].monthlyIncomeAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[7].noLinkToDocTrackIndicator"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[7].otherAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[7].overtimeAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[7].phoneNumber"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[7].positionDescription"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[7].printAttachmentIndicator"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[7].printUserJobTitleIndicator"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[7].printUserNameIndicator"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[7].selfEmployedIndicator"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[7].startDate"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[7].timeInLineOfWorkMonths"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[7].timeInLineOfWorkYears"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[7].timeOnJobTermMonths"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[7].timeOnJobTermYears"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[7].title"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[7].titleFax"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[7].titlePhone"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[7].unitNumber"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[7].unitType"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[7].urla2020StreetAddress"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[7].verificationRequestDate"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[7].individualEmployer"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[7].militaryEmployer"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[7].militaryCombatPay"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[7].militaryFlightPay"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[7].militaryHazardPay"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[7].militaryOverseasPay"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[7].militaryPropPay"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[7].clothingAllowance"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[7].rationsAllowance"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[7].variableHousingAllowance"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[7].quartersAllowance"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[7].otherAllowanceDescription"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[7].foreignIncome"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[7].seasonalIncome"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[8].id"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[8].addressCity"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[8].addressPostalCode"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[8].addressState"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[8].addressStreetLine1"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[8].attention"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[8].badgeOrEmployeeId"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[8].basePayAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[8].bonusAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[8].businessName"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[8].businessOwnedPercent"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[8].businessPhone"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[8].commissionsAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[8].countryCode"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[8].currentEmploymentIndicator"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[8].doesNotApply"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[8].email"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[8].employerComments"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[8].employerName"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[8].employmentStartDate"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[8].jobTermMonths"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[8].baseIncome"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[8].overTime"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[8].bonus"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[8].commission"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[8].militaryEntitlement"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[8].otherIncome"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[8].total"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[8].specialEmployerRelationshipIndicator"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[8].ownershipInterestType"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[8].employmentMonthlyIncomeAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[8].endDate"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[8].fax"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[8].monthlyIncomeAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[8].noLinkToDocTrackIndicator"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[8].otherAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[8].overtimeAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[8].phoneNumber"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[8].positionDescription"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[8].printAttachmentIndicator"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[8].printUserJobTitleIndicator"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[8].printUserNameIndicator"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[8].selfEmployedIndicator"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[8].startDate"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[8].timeInLineOfWorkMonths"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[8].timeInLineOfWorkYears"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[8].timeOnJobTermMonths"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[8].timeOnJobTermYears"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[8].title"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[8].titleFax"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[8].titlePhone"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[8].unitNumber"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[8].unitType"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[8].urla2020StreetAddress"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[8].verificationRequestDate"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[8].individualEmployer"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[8].militaryEmployer"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[8].militaryCombatPay"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[8].militaryFlightPay"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[8].militaryHazardPay"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[8].militaryOverseasPay"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[8].militaryPropPay"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[8].clothingAllowance"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[8].rationsAllowance"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[8].variableHousingAllowance"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[8].quartersAllowance"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[8].otherAllowanceDescription"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[8].foreignIncome"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[8].seasonalIncome"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[9].id"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[9].addressCity"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[9].addressPostalCode"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[9].addressState"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[9].addressStreetLine1"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[9].attention"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[9].badgeOrEmployeeId"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[9].basePayAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[9].bonusAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[9].businessName"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[9].businessOwnedPercent"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[9].businessPhone"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[9].commissionsAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[9].countryCode"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[9].currentEmploymentIndicator"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[9].doesNotApply"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[9].email"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[9].employerComments"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[9].employerName"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[9].employmentStartDate"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[9].jobTermMonths"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[9].baseIncome"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[9].overTime"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[9].bonus"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[9].commission"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[9].militaryEntitlement"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[9].otherIncome"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[9].total"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[9].specialEmployerRelationshipIndicator"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[9].ownershipInterestType"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[9].employmentMonthlyIncomeAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[9].endDate"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[9].fax"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[9].monthlyIncomeAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[9].noLinkToDocTrackIndicator"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[9].otherAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[9].overtimeAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[9].phoneNumber"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[9].positionDescription"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[9].printAttachmentIndicator"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[9].printUserJobTitleIndicator"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[9].printUserNameIndicator"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[9].selfEmployedIndicator"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[9].startDate"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[9].timeInLineOfWorkMonths"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[9].timeInLineOfWorkYears"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[9].timeOnJobTermMonths"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[9].timeOnJobTermYears"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[9].title"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[9].titleFax"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[9].titlePhone"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[9].unitNumber"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[9].unitType"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[9].urla2020StreetAddress"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[9].verificationRequestDate"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[9].individualEmployer"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[9].militaryEmployer"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[9].militaryCombatPay"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[9].militaryFlightPay"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[9].militaryHazardPay"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[9].militaryOverseasPay"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[9].militaryPropPay"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[9].clothingAllowance"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[9].rationsAllowance"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[9].variableHousingAllowance"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[9].quartersAllowance"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[9].otherAllowanceDescription"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[9].foreignIncome"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.employment[9].seasonalIncome"
+              }
+            ]
+          }
+        }
+      ],
+      "extensionCount": 0
+    }
+  }
+}

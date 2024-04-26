@@ -1,0 +1,1580 @@
+{
+  "partnerId": "11211000",
+  "name": "finicity-voa-services",
+  "integrationType": "ASYNC",
+  "listingName": "Finicity",
+  "interfaceUrl": "https://finicity.com/",
+  "requestTypes": [
+    "VERIFY_ASSETS"
+  ],
+  "tags": {
+    "workflows": [
+      "interactive"
+    ],
+    "categories": [
+      "VERIF",
+      "VOA"
+    ],
+    "applications": [
+      "urn:elli:application:loconnect",
+      "urn:elli:application:encompass",
+      "urn:elli:application:consumerconnect"
+    ]
+  },
+  "entitlements": {
+    "access": {
+      "allow": [
+        "urn:elli:encompass:*"
+      ],
+      "deny": [
+        ""
+      ]
+    },
+    "data": {
+      "origin": {
+        "fields": [
+          {
+            "jsonPath": "$.applications[0].borrower.id"
+          },
+          {
+            "jsonPath": "$.applications[0].borrower.firstName"
+          },
+          {
+            "jsonPath": "$.applications[0].borrower.middleName"
+          },
+          {
+            "jsonPath": "$.applications[0].borrower.lastName"
+          },
+          {
+            "jsonPath": "$.applications[0].borrower.taxIdentificationIdentifier"
+          },
+          {
+            "jsonPath": "$.applications[0].borrower.birthDate"
+          },
+          {
+            "jsonPath": "$.applications[0].borrower.emailAddressText"
+          },
+          {
+            "jsonPath": "$.applications[0].borrower.homePhoneNumber"
+          },
+          {
+            "jsonPath": "$.applications[0].borrower.mailingAddress.addressStreetLine1"
+          },
+          {
+            "jsonPath": "$.applications[0].borrower.mailingAddress.addressCity"
+          },
+          {
+            "jsonPath": "$.applications[0].borrower.mailingAddress.addressState"
+          },
+          {
+            "jsonPath": "$.applications[0].borrower.mailingAddress.addressPostalCode"
+          },
+          {
+            "jsonPath": "$.applications[0].coborrower.id"
+          },
+          {
+            "jsonPath": "$.applications[0].coborrower.firstName"
+          },
+          {
+            "jsonPath": "$.applications[0].coborrower.middleName"
+          },
+          {
+            "jsonPath": "$.applications[0].coborrower.lastName"
+          },
+          {
+            "jsonPath": "$.applications[0].coborrower.taxIdentificationIdentifier"
+          },
+          {
+            "jsonPath": "$.applications[0].coborrower.birthDate"
+          },
+          {
+            "jsonPath": "$.applications[0].coborrower.emailAddressText"
+          },
+          {
+            "jsonPath": "$.applications[0].coborrower.homePhoneNumber"
+          },
+          {
+            "jsonPath": "$.applications[0].coborrower.mailingAddress.addressStreetLine1"
+          },
+          {
+            "jsonPath": "$.applications[0].coborrower.mailingAddress.addressCity"
+          },
+          {
+            "jsonPath": "$.applications[0].coborrower.mailingAddress.addressState"
+          },
+          {
+            "jsonPath": "$.applications[0].coborrower.mailingAddress.addressPostalCode"
+          }
+        ]
+      },
+      "transactions": [
+        {
+          "requestTypes": [
+            "VERIFY_ASSETS"
+          ],
+          "request": {
+            "fields": [
+              {
+                "jsonPath": "$.applications[0].borrower.id"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.firstName"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.middleName"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.lastName"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.taxIdentificationIdentifier"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.birthDate"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.emailAddressText"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.homePhoneNumber"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.mailingAddress.addressStreetLine1"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.mailingAddress.addressCity"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.mailingAddress.addressState"
+              },
+              {
+                "jsonPath": "$.applications[0].borrower.mailingAddress.addressPostalCode"
+              },
+              {
+                "jsonPath": "$.applications[0].coborrower.id"
+              },
+              {
+                "jsonPath": "$.applications[0].coborrower.firstName"
+              },
+              {
+                "jsonPath": "$.applications[0].coborrower.middleName"
+              },
+              {
+                "jsonPath": "$.applications[0].coborrower.lastName"
+              },
+              {
+                "jsonPath": "$.applications[0].coborrower.taxIdentificationIdentifier"
+              },
+              {
+                "jsonPath": "$.applications[0].coborrower.birthDate"
+              },
+              {
+                "jsonPath": "$.applications[0].coborrower.emailAddressText"
+              },
+              {
+                "jsonPath": "$.applications[0].coborrower.homePhoneNumber"
+              },
+              {
+                "jsonPath": "$.applications[0].coborrower.mailingAddress.addressStreetLine1"
+              },
+              {
+                "jsonPath": "$.applications[0].coborrower.mailingAddress.addressCity"
+              },
+              {
+                "jsonPath": "$.applications[0].coborrower.mailingAddress.addressState"
+              },
+              {
+                "jsonPath": "$.applications[0].coborrower.mailingAddress.addressPostalCode"
+              }
+            ]
+          },
+          "response": {
+            "fields": [
+              {
+                "jsonPath": "$.applications[0].coborrower.vendor2"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[0].attention"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[0].depositoryRequestDate"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[0].holderAddressCity"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[0].holderAddressPostalCode"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[0].holderAddressState"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[0].holderAddressStreetLine1"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[0].holderComments"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[0].holderEmail"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[0].holderFax"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[0].holderName"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[0].holderPhone"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[0].includeInAusExport"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[0].noLinkToDocTrackIndicator"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[0].owner"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[0].printAttachmentIndicator"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[0].printUserJobTitleIndicator"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[0].printUserNameIndicator"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[0].title"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[0].titleFax"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[0].titlePhone"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[0].total"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[0].items[0].itemNumber"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[0].items[0].type"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[0].items[0].accountIdentifier"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[0].items[0].cashOrMarketValueAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[0].items[0].urla2020CashOrMarketValueAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[0].items[0].depositoryAccountName"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[0].items[1].itemNumber"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[0].items[1].type"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[0].items[1].accountIdentifier"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[0].items[1].cashOrMarketValueAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[0].items[1].urla2020CashOrMarketValueAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[0].items[1].depositoryAccountName"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[0].items[2].itemNumber"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[0].items[2].type"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[0].items[2].accountIdentifier"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[0].items[2].cashOrMarketValueAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[0].items[2].urla2020CashOrMarketValueAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[0].items[2].depositoryAccountName"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[0].items[3].itemNumber"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[0].items[3].type"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[0].items[3].accountIdentifier"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[0].items[3].cashOrMarketValueAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[0].items[3].urla2020CashOrMarketValueAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[0].items[3].depositoryAccountName"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[1].id"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[1].attention"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[1].depositoryRequestDate"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[1].holderAddressCity"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[1].holderAddressPostalCode"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[1].holderAddressState"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[1].holderAddressStreetLine1"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[1].holderComments"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[1].holderEmail"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[1].holderFax"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[1].holderName"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[1].holderPhone"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[1].includeInAusExport"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[1].noLinkToDocTrackIndicator"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[1].owner"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[1].printAttachmentIndicator"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[1].printUserJobTitleIndicator"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[1].printUserNameIndicator"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[1].title"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[1].titleFax"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[1].titlePhone"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[1].total"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[1].items[0].itemNumber"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[1].items[0].type"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[1].items[0].accountIdentifier"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[1].items[0].cashOrMarketValueAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[1].items[0].urla2020CashOrMarketValueAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[1].items[0].depositoryAccountName"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[1].items[1].itemNumber"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[1].items[1].type"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[1].items[1].accountIdentifier"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[1].items[1].cashOrMarketValueAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[1].items[1].urla2020CashOrMarketValueAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[1].items[1].depositoryAccountName"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[1].items[2].itemNumber"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[1].items[2].type"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[1].items[2].accountIdentifier"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[1].items[2].cashOrMarketValueAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[1].items[2].urla2020CashOrMarketValueAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[1].items[2].depositoryAccountName"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[1].items[3].itemNumber"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[1].items[3].type"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[1].items[3].accountIdentifier"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[1].items[3].cashOrMarketValueAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[1].items[3].urla2020CashOrMarketValueAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[1].items[3].depositoryAccountName"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[2].id"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[2].attention"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[2].depositoryRequestDate"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[2].holderAddressCity"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[2].holderAddressPostalCode"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[2].holderAddressState"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[2].holderAddressStreetLine1"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[2].holderComments"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[2].holderEmail"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[2].holderFax"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[2].holderName"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[2].holderPhone"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[2].includeInAusExport"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[2].noLinkToDocTrackIndicator"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[2].owner"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[2].printAttachmentIndicator"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[2].printUserJobTitleIndicator"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[2].printUserNameIndicator"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[2].title"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[2].titleFax"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[2].titlePhone"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[2].total"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[2].items[0].itemNumber"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[2].items[0].type"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[2].items[0].accountIdentifier"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[2].items[0].cashOrMarketValueAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[2].items[0].urla2020CashOrMarketValueAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[2].items[0].depositoryAccountName"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[2].items[1].itemNumber"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[2].items[1].type"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[2].items[1].accountIdentifier"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[2].items[1].cashOrMarketValueAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[2].items[1].urla2020CashOrMarketValueAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[2].items[1].depositoryAccountName"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[2].items[2].itemNumber"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[2].items[2].type"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[2].items[2].accountIdentifier"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[2].items[2].cashOrMarketValueAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[2].items[2].urla2020CashOrMarketValueAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[2].items[2].depositoryAccountName"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[2].items[3].itemNumber"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[2].items[3].type"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[2].items[3].accountIdentifier"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[2].items[3].cashOrMarketValueAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[2].items[3].urla2020CashOrMarketValueAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[2].items[3].depositoryAccountName"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[3].id"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[3].attention"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[3].depositoryRequestDate"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[3].holderAddressCity"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[3].holderAddressPostalCode"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[3].holderAddressState"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[3].holderAddressStreetLine1"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[3].holderComments"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[3].holderEmail"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[3].holderFax"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[3].holderName"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[3].holderPhone"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[3].includeInAusExport"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[3].noLinkToDocTrackIndicator"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[3].owner"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[3].printAttachmentIndicator"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[3].printUserJobTitleIndicator"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[3].printUserNameIndicator"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[3].title"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[3].titleFax"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[3].titlePhone"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[3].total"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[3].items[0].itemNumber"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[3].items[0].type"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[3].items[0].accountIdentifier"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[3].items[0].cashOrMarketValueAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[3].items[0].urla2020CashOrMarketValueAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[3].items[0].depositoryAccountName"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[3].items[1].itemNumber"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[3].items[1].type"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[3].items[1].accountIdentifier"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[3].items[1].cashOrMarketValueAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[3].items[1].urla2020CashOrMarketValueAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[3].items[1].depositoryAccountName"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[3].items[2].itemNumber"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[3].items[2].type"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[3].items[2].accountIdentifier"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[3].items[2].cashOrMarketValueAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[3].items[2].urla2020CashOrMarketValueAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[3].items[2].depositoryAccountName"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[3].items[3].itemNumber"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[3].items[3].type"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[3].items[3].accountIdentifier"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[3].items[3].cashOrMarketValueAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[3].items[3].urla2020CashOrMarketValueAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[3].items[3].depositoryAccountName"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[4].id"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[4].attention"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[4].depositoryRequestDate"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[4].holderAddressCity"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[4].holderAddressPostalCode"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[4].holderAddressState"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[4].holderAddressStreetLine1"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[4].holderComments"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[4].holderEmail"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[4].holderFax"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[4].holderName"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[4].holderPhone"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[4].includeInAusExport"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[4].noLinkToDocTrackIndicator"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[4].owner"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[4].printAttachmentIndicator"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[4].printUserJobTitleIndicator"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[4].printUserNameIndicator"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[4].title"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[4].titleFax"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[4].titlePhone"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[4].total"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[4].items[0].itemNumber"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[4].items[0].type"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[4].items[0].accountIdentifier"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[4].items[0].cashOrMarketValueAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[4].items[0].urla2020CashOrMarketValueAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[4].items[0].depositoryAccountName"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[4].items[1].itemNumber"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[4].items[1].type"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[4].items[1].accountIdentifier"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[4].items[1].cashOrMarketValueAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[4].items[1].urla2020CashOrMarketValueAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[4].items[1].depositoryAccountName"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[4].items[2].itemNumber"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[4].items[2].type"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[4].items[2].accountIdentifier"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[4].items[2].cashOrMarketValueAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[4].items[2].urla2020CashOrMarketValueAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[4].items[2].depositoryAccountName"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[4].items[3].itemNumber"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[4].items[3].type"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[4].items[3].accountIdentifier"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[4].items[3].cashOrMarketValueAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[4].items[3].urla2020CashOrMarketValueAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[4].items[3].depositoryAccountName"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[5].id"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[5].attention"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[5].depositoryRequestDate"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[5].holderAddressCity"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[5].holderAddressPostalCode"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[5].holderAddressState"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[5].holderAddressStreetLine1"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[5].holderComments"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[5].holderEmail"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[5].holderFax"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[5].holderName"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[5].holderPhone"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[5].includeInAusExport"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[5].noLinkToDocTrackIndicator"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[5].owner"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[5].printAttachmentIndicator"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[5].printUserJobTitleIndicator"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[5].printUserNameIndicator"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[5].title"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[5].titleFax"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[5].titlePhone"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[5].total"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[5].items[0].itemNumber"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[5].items[0].type"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[5].items[0].accountIdentifier"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[5].items[0].cashOrMarketValueAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[5].items[0].urla2020CashOrMarketValueAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[5].items[0].depositoryAccountName"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[5].items[1].itemNumber"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[5].items[1].type"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[5].items[1].accountIdentifier"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[5].items[1].cashOrMarketValueAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[5].items[1].urla2020CashOrMarketValueAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[5].items[1].depositoryAccountName"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[5].items[2].itemNumber"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[5].items[2].type"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[5].items[2].accountIdentifier"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[5].items[2].cashOrMarketValueAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[5].items[2].urla2020CashOrMarketValueAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[5].items[2].depositoryAccountName"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[5].items[3].itemNumber"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[5].items[3].type"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[5].items[3].accountIdentifier"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[5].items[3].cashOrMarketValueAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[5].items[3].urla2020CashOrMarketValueAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[5].items[3].depositoryAccountName"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[6].id"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[6].attention"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[6].depositoryRequestDate"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[6].holderAddressCity"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[6].holderAddressPostalCode"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[6].holderAddressState"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[6].holderAddressStreetLine1"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[6].holderComments"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[6].holderEmail"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[6].holderFax"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[6].holderName"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[6].holderPhone"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[6].includeInAusExport"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[6].noLinkToDocTrackIndicator"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[6].owner"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[6].printAttachmentIndicator"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[6].printUserJobTitleIndicator"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[6].printUserNameIndicator"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[6].title"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[6].titleFax"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[6].titlePhone"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[6].total"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[6].items[0].itemNumber"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[6].items[0].type"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[6].items[0].accountIdentifier"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[6].items[0].cashOrMarketValueAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[6].items[0].urla2020CashOrMarketValueAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[6].items[0].depositoryAccountName"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[6].items[1].itemNumber"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[6].items[1].type"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[6].items[1].accountIdentifier"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[6].items[1].cashOrMarketValueAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[6].items[1].urla2020CashOrMarketValueAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[6].items[1].depositoryAccountName"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[6].items[2].itemNumber"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[6].items[2].type"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[6].items[2].accountIdentifier"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[6].items[2].cashOrMarketValueAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[6].items[2].urla2020CashOrMarketValueAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[6].items[2].depositoryAccountName"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[6].items[3].itemNumber"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[6].items[3].type"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[6].items[3].accountIdentifier"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[6].items[3].cashOrMarketValueAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[6].items[3].urla2020CashOrMarketValueAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[6].items[3].depositoryAccountName"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[7].id"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[7].attention"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[7].depositoryRequestDate"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[7].holderAddressCity"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[7].holderAddressPostalCode"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[7].holderAddressState"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[7].holderAddressStreetLine1"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[7].holderComments"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[7].holderEmail"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[7].holderFax"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[7].holderName"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[7].holderPhone"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[7].includeInAusExport"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[7].noLinkToDocTrackIndicator"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[7].owner"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[7].printAttachmentIndicator"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[7].printUserJobTitleIndicator"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[7].printUserNameIndicator"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[7].title"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[7].titleFax"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[7].titlePhone"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[7].total"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[7].items[0].itemNumber"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[7].items[0].type"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[7].items[0].accountIdentifier"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[7].items[0].cashOrMarketValueAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[7].items[0].urla2020CashOrMarketValueAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[7].items[0].depositoryAccountName"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[7].items[1].itemNumber"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[7].items[1].type"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[7].items[1].accountIdentifier"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[7].items[1].cashOrMarketValueAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[7].items[1].urla2020CashOrMarketValueAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[7].items[1].depositoryAccountName"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[7].items[2].itemNumber"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[7].items[2].type"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[7].items[2].accountIdentifier"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[7].items[2].cashOrMarketValueAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[7].items[2].urla2020CashOrMarketValueAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[7].items[2].depositoryAccountName"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[7].items[3].itemNumber"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[7].items[3].type"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[7].items[3].accountIdentifier"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[7].items[3].cashOrMarketValueAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[7].items[3].urla2020CashOrMarketValueAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[7].items[3].depositoryAccountName"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[8].id"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[8].attention"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[8].depositoryRequestDate"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[8].holderAddressCity"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[8].holderAddressPostalCode"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[8].holderAddressState"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[8].holderAddressStreetLine1"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[8].holderComments"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[8].holderEmail"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[8].holderFax"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[8].holderName"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[8].holderPhone"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[8].includeInAusExport"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[8].noLinkToDocTrackIndicator"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[8].owner"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[8].printAttachmentIndicator"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[8].printUserJobTitleIndicator"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[8].printUserNameIndicator"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[8].title"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[8].titleFax"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[8].titlePhone"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[8].total"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[8].items[0].itemNumber"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[8].items[0].type"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[8].items[0].accountIdentifier"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[8].items[0].cashOrMarketValueAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[8].items[0].urla2020CashOrMarketValueAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[8].items[0].depositoryAccountName"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[8].items[1].itemNumber"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[8].items[1].type"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[8].items[1].accountIdentifier"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[8].items[1].cashOrMarketValueAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[8].items[1].urla2020CashOrMarketValueAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[8].items[1].depositoryAccountName"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[8].items[2].itemNumber"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[8].items[2].type"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[8].items[2].accountIdentifier"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[8].items[2].cashOrMarketValueAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[8].items[2].urla2020CashOrMarketValueAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[8].items[2].depositoryAccountName"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[8].items[3].itemNumber"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[8].items[3].type"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[8].items[3].accountIdentifier"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[8].items[3].cashOrMarketValueAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[8].items[3].urla2020CashOrMarketValueAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[8].items[3].depositoryAccountName"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[9].id"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[9].attention"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[9].depositoryRequestDate"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[9].holderAddressCity"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[9].holderAddressPostalCode"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[9].holderAddressState"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[9].holderAddressStreetLine1"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[9].holderComments"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[9].holderEmail"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[9].holderFax"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[9].holderName"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[9].holderPhone"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[9].includeInAusExport"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[9].noLinkToDocTrackIndicator"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[9].owner"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[9].printAttachmentIndicator"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[9].printUserJobTitleIndicator"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[9].printUserNameIndicator"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[9].title"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[9].titleFax"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[9].titlePhone"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[9].total"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[9].items[0].itemNumber"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[9].items[0].type"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[9].items[0].accountIdentifier"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[9].items[0].cashOrMarketValueAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[9].items[0].urla2020CashOrMarketValueAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[9].items[0].depositoryAccountName"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[9].items[1].itemNumber"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[9].items[1].type"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[9].items[1].accountIdentifier"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[9].items[1].cashOrMarketValueAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[9].items[1].urla2020CashOrMarketValueAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[9].items[1].depositoryAccountName"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[9].items[2].itemNumber"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[9].items[2].type"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[9].items[2].accountIdentifier"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[9].items[2].cashOrMarketValueAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[9].items[2].urla2020CashOrMarketValueAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[9].items[2].depositoryAccountName"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[9].items[3].itemNumber"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[9].items[3].type"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[9].items[3].accountIdentifier"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[9].items[3].cashOrMarketValueAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[9].items[3].urla2020CashOrMarketValueAmount"
+              },
+              {
+                "jsonPath": "$.applications[0].vods[9].items[3].depositoryAccountName"
+              }
+            ]
+          }
+        }
+      ],
+      "extensionCount": 0
+    }
+  }
+}

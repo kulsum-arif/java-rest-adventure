@@ -1,0 +1,1266 @@
+{
+  "partnerId": "<TBD>",
+  "name": "AppraisalRI",
+  "partnerUrl": "",
+  "integrationType": "ASYNC",
+  "listingName": "Appraisal RI",
+  "requestTypes": [
+    "NewOrder"
+  ],
+  "webhooks": [
+    {
+      "resource": "urn:elli:epc:transaction",
+      "events": [
+        "created",
+        "updated"
+      ],
+      "signingKey": "<signingKey>",
+      "url": "<utl>"
+    },
+    {
+      "resource": "urn:elli:epc:transaction:event",
+      "events": [
+        "created"
+      ],
+      "signingKey": "<signingKey>",
+      "url": "<utl>"
+    }
+  ],
+  "entitlements": {
+    "access": [
+      {
+        "tenantType": "encompass",
+        "tenantIds": [
+          "urn:elli:encompass:<instanceId>"
+        ]
+      }
+    ],
+    "data": {
+      "origin": {
+        "fields": [
+          {
+            "fieldId": "1868",
+            "jsonPath": "$.applications[0].borrower.fullNameWithSuffix",
+            "description": "Borrower Full Name"
+          },
+          {
+            "fieldId": "66",
+            "jsonPath": "$.applications[0].borrower.homePhoneNumber",
+            "description": "Borrower Home Phone"
+          },
+          {
+            "fieldId": "FE0117",
+            "jsonPath": "$.applications[0].borrower.employment[?(@.currentEmploymentIndicator == true)][0].phoneNumber",
+            "description": "Borrower Work Phone"
+          },
+          {
+            "fieldId": "1490",
+            "jsonPath": "$.applications[0].borrower.mobilePhone",
+            "description": "Borrower Mobile Phone"
+          },
+          {
+            "fieldId": "1873",
+            "jsonPath": "$.applications[0].coborrower.fullNameWithSuffix",
+            "description": "Coborrower Full Name"
+          },
+          {
+            "fieldId": "98",
+            "jsonPath": "$.applications[0].coborrower.homePhoneNumber",
+            "description": "Coborrower Home Phone"
+          },
+          {
+            "fieldId": "FE0217",
+            "jsonPath": "$.applications[0].coborrower.employment[?(@.currentEmploymentIndicator == true)][0].phoneNumber",
+            "description": "Coborrower Work Phone"
+          },
+          {
+            "fieldId": "1480",
+            "jsonPath": "$.applications[0].coborrower.mobilePhone",
+            "description": "Coborrower Mobile Phone"
+          },
+          {
+            "fieldId": "11",
+            "jsonPath": "$.property.streetAddress",
+            "description": "Property Address"
+          },
+          {
+            "fieldId": "12",
+            "jsonPath": "$.property.city",
+            "description": "Property City"
+          },
+          {
+            "fieldId": "14",
+            "jsonPath": "$.property.state",
+            "description": "Property State"
+          },
+          {
+            "fieldId": "15",
+            "jsonPath": "$.property.postalCode",
+            "description": "Property Zip"
+          },
+          {
+            "fieldId": "13",
+            "jsonPath": "$.property.county",
+            "description": "Property County"
+          },
+          {
+            "fieldId": "305",
+            "jsonPath": "$.lenderCaseIdentifier",
+            "description": "Loan Reference Number"
+          },
+          {
+            "fieldId": "1040",
+            "jsonPath": "$.agencyCaseIdentifier",
+            "description": "FHA Case Number"
+          },
+          {
+            "fieldId": "1041",
+            "jsonPath": "$.loanProductData.gsePropertyType",
+            "description": "Property Type"
+          },
+          {
+            "fieldId": "19",
+            "jsonPath": "$.property.loanPurposeType",
+            "description": "Purpose Of Loan"
+          },
+          {
+            "fieldId": "1172",
+            "jsonPath": "$.mortgageType",
+            "description": "Loan Type"
+          },
+          {
+            "fieldId": "1811",
+            "jsonPath": "$.applications[0].propertyUsageType",
+            "description": "Occupancy"
+          },
+          {
+            "fieldId": "1109",
+            "jsonPath": "$.borrowerRequestedLoanAmount",
+            "description": "Loan Amount"
+          },
+          {
+            "fieldId": "136",
+            "jsonPath": "$.purchasePriceAmount",
+            "description": "Purchase Amount"
+          },
+          {
+            "fieldId": "GUID",
+            "jsonPath": "$.id",
+            "description": "Loan GUID"
+          },
+          {
+            "fieldId": "364",
+            "jsonPath": "$.loanNumber",
+            "description": "Loan Number"
+          },
+          {
+            "fieldId": "3197",
+            "jsonPath": "$.regulationZ.borrowerIntendToContinueDate",
+            "description": "Borrower Intent to Continue Date"
+          },
+          {
+            "fieldId": "3152",
+            "jsonPath": "$.regulationZ.initialTilDisclosureProvidedDate",
+            "description": "TIL Initial Disclosure Provided Date"
+          },
+          {
+            "fieldId": "1240",
+            "jsonPath": "$.applications[0].borrower.emailAddressText",
+            "description": "Borrower Email"
+          },
+          {
+            "fieldId": "1268",
+            "jsonPath": "$.applications[0].coborrower.emailAddressText",
+            "description": "Co Borrower Email"
+          },
+          {
+            "fieldId": "",
+            "jsonPath": "$.contacts[?(@.contactType == 'BUYERS_AGENT')][0].contactType",
+            "description": "Buyer Agent contactType"
+          },
+          {
+            "fieldId": "VEND.X133",
+            "jsonPath": "$.contacts[?(@.contactType == 'BUYERS_AGENT')][0].name",
+            "description": "Buyer Agent Company"
+          },
+          {
+            "fieldId": "VEND.X139",
+            "jsonPath": "$.contacts[?(@.contactType == 'BUYERS_AGENT')][0].contactName",
+            "description": "Buyer Agent Name"
+          },
+          {
+            "fieldId": "VEND.X140",
+            "jsonPath": "$.contacts[?(@.contactType == 'BUYERS_AGENT')][0].phone",
+            "description": "Buyer Agent Phone"
+          },
+          {
+            "fieldId": "VEND.X500",
+            "jsonPath": "$.contacts[?(@.contactType == 'BUYERS_AGENT')][0].cell",
+            "description": "Buyer Agent Mobile"
+          },
+          {
+            "fieldId": "VEND.X141",
+            "jsonPath": "$.contacts[?(@.contactType == 'BUYERS_AGENT')][0].email",
+            "description": "Buyer Agent Email"
+          },
+          {
+            "fieldId": "617",
+            "jsonPath": "$.contacts[?(@.contactType == 'APPRAISAL_COMPANY')][0].name",
+            "description": "Appraisal Co Name"
+          },
+          {
+            "fieldId": "618",
+            "jsonPath": "$.contacts[?(@.contactType == 'APPRAISAL_COMPANY')][0].contactName",
+            "description": "Appraisal Co Contact Name"
+          },
+          {
+            "fieldId": "619",
+            "jsonPath": "$.contacts[?(@.contactType == 'APPRAISAL_COMPANY')][0].address",
+            "description": "Appraisal Co Address"
+          },
+          {
+            "fieldId": "620",
+            "jsonPath": "$.contacts[?(@.contactType == 'APPRAISAL_COMPANY')][0].city",
+            "description": "Appraisal Co City"
+          },
+          {
+            "fieldId": "621",
+            "jsonPath": "$.contacts[?(@.contactType == 'APPRAISAL_COMPANY')][0].postalCode",
+            "description": "Appraisal Co Zip"
+          },
+          {
+            "fieldId": "622",
+            "jsonPath": "$.contacts[?(@.contactType == 'APPRAISAL_COMPANY')][0].phone",
+            "description": "Appraisal Co Phone"
+          },
+          {
+            "fieldId": "1244",
+            "jsonPath": "$.contacts[?(@.contactType == 'APPRAISAL_COMPANY')][0].state",
+            "description": "Appraisal Co State"
+          },
+          {
+            "fieldId": "1246",
+            "jsonPath": "$.contacts[?(@.contactType == 'APPRAISAL_COMPANY')][0].fax",
+            "description": "Appraisal Co Fax"
+          },
+          {
+            "fieldId": "REQUEST.X25",
+            "jsonPath": "$.additionalRequests.appraisalContactForEntry",
+            "description": "Appraisal Contact for Entry"
+          },
+          {
+            "fieldId": "REQUEST.X22",
+            "jsonPath": "$.additionalRequests.appraisalVacant",
+            "description": "Appraisal Access Vacant"
+          },
+          {
+            "fieldId": "REQUEST.X23",
+            "jsonPath": "$.additionalRequests.appraisalLockBox",
+            "description": "Appraisal Access Lockbox"
+          },
+          {
+            "fieldId": "REQUEST.X24",
+            "jsonPath": "$.additionalRequests.appraisalKeyPickUp",
+            "description": "Appraisal Access Key Pickup"
+          },
+          {
+            "fieldId": "REQUEST.X29",
+            "jsonPath": "$.additionalRequests.appraisalContactName",
+            "description": "Appraisal Contact Name"
+          },
+          {
+            "fieldId": "REQUEST.X30",
+            "jsonPath": "$.additionalRequests.appraisalContactHomePhone",
+            "description": "Appraisal Contact Home Phone"
+          },
+          {
+            "fieldId": "REQUEST.X31",
+            "jsonPath": "$.additionalRequests.appraisalContactWorkPhone",
+            "description": "Appraisal Contact Work Phone"
+          },
+          {
+            "fieldId": "REQUEST.X32",
+            "jsonPath": "$.additionalRequests.appraisalContactCellPhone",
+            "description": "Appraisal Contact Mobile Phone"
+          },
+          {
+            "fieldId": "REQUEST.X33",
+            "jsonPath": "$.additionalRequests.appraisalContactEmail",
+            "description": "Appraisal Contact Email"
+          },
+          {
+            "fieldId": "REQUEST.X26",
+            "jsonPath": "$.additionalRequests.appraisalDescription1",
+            "description": "Appraisal Description 1"
+          },
+          {
+            "fieldId": "REQUEST.X27",
+            "jsonPath": "$.additionalRequests.appraisalDescription2",
+            "description": "Appraisal Description 2"
+          },
+          {
+            "fieldId": "REQUEST.X28",
+            "jsonPath": "$.additionalRequests.appraisalDescription3",
+            "description": "Appraisal Description 3"
+          },
+          {
+            "fieldId": "190",
+            "jsonPath": "$.property.propertyUsageType",
+            "description": "Loan Purpose"
+          },
+          {
+            "fieldId": "1066",
+            "jsonPath": "$.property.propertyRightsType",
+            "description": "Property Rights"
+          },
+          {
+            "fieldId": "MORNET.X4",
+            "jsonPath": "$.fannieMae.mornetPlusCaseFileId",
+            "description": "DU Casefile ID"
+          },
+          {
+            "fieldId": "",
+            "jsonPath": "$.contacts[?(@.contactType == 'SELLER')][0].contactType",
+            "description": "Seller1 contactType"
+          },
+          {
+            "fieldId": "638",
+            "jsonPath": "$.contacts[?(@.contactType == 'SELLER')][0].name",
+            "description": "Seller1 Full Name"
+          },
+          {
+            "fieldId": "704",
+            "jsonPath": "$.contacts[?(@.contactType == 'SELLER')][0].phone",
+            "description": "Seller1 Home Phone"
+          },
+          {
+            "fieldId": "92",
+            "jsonPath": "$.contacts[?(@.contactType == 'SELLER')][0].email",
+            "description": "Seller1 Email"
+          },
+          {
+            "fieldId": "VEND.X220",
+            "jsonPath": "$.contacts[?(@.contactType == 'SELLER')][0].businessPhone",
+            "description": "Seller1 Work Phone"
+          },
+          {
+            "fieldId": "VEND.X502",
+            "jsonPath": "$.contacts[?(@.contactType == 'SELLER')][0].cell",
+            "description": "Seller1 Mobile Phone"
+          },
+          {
+            "fieldId": "",
+            "jsonPath": "$.contacts[?(@.contactType == 'SELLER2')][0].contactType",
+            "description": "Seller2 contactType"
+          },
+          {
+            "fieldId": "VEND.X412",
+            "jsonPath": "$.contacts[?(@.contactType == 'SELLER2')][0].name",
+            "description": "Seller2 Full Name"
+          },
+          {
+            "fieldId": "VEND.X417",
+            "jsonPath": "$.contacts[?(@.contactType == 'SELLER2')][0].phone",
+            "description": "Seller2 Home Phone"
+          },
+          {
+            "fieldId": "VEND.X419",
+            "jsonPath": "$.contacts[?(@.contactType == 'SELLER2')][0].email",
+            "description": "Seller2 Email"
+          },
+          {
+            "fieldId": "VEND.X421",
+            "jsonPath": "$.contacts[?(@.contactType == 'SELLER2')][0].businessPhone",
+            "description": "Seller2 Work Phone"
+          },
+          {
+            "fieldId": "VEND.X521",
+            "jsonPath": "$.contacts[?(@.contactType == 'SELLER2')][0].cell",
+            "description": "Seller2 Mobile Phone"
+          },
+          {
+            "fieldId": "",
+            "jsonPath": "$.contacts[?(@.contactType == 'SELLER3')][0].contactType",
+            "description": "Seller3 contactType"
+          },
+          {
+            "fieldId": "Seller3.Name",
+            "jsonPath": "$.contacts[?(@.contactType == 'SELLER3')][0].name",
+            "description": "Seller3 Full Name"
+          },
+          {
+            "fieldId": "Seller3.Phone",
+            "jsonPath": "$.contacts[?(@.contactType == 'SELLER3')][0].phone",
+            "description": "Seller3 Home Phone"
+          },
+          {
+            "fieldId": "Seller3.Email",
+            "jsonPath": "$.contacts[?(@.contactType == 'SELLER3')][0].email",
+            "description": "Seller3 Email"
+          },
+          {
+            "fieldId": "Seller3.BusPh",
+            "jsonPath": "$.contacts[?(@.contactType == 'SELLER3')][0].businessPhone",
+            "description": "Seller3 Work Phone"
+          },
+          {
+            "fieldId": "Seller3.Cell",
+            "jsonPath": "$.contacts[?(@.contactType == 'SELLER3')][0].cell",
+            "description": "Seller3 Mobile Phone"
+          },
+          {
+            "fieldId": "",
+            "jsonPath": "$.contacts[?(@.contactType == 'SELLER4')][0].contactType",
+            "description": "Seller4 contactType"
+          },
+          {
+            "fieldId": "Seller4.Name",
+            "jsonPath": "$.contacts[?(@.contactType == 'SELLER4')][0].name",
+            "description": "Seller4 Full Name"
+          },
+          {
+            "fieldId": "Seller4.Phone",
+            "jsonPath": "$.contacts[?(@.contactType == 'SELLER4')][0].phone",
+            "description": "Seller4 Home Phone"
+          },
+          {
+            "fieldId": "Seller4.Email",
+            "jsonPath": "$.contacts[?(@.contactType == 'SELLER4')][0].email",
+            "description": "Seller4 Email"
+          },
+          {
+            "fieldId": "Seller4.BusPh",
+            "jsonPath": "$.contacts[?(@.contactType == 'SELLER4')][0].businessPhone",
+            "description": "Seller4 Work Phone"
+          },
+          {
+            "fieldId": "Seller4.Cell",
+            "jsonPath": "$.contacts[?(@.contactType == 'SELLER4')][0].cell",
+            "description": "Seller4 Mobile Phone"
+          },
+          {
+            "fieldId": "",
+            "jsonPath": "$.contacts[?(@.contactType == 'BUILDER')][0].contactType",
+            "description": "Builder contactType"
+          },
+          {
+            "fieldId": "714",
+            "jsonPath": "$.contacts[?(@.contactType == 'BUILDER')][0].contactName",
+            "description": "Builder Contact Name"
+          },
+          {
+            "fieldId": "718",
+            "jsonPath": "$.contacts[?(@.contactType == 'BUILDER')][0].phone",
+            "description": "Builder Contact Phone"
+          },
+          {
+            "fieldId": "94",
+            "jsonPath": "$.contacts[?(@.contactType == 'BUILDER')][0].email",
+            "description": "Builder Contact Email"
+          },
+          {
+            "fieldId": "VEND.X503",
+            "jsonPath": "$.contacts[?(@.contactType == 'BUILDER')][0].cell",
+            "description": "Builder Contact Mobile"
+          },
+          {
+            "fieldId": "",
+            "jsonPath": "$.contacts[?(@.contactType == 'SELLERS_AGENT')][0].contactType",
+            "description": "Seller Agent contactType"
+          },
+          {
+            "fieldId": "VEND.X144",
+            "jsonPath": "$.contacts[?(@.contactType == 'SELLERS_AGENT')][0].name",
+            "description": "Seller Agent Company"
+          },
+          {
+            "fieldId": "VEND.X150",
+            "jsonPath": "$.contacts[?(@.contactType == 'SELLERS_AGENT')][0].contactName",
+            "description": "Seller Agent Name"
+          },
+          {
+            "fieldId": "VEND.X151",
+            "jsonPath": "$.contacts[?(@.contactType == 'SELLERS_AGENT')][0].phone",
+            "description": "Seller Agent Phone"
+          },
+          {
+            "fieldId": "VEND.X501",
+            "jsonPath": "$.contacts[?(@.contactType == 'SELLERS_AGENT')][0].cell",
+            "description": "Seller Agent Mobile"
+          },
+          {
+            "fieldId": "VEND.X152",
+            "jsonPath": "$.contacts[?(@.contactType == 'SELLERS_AGENT')][0].email",
+            "description": "Seller Agent Email"
+          }
+        ]
+      },
+      "transactions" : [{
+        "requestTypes": ["NewOrder"],
+        "request": {
+          "fields": [
+            {
+              "fieldId": "MORNET.X4",
+              "jsonPath": "$.fannieMae.mornetPlusCaseFileId",
+              "description": "DU Casefile ID"
+            },
+            {
+              "fieldId": "VEND.X500",
+              "jsonPath": "$.contacts[?(@.contactType == 'BUYERS_AGENT')][0].cell",
+              "description": "Agent's Cell Phone Number"
+            },
+            {
+              "fieldId": "VEND.X141",
+              "jsonPath": "$.contacts[?(@.contactType == 'BUYERS_AGENT')][0].email",
+              "description": "Agent's Email"
+            },
+            {
+              "fieldId": "VEND.X739",
+              "jsonPath": "$.contacts[?(@.contactType == 'BUYERS_AGENT')][0].personalLicenseNumber",
+              "description": "Agent's State License Number"
+            },
+            {
+              "fieldId": "619",
+              "jsonPath": "$.contacts[?(@.contactType == 'APPRAISAL_COMPANY')][0].address",
+              "description": "Appraisal Company Address"
+            },
+            {
+              "fieldId": "620",
+              "jsonPath": "$.contacts[?(@.contactType == 'APPRAISAL_COMPANY')][0].city",
+              "description": "Appraisal Company City"
+            },
+            {
+              "fieldId": "618",
+              "jsonPath": "$.contacts[?(@.contactType == 'APPRAISAL_COMPANY')][0].contactName",
+              "description": "Appraisal Company Contact"
+            },
+            {
+              "fieldId": "1246",
+              "jsonPath": "$.contacts[?(@.contactType == 'APPRAISAL_COMPANY')][0].fax",
+              "description": "Appraisal Company Fax"
+            },
+            {
+              "fieldId": "1244",
+              "jsonPath": "$.contacts[?(@.contactType == 'APPRAISAL_COMPANY')][0].state",
+              "description": "Appraisal Company State"
+            },
+            {
+              "fieldId": "621",
+              "jsonPath": "$.contacts[?(@.contactType == 'APPRAISAL_COMPANY')][0].postalCode",
+              "description": "Appraisal Company Zip"
+            },
+            {
+              "fieldId": "REQUEST.X21",
+              "jsonPath": "$.additionalRequests.appraisalDateOrdered",
+              "description": "Appraisal Ordered Date"
+            },
+            {
+              "fieldId": "617",
+              "jsonPath": "$.contacts[?(@.contactType == 'APPRAISAL_COMPANY')][0].name",
+              "description": "Appraisal Company Name"
+            },
+            {
+              "fieldId": "622",
+              "jsonPath": "$.contacts[?(@.contactType == 'APPRAISAL_COMPANY')][0].phone",
+              "description": "Appraisal Company Phone"
+            },
+            {
+              "fieldId": "1416",
+              "jsonPath": "$.applications[0].borrower.mailingAddress.addressStreetLine1",
+              "description": "Borr Mailing Addr"
+            },
+            {
+              "fieldId": "1417",
+              "jsonPath": "$.applications[0].borrower.mailingAddress.addressCity",
+              "description": "Borr Mailing City"
+            },
+            {
+              "fieldId": "1418",
+              "jsonPath": "$.applications[0].borrower.mailingAddress.addressState",
+              "description": "Borr Mailing State"
+            },
+            {
+              "fieldId": "1419",
+              "jsonPath": "$.applications[0].borrower.mailingAddress.addressPostalCode",
+              "description": "Borr Mailing Zip"
+            },
+            {
+              "fieldId": "4114",
+              "jsonPath": "$.loanProductData.borrowerEstimatedClosingDate",
+              "description": "Borrower estimated Closing Date"
+            },
+            {
+              "fieldId": "3197",
+              "jsonPath": "$.regulationZ.borrowerIntendToContinueDate",
+              "description": "Borrower Intent to Continue Date"
+            },
+            {
+              "fieldId": "1490",
+              "jsonPath": "$.applications[0].borrower.mobilePhone",
+              "description": "Borrower's Cell Phone"
+            },
+            {
+              "fieldId": "1240",
+              "jsonPath": "$.applications[0].borrower.emailAddressText",
+              "description": "Borrower's Email"
+            },
+            {
+              "fieldId": "1868",
+              "jsonPath": "$.applications[0].borrower.fullNameWithSuffix",
+              "description": "Borrower's Full Name"
+            },
+            {
+              "fieldId": "66",
+              "jsonPath": "$.applications[0].borrower.homePhoneNumber",
+              "description": "Borrower's Home Phone"
+            },
+            {
+              "fieldId": "FE0117",
+              "jsonPath": "$.applications[0].borrower.employment[?(@.currentEmploymentIndicator == true)][0].phoneNumber",
+              "description": "Borrower's Work Phone"
+            },
+            {
+              "fieldId": "VEND.X139",
+              "jsonPath": "$.contacts[?(@.contactType == 'BUYERS_AGENT')][0].contactName",
+              "description": "Buyer's Agent Name"
+            },
+            {
+              "fieldId": "1519",
+              "jsonPath": "$.applications[0].coborrower.mailingAddress.addressStreetLine1",
+              "description": "Co-Borr Mailing Addr"
+            },
+            {
+              "fieldId": "1520",
+              "jsonPath": "$.applications[0].coborrower.mailingAddress.addressCity",
+              "description": "Co-Borr Mailing City"
+            },
+            {
+              "fieldId": "1521",
+              "jsonPath": "$.applications[0].coborrower.mailingAddress.addressState",
+              "description": "Co-Borr Mailing State"
+            },
+            {
+              "fieldId": "1522",
+              "jsonPath": "$.applications[0].coborrower.mailingAddress.addressPostalCode",
+              "description": "Co-Borr Mailing Zip"
+            },
+            {
+              "fieldId": "FR0204",
+              "jsonPath": "$.applications[0].coborrower.residences[?(@.residencyType== 'Current')].addressStreetLine1",
+              "description": "Co-Borr Present Addr"
+            },
+            {
+              "fieldId": "FR0206",
+              "jsonPath": "$.applications[0].coborrower.residences[?(@.residencyType== 'Current')].addressCity",
+              "description": "Co-Borr Present City"
+            },
+            {
+              "fieldId": "FR0207",
+              "jsonPath": "$.applications[0].coborrower.residences[?(@.residencyType== 'Current')].addressState",
+              "description": "Co-Borr Present State"
+            },
+            {
+              "fieldId": "FR0208",
+              "jsonPath": "$.applications[0].coborrower.residences[?(@.residencyType== 'Current')].addressPostalCode",
+              "description": "Co-Borr Present Zip"
+            },
+            {
+              "fieldId": "1480",
+              "jsonPath": "$.applications[0].coborrower.mobilePhone",
+              "description": "Co-Borrower's Cell Phone"
+            },
+            {
+              "fieldId": "1268",
+              "jsonPath": "$.applications[0].coborrower.emailAddressText",
+              "description": "Co-Borrower's Email"
+            },
+            {
+              "fieldId": "1873",
+              "jsonPath": "$.applications[0].coborrower.fullNameWithSuffix",
+              "description": "Co-Borrower's Full Name"
+            },
+            {
+              "fieldId": "98",
+              "jsonPath": "$.applications[0].coborrower.homePhoneNumber",
+              "description": "Co-Borrower's Home Phone"
+            },
+            {
+              "fieldId": "FE0217",
+              "jsonPath": "$.applications[0].coborrower.employment[?(@.currentEmploymentIndicator == true)][0].phoneNumber",
+              "description": "Co-Borrower's Work Phone"
+            },
+            {
+              "fieldId": "REQUEST.X32",
+              "jsonPath": "$.additionalRequests.appraisalContactCellPhone",
+              "description": "Contact Cell Phone"
+            },
+            {
+              "fieldId": "REQUEST.X33",
+              "jsonPath": "$.additionalRequests.appraisalContactEmail",
+              "description": "Contact Email"
+            },
+            {
+              "fieldId": "REQUEST.X25",
+              "jsonPath": "$.additionalRequests.appraisalContactForEntry",
+              "description": "Contact for Entry"
+            },
+            {
+              "fieldId": "REQUEST.X30",
+              "jsonPath": "$.additionalRequests.appraisalContactHomePhone",
+              "description": "Contact Home Phone"
+            },
+            {
+              "fieldId": "REQUEST.X29",
+              "jsonPath": "$.additionalRequests.appraisalContactName",
+              "description": "Contact Name"
+            },
+            {
+              "fieldId": "REQUEST.X31",
+              "jsonPath": "$.additionalRequests.appraisalContactWorkPhone",
+              "description": "Contact Work Phone"
+            },
+            {
+              "fieldId": "1040",
+              "jsonPath": "$.agencyCaseIdentifier",
+              "description": "FHA Case Number"
+            },
+            {
+              "fieldId": "1257",
+              "jsonPath": "$.contacts[?(@.contactType == 'LENDER_INVESTOR')][0].address",
+              "description": "File Contacts Lender Addr"
+            },
+            {
+              "fieldId": "1258",
+              "jsonPath": "$.contacts[?(@.contactType == 'LENDER_INVESTOR')][0].city",
+              "description": "File Contacts Lender City"
+            },
+            {
+              "fieldId": "1264",
+              "jsonPath": "$.contacts[?(@.contactType == 'LENDER_INVESTOR')][0].name",
+              "description": "File Contacts Lender Co Name"
+            },
+            {
+              "fieldId": "1259",
+              "jsonPath": "$.contacts[?(@.contactType == 'LENDER_INVESTOR')][0].state",
+              "description": "File Contacts Lender State"
+            },
+            {
+              "fieldId": "1260",
+              "jsonPath": "$.contacts[?(@.contactType == 'LENDER_INVESTOR')][0].postalCode",
+              "description": "File Contacts Lender Zip"
+            },
+            {
+              "fieldId": "1109",
+              "jsonPath": "$.borrowerRequestedLoanAmount",
+              "description": "Loan Amount"
+            },
+            {
+              "fieldId": "GUID",
+              "jsonPath": "$.id",
+              "description": "Loan GUID"
+            },
+            {
+              "fieldId": "364",
+              "jsonPath": "$.loanNumber",
+              "description": "Loan Number"
+            },
+            {
+              "fieldId": "18",
+              "jsonPath": "$.property.structureBuiltYear",
+              "description": "Loan Property Structure Built Year"
+            },
+            {
+              "fieldId": "305",
+              "jsonPath": "$.lenderCaseIdentifier",
+              "description": "Loan Reference Number"
+            },
+            {
+              "fieldId": "1172",
+              "jsonPath": "$.mortgageType",
+              "description": "Loan Type"
+            },
+            {
+              "fieldId": "3347",
+              "jsonPath": "$.vaLoanData.emailToBeNotifiedWhenUploaded",
+              "description": "Notification Email"
+            },
+            {
+              "fieldId": "1811",
+              "jsonPath": "$.applications[0].propertyUsageType",
+              "description": "Occupancy"
+            },
+            {
+              "fieldId": "REQUEST.X26",
+              "jsonPath": "$.additionalRequests.appraisalDescription1",
+              "description": "Appraisal Description 1"
+            },
+            {
+              "fieldId": "REQUEST.X27",
+              "jsonPath": "$.additionalRequests.appraisalDescription2",
+              "description": "Appraisal Description 2"
+            },
+            {
+              "fieldId": "REQUEST.X28",
+              "jsonPath": "$.additionalRequests.appraisalDescription3",
+              "description": "Appraisal Description 3"
+            },
+            {
+              "fieldId": "FR0104",
+              "jsonPath": "$.applications[0].borrower.residences[?(@.residencyType== 'Current')][0].addressStreetLine1",
+              "description": "Borr Present Addr"
+            },
+            {
+              "fieldId": "FR0106",
+              "jsonPath": "$.applications[0].borrower.residences[?(@.residencyType== 'Current')][0].addressCity",
+              "description": "Borr Present City"
+            },
+            {
+              "fieldId": "FR0107",
+              "jsonPath": "$.applications[0].borrower.residences[?(@.residencyType== 'Current')][0].addressState",
+              "description": "Borr Present State"
+            },
+            {
+              "fieldId": "FR0108",
+              "jsonPath": "$.applications[0].borrower.residences[?(@.residencyType== 'Current')][0].addressPostalCode",
+              "description": "Borr Present Zip"
+            },
+            {
+              "fieldId": "REQUEST.X22",
+              "jsonPath": "$.additionalRequests.appraisalVacant",
+              "description": "Appraisal Access Vacant"
+            },
+            {
+              "fieldId": "REQUEST.X23",
+              "jsonPath": "$.additionalRequests.appraisalLockBox",
+              "description": "Appraisal Access Lockbox"
+            },
+            {
+              "fieldId": "REQUEST.X24",
+              "jsonPath": "$.additionalRequests.appraisalKeyPickUp",
+              "description": "Appraisal Access Key Pickup"
+            },
+            {
+              "fieldId": "11",
+              "jsonPath": "$.property.streetAddress",
+              "description": "Property Address"
+            },
+            {
+              "fieldId": "12",
+              "jsonPath": "$.property.city",
+              "description": "Property City"
+            },
+            {
+              "fieldId": "13",
+              "jsonPath": "$.property.county",
+              "description": "Property County"
+            },
+            {
+              "fieldId": "1066",
+              "jsonPath": "$.property.propertyRightsType",
+              "description": "Property Rights"
+            },
+            {
+              "fieldId": "14",
+              "jsonPath": "$.property.state",
+              "description": "Property State"
+            },
+            {
+              "fieldId": "1041",
+              "jsonPath": "$.loanProductData.gsePropertyType",
+              "description": "Property Type"
+            },
+            {
+              "fieldId": "15",
+              "jsonPath": "$.property.postalCode",
+              "description": "Property Zip"
+            },
+            {
+              "fieldId": "136",
+              "jsonPath": "$.purchasePriceAmount",
+              "description": "Purchase Amount"
+            },
+            {
+              "fieldId": "19",
+              "jsonPath": "$.property.loanPurposeType",
+              "description": "Purpose of Loan"
+            },
+            {
+              "fieldId": "700",
+              "jsonPath": "$.hmda.censusTrack",
+              "description": "Subject Property Census Tract"
+            },
+            {
+              "fieldId": "1821",
+              "jsonPath": "$.propertyEstimatedValueAmount",
+              "description": "Subject Property Estimated Value"
+            },
+            {
+              "fieldId": "17",
+              "jsonPath": "$.property.legalDescriptionText1",
+              "description": "Subject Property Legal Desc1"
+            },
+            {
+              "fieldId": "3152",
+              "jsonPath": "$.regulationZ.initialTilDisclosureProvidedDate",
+              "description": "TIL Intl Disclosure Provided Date"
+            },
+            {
+              "fieldId": "2",
+              "jsonPath": "$.baseLoanAmount",
+              "description": "Trans Details Total Loan Amt (w/ MIP/FF)"
+            }
+          ]
+        },
+        "response": {
+          "fields": [
+            {
+              "fieldId": "uldd.x31",
+              "jsonPath": "$.uldd.appraisalIdentifier",
+              "description": "ULDD - Appraisal ID"
+            },
+            {
+              "fieldId": "168",
+              "jsonPath": "$.contacts[?(@.contactType == 'APPRAISAL_COMPANY')][0].referenceNumber",
+              "description": "Appraisal Company Case Number"
+            },
+            {
+              "fieldId": "356",
+              "jsonPath": "$.propertyAppraisedValueAmount",
+              "description": "Appraised Value"
+            },
+            {
+              "fieldId": "EEM.X64",
+              "jsonPath": "$.fhaVaLoan.eem.appraisedValue",
+              "description": "Appraised Value"
+            },
+            {
+              "fieldId": "2949",
+              "jsonPath": "$.rateLock.propertyAppraisedValueAmount",
+              "description": "Appraised Value"
+            },
+            {
+              "fieldId": "ULDD.X30",
+              "jsonPath": "$.uldd.propertyValuationEffectiveDate",
+              "description": "Appraisal Effective Date"
+            },
+            {
+              "fieldId": "4091",
+              "jsonPath": "$.contacts[?(@.contactType == 'APPRAISAL_COMPANY')][0].appraisalMade",
+              "description": "Appraisal Made"
+            },
+            {
+              "fieldId": "617",
+              "jsonPath": "$.contacts[?(@.contactType == 'APPRAISAL_COMPANY')][0].name",
+              "description": "Appraisal Co Name"
+            },
+            {
+              "fieldId": "619",
+              "jsonPath": "$.contacts[?(@.contactType == 'APPRAISAL_COMPANY')][0].address",
+              "description": "Appraisal Co Address"
+            },
+            {
+              "fieldId": "620",
+              "jsonPath": "$.contacts[?(@.contactType == 'APPRAISAL_COMPANY')][0].city",
+              "description": "Appraisal Co City"
+            },
+            {
+              "fieldId": "1244",
+              "jsonPath": "$.contacts[?(@.contactType == 'APPRAISAL_COMPANY')][0].state",
+              "description": "Appraisal Co State"
+            },
+            {
+              "fieldId": "621",
+              "jsonPath": "$.contacts[?(@.contactType == 'APPRAISAL_COMPANY')][0].postalCode",
+              "description": "Appraisal Co Zip"
+            },
+            {
+              "fieldId": "vend.x694",
+              "jsonPath": "$.contacts[?(@.contactType == 'APPRAISAL_COMPANY')][0].license",
+              "description": "File Contacts Appraiser Business  License No "
+            },
+            {
+              "fieldId": "vend.x692",
+              "jsonPath": "$.contacts[?(@.contactType == 'APPRAISAL_COMPANY')][0].bizLicenseAuthStateCode",
+              "description": "File Contacts Appraiser Business License Auth Sate Code"
+            },
+            {
+              "fieldId": "618",
+              "jsonPath": "$.contacts[?(@.contactType == 'APPRAISAL_COMPANY')][0].contactName",
+              "description": "Appraisal Co Contact Name"
+            },
+            {
+              "fieldId": "974",
+              "jsonPath": "$.contacts[?(@.contactType == 'APPRAISAL_COMPANY')][0].personalLicenseNumber",
+              "description": "Appraiser License"
+            },
+            {
+              "fieldId": "vend.X697",
+              "jsonPath": "$.contacts[?(@.contactType == 'APPRAISAL_COMPANY')][0].personalLicenseAuthStateCode",
+              "description": "Appraiser License State Code"
+            },
+            {
+              "fieldId": "622",
+              "jsonPath": "$.contacts[?(@.contactType == 'APPRAISAL_COMPANY')][0].phone",
+              "description": "Appraisal Co Phone"
+            },
+            {
+              "fieldId": "1246",
+              "jsonPath": "$.contacts[?(@.contactType == 'APPRAISAL_COMPANY')][0].fax",
+              "description": "Appraisal Co Fax"
+            },
+            {
+              "fieldId": "89",
+              "jsonPath": "$.contacts[?(@.contactType == 'APPRAISAL_COMPANY')][0].email",
+              "description": "Appraiser Email"
+            },
+            {
+              "fieldId": "3243",
+              "jsonPath": "$.underwriterSummary.supervisoryAppraiserLicenseNumber",
+              "description": "Supervisory Appraiser License"
+            },
+            {
+              "fieldId": "2356",
+              "jsonPath": "$.underwriterSummary.appraisalType",
+              "description": "Appraisal Form Type"
+            },
+            {
+              "fieldId": "ULDD.FNM.PropertyFormType",
+              "jsonPath": "$.uldd.fanniePropertyFormType",
+              "description": "Property Valuation Form Type"
+            },
+            {
+              "fieldId": "2353",
+              "jsonPath": "$.underwriterSummary.appraisalCompletedDate",
+              "description": "Appraisal Completed Date"
+            },
+            {
+              "fieldId": "641",
+              "jsonPath": "$.fees[?(@.feeType == 'AppraisalFee')][0].borPaidAmount",
+              "description": "Appraisal Fee"
+            },
+            {
+              "fieldId": "18",
+              "jsonPath": "$.property.structureBuiltYear",
+              "description": "year built"
+            },
+            {
+              "fieldId": "700",
+              "jsonPath": "$.hmda.censusTrack",
+              "description": "Census Tract"
+            },
+            {
+              "fieldId": "TSUM.X5",
+              "jsonPath": "$.tsum.bedroomsUnit1",
+              "description": "Bedrooms - Unit 1"
+            },
+            {
+              "fieldId": "TSUM.X6",
+              "jsonPath": "$.tsum.bedroomsUnit2",
+              "description": "Bedrooms - Unit 2"
+            },
+            {
+              "fieldId": "TSUM.X7",
+              "jsonPath": "$.tsum.bedroomsUnit3",
+              "description": "Bedrooms - Unit 3"
+            },
+            {
+              "fieldId": "TSUM.X8",
+              "jsonPath": "$.tsum.bedroomsUnit4",
+              "description": "Bedrooms - Unit 4"
+            },
+            {
+              "fieldId": "ULDD.X170",
+              "jsonPath": "$.uldd.unit1TotalBedrooms",
+              "description": "Bedrooms - Unit 1"
+            },
+            {
+              "fieldId": "ULDD.X160",
+              "jsonPath": "$.uldd.unit2TotalBedrooms",
+              "description": "Bedrooms - Unit 2"
+            },
+            {
+              "fieldId": "ULDD.X162",
+              "jsonPath": "$.uldd.unit3TotalBedrooms",
+              "description": "Bedrooms - Unit 3"
+            },
+            {
+              "fieldId": "ULDD.X164",
+              "jsonPath": "$.uldd.unit4TotalBedrooms",
+              "description": "Bedrooms - Unit 4"
+            },
+            {
+              "fieldId": "VASUMM.X12",
+              "jsonPath": "$.vaLoanData.totalBedrooms",
+              "description": "Total Bedrooms"
+            },
+            {
+              "fieldId": "2369",
+              "jsonPath": "$.contacts[?(@.contactType == 'FLOOD_INSURANCE')][0].insuranceNoOfBedrooms",
+              "description": "Total Bedrooms"
+            },
+            {
+              "fieldId": "VASUMM.X11",
+              "jsonPath": "$.vaLoanData.totalBaths",
+              "description": "Total bathrooms"
+            },
+            {
+              "fieldId": "VASUMM.X10",
+              "jsonPath": "$.vaLoanData.totalRooms",
+              "description": "Total rooms"
+            },
+            {
+              "fieldId": "VASUMM.X7",
+              "jsonPath": "$.vaLoanData.propertyGrossLivingArea",
+              "description": "Total Gross Living Area"
+            },
+            {
+              "fieldId": "3245",
+              "jsonPath": "$.property.numberOfStories",
+              "description": "Total Number of Stories"
+            },
+            {
+              "fieldId": "1096",
+              "jsonPath": "$.vaLoanData.utilitiesElectricDescription",
+              "description": "Utilities - Electric"
+            },
+            {
+              "fieldId": "1097",
+              "jsonPath": "$.vaLoanData.utilitiesGasDescription",
+              "description": "Utilities - Gas"
+            },
+            {
+              "fieldId": "1098",
+              "jsonPath": "$.vaLoanData.utilitiesWaterDescription",
+              "description": "Utilities - water"
+            },
+            {
+              "fieldId": "1099",
+              "jsonPath": "$.vaLoanData.utilitiesSewerDescription",
+              "description": "Utilities - sewer"
+            },
+            {
+              "fieldId": "1031",
+              "jsonPath": "$.vaLoanData.annualRealEstateTaxes",
+              "description": "Annual Real Estate Taxes"
+            },
+            {
+              "fieldId": "601",
+              "jsonPath": "$.property.buildingStatusType",
+              "description": "Building Status Type"
+            },
+            {
+              "fieldId": "602",
+              "jsonPath": "$.vaLoanData.buildingType",
+              "description": "Building Type"
+            },
+            {
+              "fieldId": "728",
+              "jsonPath": "$.vaLoanData.propertyOccupancyType",
+              "description": "Occupancy Type"
+            },
+            {
+              "fieldId": "1142",
+              "jsonPath": "$.commitmentTerms.estimatedRemainingYears",
+              "description": "Est. Remaining Economic Life"
+            },
+            {
+              "fieldId": "17",
+              "jsonPath": "$.property.legalDescriptionText1",
+              "description": "Legal Description"
+            },
+            {
+              "fieldId": "1042",
+              "jsonPath": "$.vaLoanData.lotDimensions",
+              "description": "Lot Dimension"
+            },
+            {
+              "fieldId": "1043",
+              "jsonPath": "$.vaLoanData.irregularLotSizeInSquareFeet",
+              "description": "Lot Square Footage - Irregular Size"
+            },
+            {
+              "fieldId": "720",
+              "jsonPath": "$.vaLoanData.streetAccess",
+              "description": "Street Access"
+            },
+            {
+              "fieldId": "721",
+              "jsonPath": "$.vaLoanData.streetMaintenance",
+              "description": "Street Maintenance"
+            },
+            {
+              "fieldId": "1894",
+              "jsonPath": "$.property.assessorsParcelIdentifier",
+              "description": "Property Parcel #"
+            },
+            {
+              "fieldId": "1066",
+              "jsonPath": "$.property.propertyRightsType",
+              "description": "Property.Property Rights"
+            },
+            {
+              "fieldId": "2996",
+              "jsonPath": "$.hudLoanData.propertyType",
+              "description": "Property Type"
+            },
+            {
+              "fieldId": "HMDA.X11",
+              "jsonPath": "$.hmda.propertyType",
+              "description": "property type"
+            },
+            {
+              "fieldId": "1298",
+              "jsonPath": "$.tsum.projectName",
+              "description": "project name"
+            },
+            {
+              "fieldId": "3050",
+              "jsonPath": "$.tsum.cpmProjectId",
+              "description": "project id"
+            },
+            {
+              "fieldId": "ULDD.X28",
+              "jsonPath": "$.uldd.condominiumProjectStatusType",
+              "description": "project status"
+            },
+            {
+              "fieldId": "ULDD.X140",
+              "jsonPath": "$.uldd.projectDesignType",
+              "description": "project design type"
+            },
+            {
+              "fieldId": "ULDD.X141",
+              "jsonPath": "$.uldd.freddieProjectClassificationType",
+              "description": "project classification type"
+            },
+            {
+              "fieldId": "ULDD.X142",
+              "jsonPath": "$.uldd.fannieProjectClassificationType",
+              "description": "project classification type"
+            },
+            {
+              "fieldId": "ULDD.X143",
+              "jsonPath": "$.uldd.projectAttachmentType",
+              "description": "project attachment type"
+            },
+            {
+              "fieldId": "ULDD.X176",
+              "jsonPath": "$.uldd.projectUnitCount",
+              "description": "project unit count"
+            },
+            {
+              "fieldId": "ULDD.X138",
+              "jsonPath": "$.uldd.NumberOfUnitsSold",
+              "description": "project units sold"
+            },
+            {
+              "fieldId": "ULDD.X182",
+              "jsonPath": "$.uldd.gSEProjectType",
+              "description": "project type"
+            }
+          ]
+        }
+      }]
+    }
+  }
+}

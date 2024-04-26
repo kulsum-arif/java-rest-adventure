@@ -1,0 +1,464 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "searchTime": {
+      "$ref": "#/definitions/dateTimeField",
+      "description": ""
+    },
+    "product": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "lastUpdated": {
+          "$ref": "#/definitions/dateTimeField"
+        },
+        "lienPosition": {
+          "type": "string",
+          "enum": [
+            "FirstLien",
+            "SecondLien",
+            "ThirdLien"
+          ]
+        },
+        "representativeScore": {
+          "$ref": "#/definitions/integerField"
+        },
+        "lenderName": {
+          "type": "string"
+        },
+        "userLender": {
+          "type": "string"
+        },
+        "relationship": {
+          "type": "string"
+        },
+        "program": {
+          "$ref": "#/definitions/programItem"
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "FHA",
+            "Conforming",
+            "NonConforming",
+            "HELOC",
+            "USDARuralHousing"
+          ]
+        },
+        "loanTerm": {
+          "$ref": "#/definitions/integerField"
+        },
+        "loanTermInMonths": {
+          "$ref": "#/definitions/integerField"
+        },
+        "interestOnly": {
+          "type": "boolean"
+        },
+        "waiveEscrow": {
+          "type": "boolean"
+        },
+        "isHeloc": {
+          "type": "boolean"
+        },
+        "heloc": {
+          "$ref": "#/definitions/helocItem"
+        },
+        "amount": {
+          "$ref": "#/definitions/integerField"
+        },
+        "cashout": {
+          "$ref": "#/definitions/integerField"
+        },
+        "genericName": {
+          "type": "string"
+        },
+        "userProgramName": {
+          "type": "string"
+        },
+        "lenderVisible": {
+          "type": "boolean"
+        },
+        "creditScore": {
+          "$ref": "#/definitions/integerField"
+        },
+        "productTypeId": {
+          "$ref": "#/definitions/integerField"
+        },
+        "productType": {
+          "type": "string"
+        },
+        "specialProduct": {
+          "type": "string"
+        },
+        "specialProductId": {
+          "type": "integer"
+        },
+        "selfEmploymentIndicator": {
+          "type": "boolean"
+        },
+        "documentationId": {
+          "$ref": "#/definitions/integerField"
+        },
+        "documentationLevel": {
+          "type": "string"
+        },
+        "prepaymentPenalty": {
+          "type": "integer"
+        },
+        "rate": {
+          "$ref": "#/definitions/numericField"
+        },
+        "qualifiedRate": {
+          "$ref": "#/definitions/numericField"
+        },
+        "price": {
+          "$ref": "#/definitions/numericField"
+        },
+        "holdback": {
+          "$ref": "#/definitions/numericField"
+        },
+        "rateDate": {
+          "$ref": "#/definitions/dateTimeField"
+        },
+        "lockDays": {
+          "type": "integer"
+        },
+        "displayedLockDays": {
+          "type": "integer"
+        },
+        "userLockDays": {
+          "type": "integer"
+        },
+        "commission": {
+          "$ref": "#/definitions/numericField"
+        },
+        "commissionDollar": {
+          "$ref": "#/definitions/numericField"
+        },
+        "principalAndInterest": {
+          "$ref": "#/definitions/integerField"
+        },
+        "taxInsurance": {
+          "$ref": "#/definitions/numericField"
+        },
+        "totalPayment": {
+          "$ref": "#/definitions/numericField"
+        },
+        "reserves": {
+          "$ref": "#/definitions/reservesItem"
+        },
+        "qualifiedDate": {
+          "$ref": "#/definitions/dateTimeField"
+        },
+        "repaymentPeriodMonths": {
+          "$ref": "#/definitions/integerField"
+        },
+        "introRate": {
+          "$ref": "#/definitions/integerField"
+        },
+        "introPeriod": {
+          "$ref": "#/definitions/integerField"
+        },
+        "drawPeriodMonths": {
+          "$ref": "#/definitions/integerField"
+        },
+        "interestRateCap": {
+          "$ref": "#/definitions/numericField"
+        },
+        "minimumMonthlyPayment": {
+          "$ref": "#/definitions/integerField"
+        },
+        "minimumAmount": {
+          "$ref": "#/definitions/integerField"
+        },
+        "paymentFactor": {
+          "$ref": "#/definitions/integerField"
+        },
+        "qualificationPayment": {
+          "$ref": "#/definitions/qualificationPaymentItem"
+        },
+        "fractionBalanceQualificationPayment": {
+          "$ref": "#/definitions/fractionBalanceQualificationPaymentItem"
+        },
+        "percentOfBalanceQualificationPayment": {
+          "$ref": "#/definitions/integerField"
+        },
+        "qualifyingTermMonths": {
+          "$ref": "#/definitions/integerField"
+        },
+        "qualifyingBalance": {
+          "type": "string"
+        },
+        "qualifyingPaymentDays": {
+          "type": "string"
+        },
+        "initialPayment": {
+          "$ref": "#/definitions/initialPaymentItem"
+        },
+        "initialTermMonths": {
+          "$ref": "#/definitions/integerField"
+        },
+        "balanceUsed": {
+          "type": "string"
+        },
+        "initialPaymentDays": {
+          "type": "string"
+        },
+        "maventIndexCode": {
+          "type": "string"
+        },
+        "condotelIndicator": {
+          "type": "boolean"
+        },
+        "nonWarrantableCondoIndicator": {
+          "type": "boolean"
+        },
+        "programInterestOnly": {
+          "type": "boolean"
+        },
+        "apor": {
+          "$ref": "#/definitions/numericField"
+        },
+        "lates": {
+          "type": "string"
+        },
+        "indexValue": {
+          "$ref": "#/definitions/integerField"
+        },
+        "indexEffectiveDate": {
+          "$ref": "#/definitions/dateTimeField"
+        },
+        "payment": {
+          "$ref": "#/definitions/integerField"
+        },
+        "adjustments": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/adjustmentItem"
+          },
+          "minItems": 1,
+          "description": ""
+        },
+        "priceTable": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "adjustments"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "searchTime",
+    "product"
+  ],
+  "additionalProperties": false,
+  "definitions": {
+    "integerField": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "numericField": {
+      "type": "number",
+      "multipleOf": 0.001
+    },
+    "adjustmentNumericField": {
+      "type": "number",
+      "multipleOf": 0.001
+    },
+    "dateField": {
+      "type": "string",
+      "format": "date"
+    },
+    "dateTimeField": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "programItem": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "typeId": {
+          "type": "integer"
+        },
+        "typeName": {
+          "type": "string"
+        },
+        "options": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "code",
+        "name"
+      ],
+      "additionalProperties": false
+    },
+    "helocItem": {
+      "type": "object",
+      "properties": {
+        "initialPmtBasis": {
+          "type": "boolean"
+        },
+        "pmtBasisFractionOfBal": {
+          "type": "boolean"
+        },
+        "pmtBasisPercentageOfBal": {
+          "type": "boolean"
+        },
+        "forceMinQualPmt": {
+          "type": "boolean"
+        },
+        "forceMinInitialPmt": {
+          "type": "boolean"
+        },
+        "initialPmtPI": {
+          "type": "boolean"
+        },
+        "pmtBasis": {
+          "type": "boolean"
+        },
+        "initialPmtBasisFractionOfBal": {
+          "type": "boolean"
+        },
+        "initialPmtBasisPercentageOfBal": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "initialPmtBasis"
+      ],
+      "additionalProperties": false
+    },
+    "reservesItem": {
+      "type": "object",
+      "properties": {
+        "determinedByAUS": {
+          "type": "boolean"
+        },
+        "reserves": {
+          "type": "integer"
+        },
+        "months": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "months"
+      ],
+      "additionalProperties": false
+    },
+    "qualificationPaymentItem": {
+      "type": "object",
+      "properties": {
+        "rate": {
+          "type": "string"
+        },
+        "margin": {
+          "type": "string"
+        },
+        "percent": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "rate"
+      ],
+      "additionalProperties": false
+    },
+    "fractionBalanceQualificationPaymentItem": {
+      "type": "object",
+      "properties": {
+        "number": {
+          "type": "integer"
+        },
+        "denominator": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "number",
+        "denominator"
+      ],
+      "additionalProperties": false
+    },
+    "initialPaymentItem": {
+      "type": "object",
+      "properties": {
+        "rate": {
+          "type": "string"
+        },
+        "margin": {
+          "type": "string"
+        },
+        "percent": {
+          "type": "integer"
+        },
+        "fractionBalanceNumber": {
+          "type": "integer"
+        },
+        "fractionBalanceDenominator": {
+          "type": "integer"
+        },
+        "balancePercent": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "rate",
+        "margin",
+        "percent"
+      ],
+      "additionalProperties": false
+    },
+    "adjustmentItem": {
+      "type": "object",
+      "properties": {
+        "adjustmentType": {
+          "type": "string",
+          "enum": [
+            "BasePrice",
+            "BaseMargin",
+            "BaseRate",
+            "ProfitMargin"
+          ]
+        },
+        "description": {
+          "type": "string"
+        },
+        "price": {
+          "type": "integer"
+        },
+        "rate": {
+          "type": "integer"
+        },
+        "margin": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "adjustmentType",
+        "description",
+        "price",
+        "rate",
+        "margin"
+      ],
+      "additionalProperties": false
+    },
+    "additionalProperties": false
+  }
+}

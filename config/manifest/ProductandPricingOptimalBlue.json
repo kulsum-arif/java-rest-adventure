@@ -1,0 +1,463 @@
+{
+  "partnerId": "<TBD>",
+  "name": "ProductandPricingOptimalBlue",
+  "partnerUrl": "",
+  "integrationType": "P2P",
+  "listingName": "ProductandPricingOptimalBlue",
+  "requestTypes": [
+    "SEARCH"
+  ],
+  "entitlements": {
+    "data": {
+      "origin": {
+        "fields": []
+      },
+      "transactions": [{
+        "requestTypes": [
+          "SEARCH"
+        ],
+        "request": {
+          "fields": [{
+              "jsonPath": "$.applications[0].borrower.taxIdentificationIdentifier",
+              "fieldId": "65",
+              "description": "Borr SSN"
+            },
+            {
+              "jsonPath": "$.applications[0].coborrower.taxIdentificationIdentifier",
+              "fieldId": "65",
+              "description": "Borr SSN"
+            },
+            {
+              "jsonPath": "$.applications[1].borrower.taxIdentificationIdentifier",
+              "fieldId": "65",
+              "description": "Borr SSN"
+            },
+            {
+              "jsonPath": "$.applications[2].coborrower.taxIdentificationIdentifier",
+              "fieldId": "65",
+              "description": "Borr SSN"
+            },
+            {
+              "jsonPath": "$.loanProductData.loanDocumentationType",
+              "fieldId": "MORNET.X67",
+              "description": "Fannie Mae Loan Doc Type Code"
+            },
+            {
+              "jsonPath": "$.applications[0].bottomRatioPercent",
+              "fieldId": "742",
+              "description": "Trans Details Qual Ratio Bottom"
+            },
+            {
+              "jsonPath": "$.applications[0].borrower.pledgedAssets",
+              "fieldId": "",
+              "description": "Not Supported"
+            },
+            {
+              "jsonPath": "$.applications[0].borrower.declarationsJIndicator",
+              "fieldId": "965",
+              "description": "Borr Declarations J"
+            },
+            {
+              "jsonPath": "$.applications[0].borrower.declarationsKIndicator",
+              "fieldId": "466",
+              "description": "Borr Declarations K"
+            },
+            {
+              "jsonPath": "$.applications[0].borrower.minFicoScore",
+              "fieldId": "2849",
+              "description": "Borr Actual FICO Score"
+            },
+            {
+              "jsonPath": "$.applications[0].borrower.firstName",
+              "fieldId": "4000",
+              "description": "Borrower First Name"
+            },
+            {
+              "jsonPath": "$.applications[0].borrower.lastName",
+              "fieldId": "4002",
+              "description": "Borrower Last Name"
+            },
+            {
+              "jsonPath": "$.applications[0].borrower.middleName",
+              "fieldId": "4001",
+              "description": "Borrower Middle Name"
+            },
+            {
+              "jsonPath": "$.applications[0].borrower.suffixToName",
+              "fieldId": "4003",
+              "description": "Borrower Suffix Name"
+            },
+            {
+              "jsonPath": "$.applications[0].borrower.residences[?(@.mailingAddressIndicator == false && @.residencyType == 'Current')][0].addressStreetLine1",
+              "fieldId": "FR0104",
+              "description": "Borr Present Addr"
+            },
+            {
+              "jsonPath": "$.applications[0].borrower.residences[?(@.mailingAddressIndicator == false && @.residencyType == 'Current')][0].addressCity",
+              "fieldId": "FR0106",
+              "description": "Borr Present City"
+            },
+            {
+              "jsonPath": "$.applications[0].borrower.residences[?(@.mailingAddressIndicator == false && @.residencyType == 'Current')][0].addressState",
+              "fieldId": "FR0107",
+              "description": "Borr Present State"
+            },
+            {
+              "jsonPath": "$.applications[0].borrower.residences[?(@.mailingAddressIndicator == false && @.residencyType == 'Current')][0].addressPostalCode",
+              "fieldId": "FR0108",
+              "description": "Borr Present Zip"
+            },
+            {
+              "jsonPath": "$.applications[0].borrower.homePhoneNumber",
+              "fieldId": "VAELIG.X74",
+              "description": "VA Veteran Daytime Phone"
+            },
+            {
+              "jsonPath": "$.applications[0].borrower.employment[?(@.currentEmploymentIndicator == true)][0].phoneNumber",
+              "fieldId": "FE0117",
+              "description": "Borr Business Phone"
+            },
+            {
+              "jsonPath": "$.applications[0].borrower.mobilePhone",
+              "fieldId": "1490",
+              "description": "Borr Cell"
+            },
+            {
+              "jsonPath": "$.applications[0].borrower.emailAddressText",
+              "fieldId": "1240",
+              "description": "Borr Email"
+            },
+            {
+              "jsonPath": "$.applications[0].borrower.birthDate",
+              "fieldId": "1402",
+              "description": "Borr DOB"
+            },
+            {
+              "jsonPath": "$.vaLoanData.firstTimeUse",
+              "fieldId": "VASUMM.X49",
+              "description": "VA Loan Summ 1st Time Use VA Loan Program"
+            },
+            {
+              "jsonPath": "$.applications[0].borrower.totalMonthlyIncomeMinusNetRentalAmount",
+              "fieldId": "910",
+              "description": "Income Borr Total income"
+            },
+            {
+              "jsonPath": "$.tsum.numberOfMonthsReserves",
+              "fieldId": "1548",
+              "description": "Borr Funds to Close - Mos Resrv"
+            },
+            {
+              "jsonPath": "$.applications[0].borrower.pass30Days",
+              "fieldId": "2558",
+              "description": "Underwriting Mortgage 30 Days"
+            },
+            {
+              "jsonPath": "$.applications[0].borrower.pass60Days",
+              "fieldId": "2559",
+              "description": "Underwriting Mortgaget 60 Days"
+            },
+            {
+              "jsonPath": "$.applications[0].borrower.pass90Days",
+              "fieldId": "2560",
+              "description": "Underwriting Mortgage 90 Days"
+            },
+            {
+              "jsonPath": "$.applications[0].borrower.pass120Days",
+              "fieldId": "2561",
+              "description": "Underwriting Mortgage 120 Days"
+            },
+            {
+              "jsonPath": "$.firstTimeHomebuyersIndicator",
+              "fieldId": "934",
+              "description": "Borr First Time Homebuyer"
+            },
+            {
+              "jsonPath": "$.applications[0].borrower.employment[?(@.currentEmploymentIndicator == true)][0].selfEmployedIndicator",
+              "fieldId": "FE0115",
+              "description": "Borr Self Employed"
+            },
+            {
+              "jsonPath": "$.rateLock.impoundWavied",
+              "fieldId": "2293",
+              "description": "Trans Details Impounds Waived"
+            },
+            {
+              "jsonPath": "$.applications[0].borrower.bankruptcyIndicator",
+              "fieldId": "265",
+              "description": "Borr Declarations B"
+            },
+            {
+              "jsonPath": "$.applications[0].borrower.dateOfBankruptcy",
+              "fieldId": "2340",
+              "description": "Underwriting Date of Bankruptcy"
+            },
+            {
+              "jsonPath": "$.applications[0].borrower.openBankruptcy2",
+              "fieldId": "2568",
+              "description": "Underwriting Open Bankruptcy"
+            },
+            {
+              "jsonPath": "$.applications[0].borrower.priorBankruptcy2",
+              "fieldId": "2569",
+              "description": "Underwriting Prior Bankruptcy"
+            },
+            {
+              "jsonPath": "$.applications[0].borrower.bankruptcyStatus",
+              "fieldId": "2570",
+              "description": "Underwriting Bankruptcy Status"
+            },
+            {
+              "jsonPath": "$.vaLoanData.typeOfVeteran",
+              "fieldId": "VAVOB.X72",
+              "description": "VA Veteran Type"
+            },
+            {
+              "jsonPath": "$.applications[0].coborrower.firstName",
+              "fieldId": "4004",
+              "description": "Co-Borrower First Name"
+            },
+            {
+              "jsonPath": "$.applications[0].coborrower.lastName",
+              "fieldId": "4006",
+              "description": "Co-Borrower Last Name"
+            },
+            {
+              "jsonPath": "$.applications[0].coborrower.middleName",
+              "fieldId": "4005",
+              "description": "Co-Borrower Middle Name"
+            },
+            {
+              "jsonPath": "$.applications[0].coborrower.suffixToName",
+              "fieldId": "4007",
+              "description": "Co-Borrower Suffix Name"
+            },
+            {
+              "jsonPath": "$.applications[0].coborrower.minFicoScore",
+              "fieldId": "2850",
+              "description": "Co-Borr Actual FICO Score"
+            },
+            {
+              "jsonPath": "$.applications[0].coborrower.birthDate",
+              "fieldId": "1403",
+              "description": "Co-Borr DOB"
+            },
+            {
+              "jsonPath": "$.applications[0].coborrower.residences[?(@.mailingAddressIndicator == false && @.residencyType == 'Current')][0].addressStreetLine1",
+              "fieldId": "FR0204",
+              "description": "Co-Borr Present Addr"
+            },
+            {
+              "jsonPath": "$.applications[0].coborrower.residences[?(@.mailingAddressIndicator == false && @.residencyType == 'Current')][0].addressCity",
+              "fieldId": "FR0206",
+              "description": "Co-Borr Present City"
+            },
+            {
+              "jsonPath": "$.applications[0].coborrower.residences[?(@.mailingAddressIndicator == false && @.residencyType == 'Current')][0].addressState",
+              "fieldId": "FR0207",
+              "description": "Co-Borr Present State"
+            },
+            {
+              "jsonPath": "$.applications[0].coborrower.residences[?(@.mailingAddressIndicator == false && @.residencyType == 'Current')][0].addressPostalCode",
+              "fieldId": "FR0208",
+              "description": "Co-Borr Present Zip"
+            },
+            {
+              "jsonPath": "$.applications[0].coborrower.homePhoneNumber",
+              "fieldId": "98",
+              "description": "Co-Borr Home Phone"
+            },
+            {
+              "jsonPath": "$.applications[0].coborrower.employment[?(@.currentEmploymentIndicator == true)][0].phoneNumber",
+              "fieldId": "FE0217",
+              "description": "Co-Borr Business Phone"
+            },
+            {
+              "jsonPath": "$.applications[0].coborrower.emailAddressText",
+              "fieldId": "1268",
+              "description": "Co-Borr Email"
+            },
+            {
+              "jsonPath": "$.applications[0].coborrower.intentToOccupyIndicator",
+              "fieldId": "1343",
+              "description": "Co-Borr Declarations L"
+            },
+            {
+              "jsonPath": "$.baseLoanAmount",
+              "fieldId": "2",
+              "description": "Trans Details Total Loan Amt (w/ MIP/FF)"
+            },
+            {
+              "jsonPath": "$.miAndFundingFeeFinancedAmount",
+              "fieldId": "1045",
+              "description": "Trans Details PMI/MIP/FF Financed"
+            },
+            {
+              "jsonPath": "$.property.loanPurposeType",
+              "fieldId": "19",
+              "description": "Trans Details Loan Purpose"
+            },
+            {
+              "jsonPath": "$.property.condotelIndicator",
+              "fieldId": "3315",
+              "description": "Property Info Is Condotel"
+            },
+            {
+              "jsonPath": "$.property.nonwarrantableProjectIndicator",
+              "fieldId": "3316",
+              "description": "Property Info Is Non-Warrantable Project"
+            },
+            {
+              "jsonPath": "$.loanProductData.lienPriorityType",
+              "fieldId": "420",
+              "description": "Trans Details Lien Position"
+            },
+            {
+              "jsonPath": "$.applications[0].atrqmBorrowers[0].underwritingRiskAssessType",
+              "fieldId": "AUSF.X1",
+              "description": "AUS Tracking - Latest Submission - Underwriting Risk Assess Type"
+            },
+            {
+              "jsonPath": "$.pmiIndicator",
+              "fieldId": "3336",
+              "description": "Private Mortgage Insurance Indicator"
+            },
+            {
+              "jsonPath": "$.uldd.refinanceCashOutAmount",
+              "fieldId": "ULDD.RefinanceCashOutAmount",
+              "description": "Refinance Cash Out Amount"
+            },
+            {
+              "jsonPath": "$.uldd.projectDesignType",
+              "fieldId": "ULDD.X140",
+              "description": "Project Design Type"
+            },
+            {
+              "jsonPath": "$.uldd.manufacturedHomeWidthType",
+              "fieldId": "ULDD.ManufacturedHomeWidthType",
+              "description": "ULDD Manufactured Home Width Type"
+            },
+            {
+              "jsonPath": "$.options.desiredPrice",
+              "fieldId": "",
+              "description": ""
+            },
+            {
+              "jsonPath": "$.options.desiredRate",
+              "fieldId": "",
+              "description": ""
+            },
+            {
+              "jsonPath": "$.regulationZ.interestOnlyIndicator",
+              "fieldId": "2982",
+              "description": "Trans Details Interest Only Indicator"
+            },
+            {
+              "jsonPath": "$.propertyAppraisedValueAmount",
+              "fieldId": "356",
+              "description": "Subject Property Appraised Value"
+            },
+            {
+              "jsonPath": "$.applications[0].propertyUsageType",
+              "fieldId": "1811",
+              "description": "Subject Property Occupancy Status"
+            },
+            {
+              "jsonPath": "$.property.streetAddress",
+              "fieldId": "11",
+              "description": "Subject Property Street"
+            },
+            {
+              "jsonPath": "$.property.city",
+              "fieldId": "12",
+              "description": "Subject Property City"
+            },
+            {
+              "jsonPath": "$.property.county",
+              "fieldId": "13",
+              "description": "Subject Property County"
+            },
+            {
+              "jsonPath": "$.property.state",
+              "fieldId": "14",
+              "description": "Subject Property State"
+            },
+            {
+              "jsonPath": "$.property.postalCode",
+              "fieldId": "15",
+              "description": "Subject Property Zip"
+            },
+            {
+              "jsonPath": "$.loanProductData.gsePropertyType",
+              "fieldId": "1041",
+              "description": "Subject Property Type Fannie Mae"
+            },
+            {
+              "jsonPath": "$.purchasePriceAmount",
+              "fieldId": "136",
+              "description": "Trans Details Purchase Price"
+            },
+            {
+              "jsonPath": "$.property.numberOfStories",
+              "fieldId": "3245",
+              "description": "Property Info Number of Stories"
+            },
+            {
+              "jsonPath": "$.property.financedNumberOfUnits",
+              "fieldId": "16",
+              "description": "Subject Property # Units"
+            },
+            {
+              "jsonPath": "$.applications[0].borrower.loanForeclosureOrJudgementIndicator",
+              "fieldId": "1057",
+              "description": "Borr Declarations E"
+            },
+            {
+              "jsonPath": "$.regulationZ.initialDisclosureProvidedDate",
+              "fieldId": "3144",
+              "description": "Initial Disclosure Provided Date"
+            },
+            {
+              "jsonPath": "$.property.gseRefinancePurposeType",
+              "fieldId": "299",
+              "description": "Loan Info Refi Purpose"
+            },
+            {
+              "jsonPath": "$.loanPurposeOfRefinanceType",
+              "fieldId": "MORNET.X40",
+              "description": "Refinance Type"
+            },
+            {
+              "jsonPath": "$.miAndFundingFeeTotalAmount",
+              "fieldId": "969",
+              "description": "Trans Details PMI/MIP/FF Amt"
+            },
+            {
+              "jsonPath": "$.rateLock.penaltyTerm",
+              "fieldId": "2217",
+              "description": "Trans Details Penalty Term"
+            },
+            {
+              "jsonPath": "$.vaLoanData.fundingFeeExempt",
+              "fieldId": "990",
+              "description": "VA Loan Summ Discount Info"
+            },
+            {
+              "jsonPath": "$.loCompensation.whoPaidCompensation",
+              "fieldId": "LCP.X1",
+              "description": "Loan Compensation Plan - Brrower/Lender Paid"
+            },
+            {
+              "jsonPath": "$.leadSource",
+              "fieldId": "2976",
+              "description": "Loan Info Lead Source"
+            }
+          ]
+        },
+        "response": {
+          "fields": []
+        }
+      }]
+    }
+  }
+}

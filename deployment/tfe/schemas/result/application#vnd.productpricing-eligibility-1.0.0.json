@@ -1,0 +1,127 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "product": {
+      "type": "object",
+      "properties": {
+        "productId": {
+          "type": "string"
+        },
+        "eligible": {
+          "type": "boolean"
+        },
+        "ineligibleReason": {
+          "type": "string",
+          "description": ""
+        },
+        "adjustments": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/adjustmentItem"
+          },
+          "minItems": 1,
+          "description": ""
+        }
+      },
+      "if": {
+        "properties": {
+          "eligible": {
+            "enum": [
+              false
+            ]
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "ineligibleReason"
+        ]
+      },
+      "required": [
+        "productId",
+        "eligible",
+        "adjustments"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "product"
+  ],
+  "additionalProperties": false,
+  "definitions": {
+    "integerField": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "numericField": {
+      "type": "number",
+      "multipleOf": 0.0001
+    },
+    "adjustmentNumericField": {
+      "type": "number",
+      "multipleOf": 0.0001
+    },
+    "dateField": {
+      "type": "string",
+      "format": "date"
+    },
+    "dateTimeField": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "adjustmentItem": {
+      "type": "object",
+      "properties": {
+        "displayOrder": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "rate": {
+          "$ref": "#/definitions/adjustmentNumericField",
+          "description": ""
+        },
+        "price": {
+          "$ref": "#/definitions/adjustmentNumericField",
+          "description": ""
+        },
+        "priceVal": {
+          "$ref": "#/definitions/adjustmentNumericField",
+          "description": ""
+        },
+        "margin": {
+          "$ref": "#/definitions/integerField",
+          "description": ""
+        },
+        "admin": {
+          "type": "boolean"
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "Adjustment",
+            "Holdback",
+            "SRP",
+            "Compensation",
+            "L.O. Compensation",
+            "Base",
+            "Final",
+            "AllIn"
+          ]
+        },
+        "typeDescription": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "rate",
+        "price",
+        "type"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

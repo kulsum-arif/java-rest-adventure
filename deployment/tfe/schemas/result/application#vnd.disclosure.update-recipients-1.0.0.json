@@ -1,0 +1,245 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "validationMessage": {
+    "invalid-alpha-numeric-string": "a valid String. Please provide a valid String that does not contain leading or trailing spaces.",
+    "any-of-type-viewed": "At least one of [consentDate, messageDate, eSignedDate, wetSignedDate] is required for type=viewed",
+    "any-of-type-accepted": "At least one of [consentDate, ip] is required for type=accepted",
+    "any-of-type-rejected": "At least one of [consentDate, ip] is required for type=rejected",
+    "any-of-type-authenticated": "At least one of [date, ip] is required for type=authenticated",
+    "date-time-pattern": "DateTime should be in UTC format Ex: [yyyy-MM-dd'T'HH:mm:ssZ]."
+  },
+  "properties": {
+    "disclosureRecipients": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/recipient-item"
+      },
+      "minItems": 1,
+      "description": "disclosure recipient object"
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "disclosureRecipients"
+  ],
+  "definitions": {
+    "recipient-item": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/non-empty-alpha-numeric-string"
+        },
+        "eSignedDate": {
+          "$ref": "#/definitions/date-time-format"
+        },
+        "eSignedIP": {
+          "type": "string"
+        },
+        "wetSignedDate": {
+          "$ref": "#/definitions/date-time-format"
+        },
+        "actions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/action-item"
+          },
+          "minItems": 1,
+          "description": "disclosure recipient action items"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "id"
+      ]
+    },
+    "action-item": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "viewed",
+            "accepted",
+            "rejected",
+            "authenticated"
+          ]
+        },
+        "consentDate": {
+          "$ref": "#/definitions/date-time-format"
+        },
+        "messageDate": {
+          "$ref": "#/definitions/date-time-format"
+        },
+        "eSignedDate": {
+          "$ref": "#/definitions/date-time-format"
+        },
+        "wetSignedDate": {
+          "$ref": "#/definitions/date-time-format"
+        },
+        "ip": {
+          "type": "string"
+        },
+        "date": {
+          "$ref": "#/definitions/date-time-format"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "type"
+      ],
+      "dependencies": {
+        "type": {
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "type": {
+                    "const": "viewed"
+                  }
+                }
+              },
+              "then": {
+                "anyOf": [
+                  {
+                    "required": [
+                      "consentDate"
+                    ],
+                    "validationMessage": {
+                      "$ref": "#/validationMessage/any-of-type-viewed"
+                    }
+                  },
+                  {
+                    "required": [
+                      "messageDate"
+                    ],
+                    "validationMessage": {
+                      "$ref": "#/validationMessage/any-of-type-viewed"
+                    }
+                  },
+                  {
+                    "required": [
+                      "eSignedDate"
+                    ],
+                    "validationMessage": {
+                      "$ref": "#/validationMessage/any-of-type-viewed"
+                    }
+                  },
+                  {
+                    "required": [
+                      "wetSignedDate"
+                    ],
+                    "validationMessage": {
+                      "$ref": "#/validationMessage/any-of-type-viewed"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "type": {
+                    "const": "accepted"
+                  }
+                }
+              },
+              "then": {
+                "anyOf": [
+                  {
+                    "required": [
+                      "consentDate"
+                    ],
+                    "validationMessage": {
+                      "$ref": "#/validationMessage/any-of-type-accepted"
+                    }
+                  },
+                  {
+                    "required": [
+                      "ip"
+                    ],
+                    "validationMessage": {
+                      "$ref": "#/validationMessage/any-of-type-accepted"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "type": {
+                    "const": "rejected"
+                  }
+                }
+              },
+              "then": {
+                "anyOf": [
+                  {
+                    "required": [
+                      "consentDate"
+                    ],
+                    "validationMessage": {
+                      "$ref": "#/validationMessage/any-of-type-rejected"
+                    }
+                  },
+                  {
+                    "required": [
+                      "ip"
+                    ],
+                    "validationMessage": {
+                      "$ref": "#/validationMessage/any-of-type-rejected"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "type": {
+                    "const": "authenticated"
+                  }
+                }
+              },
+              "then": {
+                "anyOf": [
+                  {
+                    "required": [
+                      "date"
+                    ],
+                    "validationMessage": {
+                      "$ref": "#/validationMessage/any-of-type-authenticated"
+                    }
+                  },
+                  {
+                    "required": [
+                      "ip"
+                    ],
+                    "validationMessage": {
+                      "$ref": "#/validationMessage/any-of-type-authenticated"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    },
+    "date-time-format": {
+      "type": "string",
+      "format": "date-time",
+      "validationMessage": {
+        "$ref": "#/validationMessage/date-time-pattern"
+      }
+    },
+    "non-empty-alpha-numeric-string": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9](?:[A-Za-z0-9-]*[A-Za-z0-9])?$",
+      "validationMessage": {
+        "$ref": "#/validationMessage/invalid-alpha-numeric-string"
+      }
+    }
+  }
+}

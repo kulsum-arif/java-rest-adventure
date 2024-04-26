@@ -1,0 +1,312 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "description": "MI Rate quotes schema",
+  "properties": {
+    "company": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "To convey the private MI company short/common name from whom the private mortgage insurance coverage was obtained."
+        },
+        "otherName": {
+          "type": "string",
+          "description": ""
+        },
+        "address": {
+          "type": "object",
+          "properties": {
+            "streetAddress1": {
+              "type": "string",
+              "description": ""
+            },
+            "streetAddress2": {
+              "type": "string",
+              "description": ""
+            },
+            "city": {
+              "type": "string",
+              "description": ""
+            },
+            "state": {
+              "type": "string",
+              "description": ""
+            },
+            "postalCode": {
+              "type": "string",
+              "description": ""
+            }
+          },
+          "required": [
+            "streetAddress1"
+          ],
+          "additionalProperties": false
+        },
+        "contacts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/contactItem"
+          },
+          "minItems": 1,
+          "description": "Contacts."
+        }
+      },
+      "required": [
+        "name"
+      ],
+      "additionalProperties": false
+    },
+    "disclaimer": {
+      "type": "string",
+      "description": "Free-form text field used to describe the legal terms under which a rate quote is valid."
+    },
+    "certificateDecision": {
+      "type": "string",
+      "description": ""
+    },
+    "expirationDate": {
+      "type": "string",
+      "format": "date",
+      "description": "The date after which the rate quote is no longer valid."
+    },
+    "coveragePercent": {
+      "$ref": "#/definitions/numericFieldWith8Decimals",
+      "description": "The percentage of mortgage insurance coverage obtained."
+    },
+    "certificateIdentifier": {
+      "type": "string",
+      "description": "MI certificate identifier."
+    },
+    "quotes": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/quoteItem"
+      },
+      "minItems": 1,
+      "description": "MI Quotes."
+    }
+  },
+  "required": [
+    "company",
+    "quotes"
+  ],
+  "additionalProperties": false,
+  "definitions": {
+    "integerField": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "numericFieldWith8Decimals": {
+      "type": "number",
+      "multipleOf": 0.00000001
+    },
+    "numericFieldWith7Decimals": {
+      "type": "number",
+      "multipleOf": 0.0000001
+    },
+    "numericFieldWith2Decimals": {
+      "type": "number",
+      "multipleOf": 0.01
+    },
+    "contactItem": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "Home",
+            "Mobile",
+            "Work",
+            "Other"
+          ],
+          "description": ""
+        },
+        "phone": {
+          "type": "string",
+          "description": ""
+        },
+        "email": {
+          "type": "string",
+          "format": "email",
+          "minLength": 6,
+          "maxLength": 127,
+          "description": "Email address of the contact"
+        }
+      },
+      "required": [
+        "type",
+        "phone",
+        "email"
+      ],
+      "additionalProperties": false
+    },
+    "premiumItem": {
+      "type": "object",
+      "properties": {
+        "calculationType": {
+          "type": "string",
+          "enum": [
+            "Constant",
+            "Declining",
+            "Other",
+            "NoRenewals"
+          ],
+          "description": "Method by which new MI Premium is calculated"
+        },
+        "sequenceType": {
+          "type": "string",
+          "enum": [
+            "First",
+            "Second",
+            "Third",
+            "Fourth",
+            "Fifth"
+          ],
+          "description": "Specifies the order in which the MI premium rate and amount applies"
+        },
+        "periodType": {
+          "type": "string",
+          "enum": [
+            "Other",
+            "Renewal",
+            "Upfront"
+          ],
+          "description": "Defines the type of premium being paid during different stages of the mortgage insurance policy"
+        },
+        "blendedPaymentAndTax": {
+          "type": "object",
+          "properties": {
+            "amount": {
+              "$ref": "#/definitions/numericFieldWith8Decimals",
+              "description": "A calculated value representing the sum of the premium amount and the tax amount for the payment of a mortgage insurance policy."
+            },
+            "percent": {
+              "$ref": "#/definitions/numericFieldWith8Decimals",
+              "description": "A calculated value representing the combination of the mortgage insurance percentage and the tax percentage for the payment of a mortgage insurance policy."
+            }
+          },
+          "required": [
+            "amount",
+            "percent"
+          ],
+          "additionalProperties": false
+        },
+        "durationInMonths": {
+          "type": "integer",
+          "description": "The number of months for which a given occurrence of a MI renewal premium rate applies"
+        }
+      },
+      "additionalProperties": false
+    },
+    "quoteItem": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "The identifier of a particular quote."
+        },
+        "productDescription": {
+          "type": "string",
+          "description": "The description of a particular mortgage insurance product."
+        },
+        "partnerProductDescription": {
+          "type": "string",
+          "description": "The description of a particular mortgage insurance product."
+        },
+        "objectUrl": {
+          "type": "string",
+          "description": ""
+        },
+        "approvedMIBuyDownAmount": {
+          "$ref": "#/definitions/numericFieldWith2Decimals",
+          "description": "Approved MI Buydown Amount "
+        },
+        "durationType": {
+          "type": "string",
+          "enum": [
+            "Annual",
+            "NotApplicable",
+            "Other",
+            "PeriodicMonthly",
+            "SingleLifeOfLoan",
+            "SingleSpecific",
+            "SplitPremium"
+          ],
+          "description": "Specifies the period of time for which mortgage insurance coverage has been obtained/paid."
+        },
+        "initialPremiumAtClosingType": {
+          "type": "string",
+          "enum": [
+            "Deferred",
+            "Prepaid",
+            "Other"
+          ],
+          "description": ""
+        },
+        "premiumDetails": {
+          "type": "object",
+          "properties": {
+            "sequenceType": {
+              "type": "string",
+              "enum": [
+                "First",
+                "Second",
+                "Third",
+                "Fourth",
+                "Fifth"
+              ],
+              "description": "Specifies the order in which the MI premium rate and amount applies"
+            },
+            "financedIndicator": {
+              "type": "boolean",
+              "description": "Indicates whether mortgage insurance premium has been added to loan amount."
+            },
+            "refundableType": {
+              "type": "string",
+              "enum": [
+                "NotRefundable",
+                "Other",
+                "Refundable",
+                "RefundableWithLimits"
+              ],
+              "description": "Specifies how the unearned portion of any private mortgage insurance premiums will be treated if the private mortgage insurance coverage is canceled."
+            },
+            "sourceType": {
+              "type": "string",
+              "enum": [
+                "Borrower",
+                "BorrowerAndLender",
+                "Lender",
+                "Other"
+              ],
+              "description": "Defines the source of the MI premium payment."
+            },
+            "upfrontPercent": {
+              "$ref": "#/definitions/numericFieldWith8Decimals",
+              "description": "Reflects the MI Premium percent associated with the plan."
+            },
+            "premiums": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/premiumItem"
+              },
+              "minItems": 1,
+              "description": "MI Premiums."
+            }
+          },
+          "required": [
+            "premiums"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "id",
+        "productDescription",
+        "premiumDetails"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

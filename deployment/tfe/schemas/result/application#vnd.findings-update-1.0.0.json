@@ -1,0 +1,83 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "validationMessage": {
+    "invalid-string": "a valid String. Please provide a valid string.",
+    "invalid-alpha-numeric-string": "a valid String. Please provide a valid String."
+  },
+  "properties": {
+    "findings": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/findingItem"
+      },
+      "minItems": 1,
+      "description": ""
+    }
+  },
+  "required": [
+    "findings"
+  ],
+  "additionalProperties": false,
+  "definitions": {
+    "non-empty-string": {
+      "type": "string",
+      "pattern": "^(?!\\s*$).+",
+      "validationMessage": {
+        "$ref": "#/validationMessage/invalid-string"
+      }
+    },
+    "non-empty-string-code-pattern": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9](?:[A-Za-z0-9_-]*[A-Za-z0-9])?$",
+      "validationMessage": {
+        "$ref": "#/validationMessage/invalid-string"
+      }
+    },
+    "non-empty-alpha-numeric-string": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9](?:[A-Za-z0-9_.:'$%<>&()*#@!;\\/, -]*[A-Za-z0-9_.:'$%()\\/,-])?$",
+      "validationMessage": {
+        "$ref": "#/validationMessage/invalid-alpha-numeric-string"
+      }
+    },
+    "findingItem": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/non-empty-string",
+          "description": "Represents the id of the finding."
+        },
+        "description": {
+          "$ref": "#/definitions/non-empty-string",
+          "description": "Represents the description of the finding."
+        },
+        "code": {
+          "$ref": "#/definitions/non-empty-string",
+          "description": "Represents the code of the finding."
+        },
+        "status": {
+          "$ref": "#/definitions/non-empty-string",
+          "description": "Represents the status of the finding."
+        }
+      },
+      "required": [
+        "id",
+        "code"
+      ],
+      "additionalProperties": false
+    },
+    "commentItem": {
+      "type": "object",
+      "properties": {
+        "comment": {
+          "$ref": "#/definitions/non-empty-string"
+        }
+      },
+      "required": [
+        "comment"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

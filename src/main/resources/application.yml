@@ -1,0 +1,237 @@
+server:
+  port: 8443
+  ssl:
+    enabled: true
+    key-store-type: PKCS12
+    key-store: /opt/apps/partner-service/certs/epc.p12
+    key-alias: epc
+security:
+  require-ssl: true
+synkrato:
+  kafka:
+    sasl-username: epcProduct
+    bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS}
+    topic: ${spring.profiles.active}.${DC_REGION}.epc.product
+  aws:
+    s3:
+      schema:
+        name: ${SDLC_ENVIRONMENT}-em-partner-resources
+        billing-prefix: schemas/billing
+        result-prefix: schemas/result
+  metrics:
+    enabled: false
+    cloudwatch:
+      enabled: false
+  microservice:
+    filter:
+      auth-audience: "urn:elli:service:epc"
+      auth-token:
+        exp-duration-minutes: 525600
+      correlation-id:
+        # comma delimited list of url patterns
+        url-patterns: /v2/*
+    http:
+      connectionRequestTimeoutInMs: 30000
+      readTimeoutInMs: 30000
+      connectTimeoutInMs: 30000
+      keepAliveTimeInMs: 5000
+    aws:
+      paramstore:
+        config:
+          refreshIntervalMs: 60000
+  http-connection-pool:
+    max-total: 50
+    default-max-per-route: 50
+  epc:
+    filter:
+      auth-audience: "urn:elli:service:epc"
+      required-claims: "sub,elli_idt"
+    cache:
+      webhook-token-cache:
+        name: webhookTokenCache
+        caffeine-spec: maximumSize=10,expireAfterWrite=5m
+      schema-cache:
+        name: schemaCache
+        caffeine-spec: maximumSize=10,expireAfterWrite=1m
+    product:
+      max-query-limit: 100
+      default-query-limit: 25
+  em-services:
+    security:
+      token:
+        oapi:
+          client-id: epc-partner-service
+          grant-type: client_credentials
+          scope: apiplatform
+    webhook:
+      security:
+        token:
+          oapi:
+            client-id: uqkdzqr9
+            grant-type: client_credentials
+            scope: pc
+management:
+  endpoints:
+    enabled-by-default: false
+    web:
+      base-path: /
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      enabled: true
+      show-details: always
+spring:
+  jackson:
+    deserialization:
+      fail-on-reading-dup-tree-key: true
+      fail-on-unknown-properties: false
+    serialization-inclusion: NON_NULL
+    date-format: yyyy-MM-dd'T'HH:mm:ssXXX
+  jpa:
+    properties:
+      hibernate:
+        default_schema: partnerschema
+        dialect: com.synkrato.services.partner.config.CustomDialect
+        naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+        hbm2ddl.auto: none
+        database: POSTGRESQL
+        show-sql: false
+  datasource:
+    username: epc2admin
+    # https://github.com/brettwooldridge/HikariCP#configuration-knobs-baby
+    hikari:
+      minimum-idle: 10 # Default value is 10
+      maximum-pool-size: 100
+    platform: POSTGRESQL
+    driver-class-name: org.postgresql.Driver
+    pool-name: postgresqlDSPool
+    testWhileIdle: true
+    validationQuery: SELECT 1
+    validationInterval: 30000
+    testOnBorrow: true
+  application:
+    name: epc-partner-service
+---
+spring:
+  config:
+    activate:
+      on-profile: default
+  datasource:
+    url: jdbc:postgresql://127.0.0.1:5432/partnerdb
+
+synkrato:
+  em-services:
+    endpoint-url:
+      oapi-webhook:
+        create-subscription: https://int.api.ellielabs.com/webhook/v1/subscriptions
+        get-subscription: https://int.api.ellielabs.com/webhook/v1/subscriptions/{subscriptionId}
+  kafka:
+    # Overriding topic since 'default' topic does not exist
+    topic: dev.dcSacramento.epc.product
+---
+spring:
+  config:
+    activate:
+      on-profile: dev
+synkrato:
+  em-services:
+    endpoint-url:
+      oapi-webhook:
+        create-subscription: https://int.api.ellielabs.com/webhook/v1/subscriptions
+        get-subscription: https://int.api.ellielabs.com/webhook/v1/subscriptions/{subscriptionId}
+---
+spring:
+  config:
+    activate:
+      on-profile: qa
+synkrato:
+  em-services:
+    endpoint-url:
+      oapi-webhook:
+        create-subscription: https://int.api.ellielabs.com/webhook/v1/subscriptions
+        get-subscription: https://int.api.ellielabs.com/webhook/v1/subscriptions/{subscriptionId}
+---
+spring:
+  config:
+    activate:
+      on-profile: int
+synkrato:
+  em-services:
+    endpoint-url:
+      oapi-webhook:
+        create-subscription: https://int.api.ellielabs.com/webhook/v1/subscriptions
+        get-subscription: https://int.api.ellielabs.com/webhook/v1/subscriptions/{subscriptionId}
+---
+spring:
+  config:
+    activate:
+      on-profile: peg
+synkrato:
+  em-services:
+    endpoint-url:
+      oapi-webhook:
+        create-subscription: https://pel1.api.ellielabs.com/webhook/v1/subscriptions
+        get-subscription: https://pel1.api.ellielabs.com/webhook/v1/subscriptions/{subscriptionId}
+  kafka:
+    topic: pel.${DC_REGION}.epc.product
+---
+spring:
+  config:
+    activate:
+      on-profile: concept
+synkrato:
+  microservice:
+    aws:
+      paramstore:
+        config:
+          refreshIntervalMs: 3600000
+  epc:
+    cache:
+      schema-cache:
+        caffeine-spec: maximumSize=10,expireAfterWrite=24h
+  em-services:
+    endpoint-url:
+      oapi-webhook:
+        create-subscription: https://concept.api.synkrato.com/webhook/v1/subscriptions
+        get-subscription: https://concept.api.synkrato.com/webhook/v1/subscriptions/{subscriptionId}
+---
+spring:
+  config:
+    activate:
+      on-profile: stg
+synkrato:
+  microservice:
+    aws:
+      paramstore:
+        config:
+          refreshIntervalMs: 3600000
+  epc:
+    cache:
+      schema-cache:
+        caffeine-spec: maximumSize=10,expireAfterWrite=24h
+  em-services:
+    endpoint-url:
+      oapi-webhook:
+        create-subscription: https://stg.api.synkrato.com/webhook/v1/subscriptions
+        get-subscription: https://stg.api.synkrato.com/webhook/v1/subscriptions/{subscriptionId}
+---
+spring:
+  config:
+    activate:
+      on-profile: prod
+synkrato:
+  microservice:
+    aws:
+      paramstore:
+        config:
+          refreshIntervalMs: 3600000
+  epc:
+    cache:
+      schema-cache:
+        caffeine-spec: maximumSize=10,expireAfterWrite=24h
+  em-services:
+    endpoint-url:
+      oapi-webhook:
+        create-subscription: https://api.synkrato.com/webhook/v1/subscriptions
+        get-subscription: https://api.synkrato.com/webhook/v1/subscriptions/{subscriptionId}

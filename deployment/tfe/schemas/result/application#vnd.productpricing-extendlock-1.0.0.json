@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "comments": {
+      "type": "string",
+      "description": "" 
+    },
+    "daysToExtend": {
+      "$ref": "#/definitions/integerField",
+      "description": "" 
+    },
+    "lockExtendPriceAdjustment": {
+      "$ref": "#/definitions/numericField",
+      "description": "" 
+    }
+  },
+  "required": [
+    "daysToExtend",
+    "lockExtendPriceAdjustment"
+  ],
+  "additionalProperties": false,
+  "definitions": {
+    "integerField": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "numericField": {
+      "type": "number",
+      "multipleOf": 0.001
+    }
+  }
+}

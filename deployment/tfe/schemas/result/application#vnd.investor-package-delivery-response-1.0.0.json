@@ -1,0 +1,538 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "description": "JSON representation of investor connect delivery response.",
+  "validationMessage": {
+    "amountPattern": "Invalid amount. (Valid example: 1000.00).",
+    "datePattern": "Date should be in the format YYYY-MM-DD.",
+    "phonePattern": "Invalid phone number (Valid example: 4087655432).",
+    "categoryValues": "Valid values for category are Credit, Income, Assets, Legal, Misc, Property.",
+    "priorToValues": "Valid values for priorTo are Approval, Funding, Closing, Purchase, Docs.",
+    "mimeTypeValues": "Valid values for mimeType are application/pdf or text/plain.",
+    "documentTypeValues": "Valid values for documentType are Purchase Advice, Eligibility Letter, Lock Confirmation, Conditions, Misc."
+  },
+  "additionalProperties": false,
+  "properties": {
+    "orders": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "examples": [
+              "4aee7c91-df6f-44d1-8697-00c79a21526e"
+            ]
+          },
+          "orderDateTime": {
+            "type": "string",
+            "examples": [
+              "2017-06-02"
+            ]
+          },
+          "orderStatus": {
+            "type": "string",
+            "examples": [
+              "Delivered"
+            ]
+          },
+          "message": {
+            "type": "string",
+            "maxLength": 256,
+            "examples": [
+              "Loan package is successfully delivered and ingested to the LOS"
+            ]
+          }
+        },
+        "required": [
+          "orderStatus"
+        ]
+      }
+    },
+    "delivery": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "providerLoanId": {
+          "type": "string",
+          "maxLength": 256,
+          "examples": [
+            "InvLoan12345"
+          ]
+        },
+        "fedReferenceNumber": {
+          "type": "string",
+          "maxLength": 256,
+          "examples": [
+            "FED REF 001100"
+          ]
+        },
+        "loan": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "entityId": {
+              "type": "string",
+              "maxLength": 256,
+              "examples": [
+                "a082728b-c7e6-473c-9a1c-b4337a747266"
+              ]
+            },
+            "entityType": {
+              "type": "string",
+              "maxLength": 50,
+              "examples": [
+                "urn:elli:encompass:loan"
+              ]
+            }
+          },
+          "required": [
+            "entityId"
+          ]
+        },
+        "noteTracking": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "deliveryDate": {
+              "$ref": "#/definitions/datePattern"
+            },
+            "shipment": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "trackingId": {
+                  "type": "string",
+                  "maxLength": 256,
+                  "examples": [
+                    "1Z999AA10123456784"
+                  ]
+                },
+                "carrier": {
+                  "type": "string",
+                  "maxLength": 256,
+                  "examples": [
+                    "UPS"
+                  ]
+                },
+                "method": {
+                  "type": "string",
+                  "maxLength": 256,
+                  "examples": [
+                    "Air"
+                  ]
+                },
+                "shippingDate": {
+                  "$ref": "#/definitions/datePattern"
+                },
+                "shippedBy": {
+                  "type": "string",
+                  "maxLength": 256,
+                  "examples": [
+                    "Otis Warehouse Lending Bank"
+                  ]
+                },
+                "comments": {
+                  "type": "string",
+                  "maxLength": 500,
+                  "examples": [
+                    "Note delivered to Beltran Investor Company"
+                  ]
+                }
+              },
+              "dependentRequired": {
+                "trackingId": [
+                  "carrier"
+                ],
+                "carrier": [
+                  "trackingId"
+                ]
+              }
+            },
+            "recipient": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "maxLength": 256,
+                  "examples": [
+                    "Jon"
+                  ]
+                },
+                "address": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "line1": {
+                      "type": "string",
+                      "maxLength": 256,
+                      "examples": [
+                        "123 Airway Ln"
+                      ]
+                    },
+                    "line2": {
+                      "type": "string",
+                      "maxLength": 256
+                    },
+                    "city": {
+                      "type": "string",
+                      "maxLength": 50,
+                      "examples": [
+                        "Pleasanton"
+                      ]
+                    },
+                    "state": {
+                      "type": "string",
+                      "maxLength": 50,
+                      "examples": [
+                        "CA"
+                      ]
+                    },
+                    "zip": {
+                      "type": "string",
+                      "maxLength": 50,
+                      "examples": [
+                        "94588"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "line1",
+                    "city",
+                    "state",
+                    "zip"
+                  ]
+                },
+                "email": {
+                  "type": "string",
+                  "format": "email",
+                  "examples": [
+                    "nibepillorro-9668@yopmail.com"
+                  ]
+                },
+                "phone": {
+                  "$ref": "#/definitions/phonePattern"
+                },
+                "contactPerson": {
+                  "type": "string",
+                  "maxLength": 256,
+                  "examples": [
+                    "Mike"
+                  ]
+                },
+                "receivedDate": {
+                  "$ref": "#/definitions/datePattern"
+                },
+                "receivedBy": {
+                  "type": "string",
+                  "maxLength": 256,
+                  "examples": [
+                    "Davis"
+                  ]
+                }
+              },
+              "required": [
+                "name",
+                "address",
+                "email",
+                "phone",
+                "contactPerson"
+              ]
+            }
+          }
+        },
+        "funding": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "wire": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "federalReferenceNumber": {
+                  "type": "string",
+                  "maxLength": 256,
+                  "examples": [
+                    "FED REF 001100"
+                  ]
+                },
+                "amount": {
+                  "$ref": "#/definitions/amountPattern"
+                },
+                "wireDate": {
+                  "$ref": "#/definitions/datePattern"
+                }
+              },
+              "required": [
+                "federalReferenceNumber",
+                "wireDate",
+                "amount"
+              ]
+            },
+            "institution": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "identificationCode": {
+                  "type": "string",
+                  "maxLength": 50,
+                  "examples": [
+                    "928405212ABC"
+                  ]
+                },
+                "websiteUrl": {
+                  "type": "string",
+                  "maxLength": 256,
+                  "examples": [
+                    "yopmail.com"
+                  ]
+                }
+              }
+            }
+          },
+          "required": [
+            "wire"
+          ]
+        },
+        "conditions": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "id": {
+                "type": "string",
+                "maxLength": 50,
+                "examples": [
+                  "1122334455"
+                ]
+              },
+              "code": {
+                "type": "string",
+                "maxLength": 50,
+                "examples": [
+                  "BR006"
+                ]
+              },
+              "status": {
+                "type": "string",
+                "maxLength": 50,
+                "examples": [
+                  "Cleared"
+                ]
+              },
+              "comments": {
+                "type": "string",
+                "maxLength": 500,
+                "examples": [
+                  "Please provide requested documents for borrower only"
+                ]
+              },
+              "title": {
+                "type": "string",
+                "maxLength": 256,
+                "examples": [
+                  "Submit most recent paystub"
+                ]
+              },
+              "description": {
+                "type": "string",
+                "maxLength": 256,
+                "examples": [
+                  "Submit paystubs for July and August 2019"
+                ]
+              },
+              "category": {
+                "type": "string",
+                "pattern": "^(\\s*)(?i)(Credit|Income|Assets|Legal|Misc|Property)(\\s*)$",
+                "validationMessage": {
+                  "$ref": "#/validationMessage/categoryValues"
+                },
+                "examples": [
+                  "Income"
+                ]
+              },
+              "applications": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "borrower": {
+                      "$ref": "#/definitions/borrowerItem"
+                    },
+                    "coBorrower": {
+                      "$ref": "#/definitions/borrowerItem"
+                    }
+                  }
+                }
+              },
+              "priorTo": {
+                "type": "string",
+                "pattern": "^(\\s*)(?i)(Approval|Funding|Closing|Purchase|Docs)(\\s*)$",
+                "validationMessage": {
+                  "$ref": "#/validationMessage/priorToValues"
+                },
+                "examples": [
+                  "Approval"
+                ]
+              },
+              "effectiveStartDate": {
+                "$ref": "#/definitions/datePattern"
+              },
+              "effectiveEndDate": {
+                "$ref": "#/definitions/datePattern"
+              }
+            },
+            "required": [
+              "description",
+              "title",
+              "category"
+            ]
+          }
+        },
+        "files": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "object",
+            "uniqueItems": true,
+            "additionalProperties": false,
+            "properties": {
+              "id": {
+                "type": "string",
+                "maxLength": 256,
+                "examples": [
+                  "bbe4a5ee-f1a1-4993-9b6f-4e14c2d0588b"
+                ]
+              },
+              "name": {
+                "type": "string",
+                "maxLength": 256,
+                "examples": [
+                  "PurchaseAdvice.pdf"
+                ]
+              },
+              "mimeType": {
+                "type": "string",
+                "pattern": "^(\\s*)(?i)(application/pdf|text/plain)(\\s*)$",
+                "examples": [
+                  "application/pdf"
+                ],
+                "validationMessage": {
+                  "$ref": "#/validationMessage/mimeTypeValues"
+                }
+              },
+              "documentType": {
+                "type": "string",
+                "pattern": "^(\\s*)(?i)(Purchase Advice|Eligibility Letter|Lock Confirmation|Conditions|Misc)(\\s*)$",
+                "validationMessage": {
+                  "$ref": "#/validationMessage/documentTypeValues"
+                }
+              }
+            },
+            "required": [
+              "id",
+              "name",
+              "mimeType",
+              "documentType"
+            ]
+          }
+        }
+      },
+      "dependentRequired": {
+        "providerLoanId": [
+          "loan"
+        ],
+        "funding": [
+          "loan"
+        ],
+        "conditions": [
+          "loan"
+        ],
+        "noteTracking": [
+          "loan"
+        ],
+        "files": [
+          "loan"
+        ]
+      }
+    }
+  },
+  "anyOf": [
+    {
+      "required": [
+        "orders"
+      ]
+    },
+    {
+      "required": [
+        "delivery"
+      ]
+    }
+  ],
+  "definitions": {
+    "datePattern": {
+      "type": "string",
+      "format": "date",
+      "examples": [
+        "2017-06-02"
+      ],
+      "validationMessage": {
+        "$ref": "#/validationMessage/datePattern"
+      }
+    },
+    "amountPattern": {
+      "type": "string",
+      "maxLength": 50,
+      "pattern": "^[+]?\\d*\\.\\d+$|^[+]?\\d+(\\.\\d*)?$",
+      "examples": [
+        "234234.98"
+      ],
+      "validationMessage": {
+        "$ref": "#/validationMessage/amountPattern"
+      }
+    },
+    "phonePattern": {
+      "type": "string",
+      "pattern": "^\\d{10}$",
+      "examples": [
+        "5559251234"
+      ],
+      "validationMessage": {
+        "$ref": "#/validationMessage/phonePattern"
+      }
+    },
+    "borrowerItem": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "firstName": {
+          "type": "string",
+          "maxLength": 50,
+          "examples": [
+            "Andre"
+          ]
+        },
+        "middleName": {
+          "type": "string",
+          "maxLength": 50,
+          "examples": [
+            "Dennis"
+          ]
+        },
+        "lastName": {
+          "type": "string",
+          "maxLength": 50,
+          "examples": [
+            "Livingston"
+          ]
+        }
+      }
+    }
+  }
+}

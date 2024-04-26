@@ -1,0 +1,10 @@
+library 'microservice-pipelines@master'
+pipelineSpaceliftDeploy environment: env.environment,
+        terraformCommand: env.terraformCommand,
+        tfeTokenCredentials: "tfe-epc-token-prod",
+        terraformVersion: "0.12.29",
+        workingDirectory: "deployment/tfe",
+        releaseVersion: env.releaseVersion,
+        teamsWebhookUrl: "https://iceholdings.webhook.office.com/webhookb2/3bab4a44-9d66-4b24-b3ce-ce94fd0c1a10@f92659f6-4a91-457a-9aac-df071c834cc4/IncomingWebhook/d5fcc3005a2a4c189d1178ca1d0ed89c/178cf66c-cd27-4a57-8068-71fb4bb9d8cb",
+        spacectlApiKeyId: "spl-api-key-id-prod",
+        stackNamePrefix: "partner-service"

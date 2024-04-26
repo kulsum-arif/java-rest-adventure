@@ -1,0 +1,24 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "description": "JSON representation of a deny lock request transaction result.",
+  "validationMessage": {
+    "uuidPattern": "UUID. It must be a valid UUID format"
+  },
+  "properties": {
+    "lockId": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+      "validationMessage": {
+        "$ref": "#/validationMessage/uuidPattern"
+      }
+    },
+    "comments": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "comments"
+  ],
+  "additionalProperties": false
+}

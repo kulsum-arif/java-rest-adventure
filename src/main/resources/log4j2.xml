@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration monitorInterval="60" name="PartnerService" packages="com.synkrato.services.epc.common.logging">
+  <Appenders>
+    <Console name="STDOUT" target="SYSTEM_OUT">
+      <AsyncJSONLayout compact="true" complete="false" eventEol="true" locationInfo="true" properties="true" objectMessageAsJsonObject="true" />
+    </Console>
+    <Console name="LOCAL" target="SYSTEM_OUT">
+      <PatternLayout>
+        <pattern>%d{yyyy-MM-dd HH:mm:ss,SSS} [%t] %p [X-Correlation-ID: %X{X-Correlation-ID}][origin-class: %class] [origin-line-number : %line] [method : %method][thread-name : %thread] %m%n</pattern>
+      </PatternLayout>
+    </Console>
+    <Rewrite name="Rewrite">
+      <LogRewrite />
+      <AppenderRef ref="STDOUT"/>
+    </Rewrite>
+  </Appenders>
+  <Loggers>
+    <Logger additivity="false" level="INFO" name="com.synkrato">
+      <AppenderRef ref="Rewrite"/>
+    </Logger>
+
+    <Logger additivity="false" level="INFO" name="org.springframework">
+      <AppenderRef ref="Rewrite"/>
+    </Logger>
+
+    <Root level="INFO">
+      <AppenderRef ref="Rewrite"/>
+    </Root>
+  </Loggers>
+</Configuration>

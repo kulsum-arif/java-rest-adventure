@@ -1,0 +1,148 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "description": "Transform definitions that qualify certain transaction states into billable SKU's, evaluated in order",
+  "properties": {
+    "transformations": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/transformItem"
+      },
+      "minItems": 1,
+      "description": "Transform definitions that qualify certain transaction states into billable SKU's, evaluated in order"
+    }
+  },
+  "additionalProperties": false,
+  "definitions": {
+    "integerField": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 100
+    },
+    "numericField": {
+      "type": "number"
+    },
+    "datePattern": {
+      "type": "string",
+      "pattern": "^^(?:(?:(?:0?[13578]|1[02])(\\/)31)\\1|(?:(?:0?[1,3-9]|1[0-2])(\\/)(?:29|30)\\2))(?:(?:1[6-9]|[2-9]\\d)?\\d{2})$|^(?:0?2(\\/)29\\3(?:(?:(?:1[6-9]|[2-9]\\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:(?:0?[1-9])|(?:1[0-2]))(\\/)(?:0?[1-9]|1\\d|2[0-8])\\4(?:(?:1[6-9]|[2-9]\\d)?\\d{2})$",
+      "validationMessage": "Date should be in the format MM/DD/YYYY."
+    },
+    "scopePattern": {
+      "type": "string",
+      "pattern": "^(?i)(Loan|Application|Borrower|Coborrower)$",
+      "validationMessage": "- scope must be one of ['Loan', 'Application', 'Borrower' or 'Coborrower']"
+    },
+    "statusPattern": {
+      "type": "string",
+      "pattern": "^(pending|processing|completed)$",
+      "validationMessage": "- status must be one of ['pending', 'processing' or 'completed']"
+    },
+    "stringPattern": {
+      "type": "string",
+      "pattern": "^[a-zA-Z0-9-_]+$",
+      "validationMessage": "required pattern ^[a-zA-Z0-9-_]+$ (should be an alphanumeric string that may contain - or _)"
+    },
+    "transformItem": {
+      "type": "object",
+      "properties": {
+        "sku": {
+          "$ref": "#/definitions/stringPattern"
+        },
+        "transaction": {
+          "type": "object",
+          "properties": {
+            "requestType": {
+              "type": "string",
+              "minLength": 1,
+              "description": "Qualifying transaction request type"
+            },
+            "status": {
+              "$ref": "#/definitions/statusPattern",
+              "description": "Qualifying transaction status"
+            },
+            "partnerStatus":{
+              "type": "string",
+              "maxLength": 64,
+              "description": "Partner status for a transaction"
+            },
+            "scope": {
+              "$ref": "#/definitions/scopePattern",
+              "description": "Qualifying transaction scope"
+            },
+            "options": {
+              "type": "object",
+              "description": "Qualifying transaction options",
+              "minProperties": 1
+            },
+            "test": {
+              "type": "object",
+              "properties": {
+                "borrowerName":{
+                  "type": "string",
+                  "description": "Qualifying test transaction borrower name"
+                },
+                "propertyAddress":{
+                  "type": "string",
+                  "description": "Qualifying test transaction property address"
+                }
+              },
+              "description": "Qualifying test transaction name and propertyAddress",
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "requestType"
+          ],
+          "additionalProperties": false
+        },
+        "groupingRules": {
+          "type": "array",
+          "description": "Grouping rules that qualify related transactions to be recorded with an alternative SKU, evaluated in order",
+          "items": [
+            {
+              "type": "object",
+              "properties": {
+                "groupAs": {
+                  "$ref": "#/definitions/stringPattern",
+                  "description": "Target SKU"
+                },
+                "period": {
+                  "$ref": "#/definitions/integerField",
+                  "description": "Optional condition for qualifying number of days"
+                },
+                "ignore": {
+                  "type": "boolean",
+                  "description": "Optional condition to ignore billing on the transaction"
+                }
+              },
+              "required": [
+                "period"
+              ],
+              "if": {
+                "properties": {
+                  "ignore": {
+                    "enum": [
+                      false
+                    ]
+                  }
+                }
+              },
+              "then": {
+                "required": [
+                  "groupAs"
+                ]
+              },
+              "else": true,
+              "additionalProperties": false
+            }
+          ]
+        }
+      },
+      "required": [
+        "sku",
+        "transaction"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

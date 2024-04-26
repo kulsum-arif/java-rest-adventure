@@ -1,0 +1,25 @@
+#!/bin/bash
+set -e
+
+mkdir -p .cache
+if [[ ! -f .cache/google-java-format-1.7-all-deps.jar ]]; then
+  cd .cache && curl -LJO "https://github.com/google/google-java-format/releases/download/google-java-format-1.7/google-java-format-1.7-all-deps.jar"
+  cd ..
+fi
+
+# echo "69e2efccf9938cfb08b1d5315ad61ca4484bbd0a *.cache/google-java-format-1.7-all-deps.jar" | shasum -a 256 -c
+
+changed_java_files=$(git diff --cached --name-only --diff-filter=ACMR | grep ".*java$" || true)
+
+if [[ -n "$changed_java_files" ]]; then
+  echo "Reformatting Java files: $changed_java_files"
+  if ! java -jar .cache/google-java-format-1.7-all-deps.jar \
+    --replace \
+    --set-exit-if-changed \
+    $changed_java_files; then
+    echo "Some files were changed, aborting commit!" >&2
+    exit 1
+  fi
+else
+  echo "No Java files changes found."
+fi

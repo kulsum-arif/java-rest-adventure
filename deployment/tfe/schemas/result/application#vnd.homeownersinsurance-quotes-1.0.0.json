@@ -1,0 +1,64 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "description": "HOI Quotes schema",
+  "properties": {
+    "additionalDetails": {
+      "type": "object",
+      "description": "Any additional details other than quotes."
+    },
+    "quotes": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "carrierName": {
+              "type": "string",
+              "description": "Name of the carrier"
+            },
+            "premium": {
+              "type": "string",
+              "description": "Premium amount."
+            },
+            "quotedEffectiveDate": {
+              "type": "string",
+              "description": ""
+            },
+            "dwellingCoverage": {
+              "type": "string",
+              "description": "Dwelling coverage"
+            },
+            "personalPropertyCoverage": {
+              "type": "string",
+              "description": "Personal property coverage"
+            },
+            "liabilityCoverage": {
+              "type": "string",
+              "description": "Liability coverage"
+            },
+            "policyDeductible": {
+              "type": "string",
+              "description": "Policy Deductible"
+            },
+            "specialDeductibles": {
+              "type": "array",
+              "description": "Special deductibles",
+              "items": [
+                {
+                  "type": "string"
+                }
+              ]
+            },
+            "isPreferredQuote": {
+              "type": "boolean",
+              "description": "is Preferred Quote"
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    }
+  },
+  "additionalProperties": false
+}

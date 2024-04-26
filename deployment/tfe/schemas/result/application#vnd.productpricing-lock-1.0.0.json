@@ -1,0 +1,357 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "description": "JSON representation of a rate lock request initiation transaction result.",
+  "validationMessage": {
+    "oneOf": "Two of lockDate, lockNumberOfDays and lockExpirationDate are required.",
+    "oneOfSub": "Two of lockDate, lockNumberOfDays and lockExpirationDate are required.",
+    "datePattern": "Date should be in the format MM/DD/YYYY.",
+    "timePattern": "Time should be in the format HH:MM"
+  },
+  "properties": {
+    "extensionIndicator": {
+      "type": "boolean",
+      "description": ""
+    },
+    "priceConcession": {
+      "type": "object",
+      "properties": {
+        "indicator": {
+          "type": "boolean",
+          "description": ""
+        },
+        "requestStatus": {
+          "type": "string",
+          "enum": [
+            "Approved",
+            "Denied"
+          ],
+          "description": ""
+        },
+        "requestedAmount": {
+          "$ref": "#/definitions/numericField",
+          "description": ""
+        }
+      }
+    },
+    "borrLenderPaid": {
+      "type": "string",
+      "enum": [
+        "Lender Paid",
+        "Borrower Paid",
+        "Exempt"
+      ],
+      "description": ""
+    },
+    "onrpDate": {
+      "$ref": "#/definitions/datePattern",
+      "description": ""
+    },
+    "onrpTime": {
+      "type": "string",
+      "$ref": "#/definitions/timePattern",
+      "description": ""
+    },
+    "onrpLock": {
+      "type": "boolean",
+      "description": ""
+    },
+    "onrpEligible": {
+      "type": "boolean",
+      "description": ""
+    },
+    "teaserRate": {
+      "$ref": "#/definitions/numericField",
+      "description": ""
+    },
+    "disclosureType": {
+      "type": "string",
+      "description": ""
+    },
+    "indexCurrentValuePercent": {
+      "$ref": "#/definitions/numericField",
+      "description": ""
+    },
+    "buydownType": {
+      "type": "string",
+      "description": ""
+    },
+    "pudIndicator": {
+      "type": "boolean",
+      "description": ""
+    },
+    "notInProjectIndicator": {
+      "type": "boolean",
+      "description": ""
+    },
+    "comments": {
+      "type": "string",
+      "description": "Free form comments for the rate lock operation."
+    },
+    "programNotes": {
+      "type": "string",
+      "description": "Free form Rate Lock Request Program Notes."
+    },
+    "planCode": {
+      "type": "string",
+      "description": "Alpha-numeric code that represents the specific loan program."
+    },
+    "lockDate": {
+      "$ref": "#/definitions/datePattern",
+      "description": "Effective date for the rate lock."
+    },
+    "lockExpirationDate": {
+      "$ref": "#/definitions/datePattern",
+      "description": "Expiration date for the rate lock."
+    },
+    "lockNumberOfDays": {
+      "$ref": "#/definitions/integerField",
+      "description": "Lock period number of days for the rate lock."
+    },
+    "startingAdjustRate": {
+      "$ref": "#/definitions/numericField",
+      "description": ""
+    },
+    "startingAdjustPrice": {
+      "$ref": "#/definitions/numericField",
+      "description": ""
+    },
+    "unDiscountedRate": {
+      "$ref": "#/definitions/numericField",
+      "description": ""
+    },
+    "gpmRate": {
+      "$ref": "#/definitions/numericField",
+      "description": "Graduated payment mortgage rate."
+    },
+    "gpmYears": {
+      "$ref": "#/definitions/integerField",
+      "description": "Graduated payment mortgage number of years."
+    },
+    "lastRateSetDate": {
+      "$ref": "#/definitions/datePattern",
+      "description": ""
+    },
+    "correspondentCommitmentType": {
+      "type": "string",
+      "enum": [
+        "Best Efforts",
+        "Mandatory"
+      ],
+      "description": "Type of lock associated with the correspondent trade."
+    },
+    "correspondentDeliveryType": {
+      "type": "string",
+      "description": "The processing method of the commitment."
+    },
+    "isDeliveryType": {
+      "type": "boolean",
+      "description": "Indicates whether the correspondent delivery type has been determined."
+    },
+    "hedging": {
+      "type": "boolean",
+      "description": "Indicates if the subject loan is part of the lenders interest rate risk hedging program."
+    },
+    "penaltyTerm": {
+      "type": "string",
+      "enum": [
+        "1 Year",
+        "2 Years",
+        "3 Years",
+        "4 Years",
+        "5 Years"
+      ],
+      "description": "The period for the pre-payment penalty."
+    },
+    "currentAcquisition": {
+      "type": "boolean",
+      "description": "The lot/land status of the property"
+    },
+    "currentConstructionRefi": {
+      "type": "boolean",
+      "description": "Indicates whether a refinance is being done on the construction."
+    },
+    "prepayPenalty": {
+      "type": "boolean",
+      "description": "Indicates whether there is a pre-payment penalty on the loan."
+    },
+    "baseRate": {
+      "$ref": "#/definitions/numericField",
+      "description": "The base interest rate defined in the requested lock."
+    },
+    "basePrice": {
+      "$ref": "#/definitions/numericField",
+      "description": "The base loan price defined in the requested lock."
+    },
+    "baseMarginRate": {
+      "$ref": "#/definitions/numericField",
+      "description": "The lenders marginal interest rate defined in the requested lock."
+    },
+    "rateSheetId": {
+      "type": "string",
+      "description": "The identifier for the source loan pricing rate sheet."
+    },
+    "requestImpoundWaived": {
+      "type": "string",
+      "enum": [
+        "Waived",
+        "Not Waived",
+        ""
+      ],
+      "description": "Indicates waiver of impound/escrow account requirement for the subject mortgage transaction."
+    },
+    "requestImpoundType": {
+      "type": "string",
+      "enum": [
+        "No Impounds",
+        "Insurance only",
+        "Taxes only",
+        "Taxes and Insurance",
+        ""
+      ],
+      "description": "Waiver type of impound/escrow account requirement for the subject mortgage transaction."
+    },
+    "lenderFeeWaiverOption": {
+      "type": "boolean",
+      "description": "Indicates whether the fee waiver is covered by the lender."
+    },
+    "sellerPaidMiPremium": {
+      "$ref": "#/definitions/integerField",
+      "description": "MI premium amount paid by the subject property seller."
+    },
+    "fhaUpfrontMiPremiumPercent": {
+      "$ref": "#/definitions/numericField",
+      "description": "FHA-only upfront MI premium percentage."
+    },
+    "roundToNearest50": {
+      "type": "boolean",
+      "description": "Indicates whether to round the loan amount to the nearest multiple of $50."
+    },
+    "pricing": {
+      "type": "object",
+      "properties": {
+        "historyData": {
+          "type": "string",
+          "minLength": 1
+        },
+        "updated": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "historyData"
+      ],
+      "additionalProperties": false
+    },
+    "adjustments": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/adjustmentItem"
+      },
+      "minItems": 1,
+      "description": "Loan interest rate adjustments."
+    }
+  },
+  "required": [
+    "baseRate"
+  ],
+  "oneOf": [
+    {
+      "required": [
+        "lockDate",
+        "lockNumberOfDays"
+      ],
+      "validationMessage": {
+        "$ref": "#/validationMessage/oneOfSub"
+      }
+    },
+    {
+      "required": [
+        "lockDate",
+        "lockExpirationDate"
+      ],
+      "validationMessage": {
+        "$ref": "#/validationMessage/oneOfSub"
+      }
+    },
+    {
+      "required": [
+        "lockExpirationDate",
+        "lockNumberOfDays"
+      ],
+      "validationMessage": {
+        "$ref": "#/validationMessage/oneOfSub"
+      }
+    }
+  ],
+  "additionalProperties": false,
+  "definitions": {
+    "integerField": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "numericField": {
+      "type": "number",
+      "multipleOf": 0.0000000001
+    },
+    "adjustmentNumericField": {
+      "type": "number",
+      "multipleOf": 0.0000000001
+    },
+    "datePattern": {
+      "type": "string",
+      "pattern": "^^(?:(?:(?:0?[13578]|1[02])(\\/)31)\\1|(?:(?:0?[1,3-9]|1[0-2])(\\/)(?:29|30)\\2))(?:(?:1[6-9]|[2-9]\\d)?\\d{2})$|^(?:0?2(\\/)29\\3(?:(?:(?:1[6-9]|[2-9]\\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:(?:0?[1-9])|(?:1[0-2]))(\\/)(?:0?[1-9]|1\\d|2[0-8])\\4(?:(?:1[6-9]|[2-9]\\d)?\\d{2})$",
+      "validationMessage": {
+        "$ref": "#/validationMessage/datePattern"
+      }
+    },
+    "timePattern": {
+      "type": "string",
+      "pattern": "^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$",
+      "validationMessage": {
+        "$ref": "#/validationMessage/timePattern"
+      }
+    },
+    "adjustmentItem": {
+      "type": "object",
+      "properties": {
+        "adjustmentType": {
+          "type": "string",
+          "enum": [
+            "Adjustment",
+            "LockExtensionAdjustment",
+            "ReLockFeeAdjustment",
+            "CustomPriceAdjustment"
+          ],
+          "description": "The type of the subject interest rate adjustment."
+        },
+        "description": {
+          "type": "string",
+          "description": ""
+        },
+        "priceAdjustmentType": {
+          "type": "string",
+          "enum": [
+            "BasePrice",
+            "BaseMargin",
+            "BaseRate",
+            "ProfitMargin"
+          ],
+          "description": "If the adjustment affects the loan price - the type of the pricing adjustment."
+        },
+        "adjustment": {
+          "$ref": "#/definitions/adjustmentNumericField",
+          "description": "The adjustment amount."
+        }
+      },
+      "required": [
+        "adjustmentType",
+        "description",
+        "priceAdjustmentType",
+        "adjustment"
+      ],
+      "additionalProperties": false
+    }
+  }
+}
