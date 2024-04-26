@@ -1,0 +1,25 @@
+library 'microservice-pipelines@master'
+pipelineJavaServiceGithubFlow gitCredentialId: 'GitHub-Jenkins-HTTP-Method-Access',
+  artifactoryCredentialsId: '91a9b4bb-178a-4518-bfbf-4fcff0e823c7',
+  dockerRepo: 'cicd-repo',
+  exclusionPattern: '**/PartnerServiceApplication.class,**/PartnerServiceConstants.class,**/jpa/*,**/exception/*,**/security/*,**/data/*,**/data/repository/*,**/dto/*,**/config/*,**/views/*',
+  minimumLineCoverage: '84',
+  disableSonarQube: false,
+  disablePrComments: false,
+  disableCxScan: true,
+  cxTeamPath: 'CxServer\\synkrato\\Encompass\\EPC',
+  cxProjectName: 'partner-service',
+  cxWaitForResults: true,
+  defaultPublishingMode: 'snapshot',
+  teamsWebhookUrl: "https://iceholdings.webhook.office.com/webhookb2/3bab4a44-9d66-4b24-b3ce-ce94fd0c1a10@f92659f6-4a91-457a-9aac-df071c834cc4/IncomingWebhook/d5fcc3005a2a4c189d1178ca1d0ed89c/178cf66c-cd27-4a57-8068-71fb4bb9d8cb",
+  enableDeploy: true,
+  mavenFileId: '0d2bdd01-412b-4a60-a37a-af1a1841c690',
+  gitTokenId: 'svc-ro-jenkins-github-aws',
+  deployJob: 'EPC/Dev/PartnerPlatform/EPC/epc-continuous-deployment-pipeline/partner-service/master',
+  deployParams: [
+    string(name: 'label', value: params.label),
+    string(name: 'Verbosity', value: 'normal'),
+    string(name: 'terraformCommand', value: 'apply'), 
+    string(name: 'environment', value: 'dev'), 
+    string(name: 'releaseVersion', value: '')
+  ]

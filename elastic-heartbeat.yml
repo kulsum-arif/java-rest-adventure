@@ -1,0 +1,131 @@
+# DEV
+- type: http
+  urls: ["https://api.partner.dev.epc2.rd.synkrato.io/health"]
+  fields_under_root: true
+  fields:
+    project: "epc2"
+    service.name: "partner-service"
+    cloud.region: "us-east-1"
+    environment: "dev"
+  name: "epc2-partner-service-dev"
+  id: "epc2-partner-service-dev"
+  location: ''
+  schedule: "@every 180s"
+  timeout: 30s
+  check.response:
+    status: 200
+    json:
+    - description: parse health response
+      condition:
+        equals:
+          status: UP
+
+# QA
+- type: http
+  urls: ["https://api.partner.qa.epc2.rd.synkrato.io/health"]
+  fields_under_root: true
+  fields:
+    project: "epc2"
+    service.name: "partner-service"
+    cloud.region: "us-east-1"
+    environment: "qa"
+  name: "epc2-partner-service-qa"
+  id: "epc2-partner-service-qa"
+  location: ''
+  schedule: "@every 180s"
+  timeout: 30s
+  check.response:
+    status: 200
+    json:
+    - description: parse health response
+      condition:
+        equals:
+          status: UP
+
+# INT
+- type: http
+  urls: ["https://api.partner.int.epc2.rd.synkrato.io/health"]
+  fields_under_root: true
+  fields:
+    project: "epc2"
+    service.name: "partner-service"
+    cloud.region: "us-east-1"
+    environment: "int"
+  name: "epc2-partner-service-int"
+  id: "epc2-partner-service-int"
+  location: ''
+  schedule: "@every 180s"
+  timeout: 30s
+  check.response:
+    status: 200
+    json:
+    - description: parse health response
+      condition:
+        equals:
+          status: UP
+
+# CONCEPT
+- type: http
+urls: ["https://api.partner.concept.epc2.ellielabs.com//health"]
+fields_under_root: true
+fields:
+  project: "epc2"
+  service.name: "partner-service"
+  cloud.region: "us-east-1"
+  environment: "concept"
+name: "epc2-partner-service-concept"
+id: "epc2-partner-service-concept"
+location: ''
+schedule: "@every 180s"
+timeout: 30s
+check.response:
+  status: 200
+  json:
+  - description: parse health response
+    condition:
+      equals:
+        status: UP
+
+# STG
+- type: http
+urls: ["https://api.partner.stg.epc2.ellielabs.com//health"]
+fields_under_root: true
+fields:
+  project: "epc2"
+  service.name: "partner-service"
+  cloud.region: "us-east-1"
+  environment: "stg"
+name: "epc2-partner-service-stg"
+id: "epc2-partner-service-stg"
+location: ''
+schedule: "@every 180s"
+timeout: 30s
+check.response:
+  status: 200
+  json:
+  - description: parse health response
+    condition:
+      equals:
+        status: UP
+
+# PROD
+- type: http
+urls: ["https://api.partner.epc2.ellieservices.com/health"]
+fields_under_root: true
+fields:
+  project: "epc2"
+  service.name: "partner-service"
+  cloud.region: "us-east-1"
+  environment: "prod"
+name: "epc2-partner-service-prod"
+id: "epc2-partner-service-prod"
+location: ''
+schedule: "@every 180s"
+timeout: 30s
+check.response:
+  status: 200
+  json:
+  - description: parse health response
+    condition:
+      equals:
+        status: UP
